@@ -2,6 +2,11 @@
   directory = "functions/"
 
 [[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
+[[redirects]]
   from = "/auth"
   to = "/.netlify/functions/auth/"
   status = 302
