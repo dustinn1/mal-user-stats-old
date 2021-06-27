@@ -1,0 +1,32 @@
+{
+  "name": "mal-user-stats",
+  "version": "1.0.0",
+  "description": "Backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.14",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/lodash": "^4.14.170",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^15.6.1",
+    "@types/node-fetch": "^2.5.10",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.27.0",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.2.4"
+  }
+}
