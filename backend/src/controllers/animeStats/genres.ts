@@ -30,8 +30,10 @@ export default async function genreStats(animeList: Array<any>): Promise<Genre[]
       animes = _.filter(animes, function(n) {
         return n.mean;
       });
-      object.mean_score = _.round(_.meanBy(animes, function(n) {
-        return n.mean;
+      object.mean_score = _.round(_.meanBy(_.filter(animes, function(n) {
+        return n.my_list_status.score;
+      }), function(n) {
+        return n.my_list_status.score;
       }), 2);
       object.time_watched = _.sumBy(animes, function(n) {
         return n.time_watched;

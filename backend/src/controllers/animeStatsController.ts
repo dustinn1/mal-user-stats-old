@@ -9,6 +9,8 @@ import overallStats from './animeStats/overall';
 import scoresStats from './animeStats/scores';
 import formatStats from './animeStats/format';
 import statusStats from './animeStats/status';
+import releaseYearStats from './animeStats/releaseYear';
+import watchYearStats from './animeStats/watchYear';
 import genreStats from './animeStats/genres';
 
 interface userJWT {
@@ -26,6 +28,8 @@ interface Stats {
     scores: Array<Object>,
     format_distribution: Array<Object>,
     status_distribution: Array<Object>,
+    release_years: Array<Object>,
+    watch_years: Array<Object>,
     genres: Array<Object>
   }
 }
@@ -76,15 +80,19 @@ async function getStatsJSON(animeList: Array<any>, mal_id: number, username: str
       scores: [],
       format_distribution: [],
       status_distribution: [],
+      release_years: [],
+      watch_years: [],
       genres: []
     }
   };
   try {
-    json.statistics.overview = await overallStats(animeList);
-    json.statistics.scores = await scoresStats(animeList);
-    json.statistics.format_distribution = await formatStats(animeList);
-    json.statistics.status_distribution = await statusStats(animeList);
-    json.statistics.genres = await genreStats(animeList);
+    //json.statistics.overview = await overallStats(animeList);
+    //json.statistics.scores = await scoresStats(animeList);
+    //json.statistics.format_distribution = await formatStats(animeList);
+    //json.statistics.status_distribution = await statusStats(animeList);
+    //json.statistics.release_years = await releaseYearStats(animeList);
+    json.statistics.watch_years = await watchYearStats(animeList);
+    //json.statistics.genres = await genreStats(animeList);
     return json;
   } catch(err) {
     throw(err);

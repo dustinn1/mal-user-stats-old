@@ -28,9 +28,9 @@ export default async function formatStats(animeList: Array<any>): Promise<Format
         return n.time_watched;
       });
       object.mean_score = _.round(_.meanBy(_.filter(formatArray, function(n) {
-        return n.mean;
+        return n.my_list_status.score;
       }), function(n) {
-        return n.mean;
+        return n.my_list_status.score;
       }), 2);
       stats.push(object);
     }

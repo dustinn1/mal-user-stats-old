@@ -23,9 +23,9 @@ export default async function overallStats(animeList: Array<any>): Promise<Overa
       return n.time_watched;
     })
     object.mean_score = _.round(_.meanBy(_.filter(animeList, function(n) {
-      return n.mean;
+      return n.my_list_status.score;
     }), function(n) {
-      return n.mean;
+      return n.my_list_status.score;
     }), 2);
     return object;
   } catch(err) {
