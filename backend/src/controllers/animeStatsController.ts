@@ -1,12 +1,13 @@
 import { Request, Response } from 'express';
 import fetch from 'node-fetch';
-import jwt, { decode } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import _ from 'lodash';
 import { User } from '../models/user';
 import { test } from '../json/test';
 
 import overallStats from './animeStats/overall';
 import scoresStats from './animeStats/scores';
+import episodeCountStats from './animeStats/episodeCount';
 import formatStats from './animeStats/format';
 import statusStats from './animeStats/status';
 import releaseYearStats from './animeStats/releaseYear';
@@ -26,6 +27,7 @@ interface Stats {
   statistics: {
     overview: Object,
     scores: Array<Object>,
+    episode_count: Array<Object>,
     format_distribution: Array<Object>,
     status_distribution: Array<Object>,
     release_years: Array<Object>,
@@ -78,6 +80,7 @@ async function getStatsJSON(animeList: Array<any>, mal_id: number, username: str
     statistics: {
       overview: {},
       scores: [],
+      episode_count: [],
       format_distribution: [],
       status_distribution: [],
       release_years: [],
@@ -86,13 +89,14 @@ async function getStatsJSON(animeList: Array<any>, mal_id: number, username: str
     }
   };
   try {
-    //json.statistics.overview = await overallStats(animeList);
-    //json.statistics.scores = await scoresStats(animeList);
-    //json.statistics.format_distribution = await formatStats(animeList);
-    //json.statistics.status_distribution = await statusStats(animeList);
-    //json.statistics.release_years = await releaseYearStats(animeList);
+    json.statistics.overview = await overallStats(animeList);
+    json.statistics.scores = await scoresStats(animeList);
+    json.statistics.episode_count = await episodeCountStats(animeList);
+    json.statistics.format_distribution = await formatStats(animeList);
+    json.statistics.status_distribution = await statusStats(animeList);
+    json.statistics.release_years = await releaseYearStats(animeList);
     json.statistics.watch_years = await watchYearStats(animeList);
-    //json.statistics.genres = await genreStats(animeList);
+    json.statistics.genres = await genreStats(animeList);
     return json;
   } catch(err) {
     throw(err);
@@ -116,9 +120,6 @@ export function getStats(req: Request, res: Response) {
               .then(response => getResponseJSON(response, decodedUserJWT.mal_id, decodedUserJWT.username)
                 .then(response => res.json(response))
                 .catch(err => res.send(err)))
-              .catch(err => res.send(err)) 
-            getFullList(user.access_token)
-              .then(response => res.json(response))
               .catch(err => res.send(err)) */
             getStatsJSON(test, decodedUserJWT.mal_id, decodedUserJWT.username)
               .then(response => res.json(response))

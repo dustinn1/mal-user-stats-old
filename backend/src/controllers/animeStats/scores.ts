@@ -9,7 +9,7 @@ interface Score {
 export default async function scoreStats(animeList: Array<any>): Promise<Score[]> {
   let stats: Array<Score> = [];
   try {
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 0; i <= 10; i++) {
       let object: Score = {
         score: i,
         count: 0,

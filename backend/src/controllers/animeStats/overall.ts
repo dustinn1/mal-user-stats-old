@@ -4,7 +4,8 @@ interface Overall {
   total_anime: number,
   episodes_watched: number,
   time_watched: number,
-  mean_score: number
+  mean_score: number,
+  standard_deviation: number,
 }
 
 export default async function overallStats(animeList: Array<any>): Promise<Overall> {
@@ -12,7 +13,8 @@ export default async function overallStats(animeList: Array<any>): Promise<Overa
     total_anime: 0,
     episodes_watched: 0,
     time_watched: 0,
-    mean_score: 0
+    mean_score: 0,
+    standard_deviation: 0
   };
   try {
     object.total_anime = animeList.length;
@@ -22,11 +24,15 @@ export default async function overallStats(animeList: Array<any>): Promise<Overa
     object.time_watched = _.sumBy(animeList, function(n) {
       return n.time_watched;
     })
-    object.mean_score = _.round(_.meanBy(_.filter(animeList, function(n) {
+    const animesWithScore = _.filter(animeList, function(n) {
       return n.my_list_status.score;
-    }), function(n) {
+    })
+    object.mean_score = _.round(_.meanBy(animesWithScore, function(n) {
       return n.my_list_status.score;
     }), 2);
+    object.standard_deviation = _.round(Math.sqrt(_.meanBy(animesWithScore, function(n) {
+      return Math.pow(n.my_list_status.score - object.mean_score, 2)
+    })), 2)
     return object;
   } catch(err) {
     throw(err);
