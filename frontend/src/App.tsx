@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { CookiesProvider } from 'react-cookie';
 
-import Homepage from './pages/Homepage';
-import Login from './pages/Login';
-import Generate from './pages/Generate';
-import Stats from './pages/Stats';
-import NotFound from './pages/NotFound';
+import Homepage from './pages/homepage';
+import Login from './pages/login';
+import Generate from './pages/generate';
+import Stats from './pages/stats';
+import NotFound from './pages/notfound';
 
 export default function App() {
   return (

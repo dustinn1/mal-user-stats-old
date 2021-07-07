@@ -1,4 +1,4 @@
-export default function Login() {
+export default function Homepage() {
   return (
     <>
       <div className="d-flex justify-content-center" style={{ height: '100vh' }}>

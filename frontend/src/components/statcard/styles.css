@@ -1,0 +1,67 @@
+.stats-card {
+  width: 21.5rem;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 14px;
+  padding-top: 0.75rem;
+}
+
+.stats-card > .stats-card-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
+}
+
+.stats-card > .stats-card-header > .badge {
+  align-content: center;
+  font-size: 0.65em;
+}
+
+.stats-card > .stats {
+  margin: 0.5rem 1rem;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid #777777;
+}
+
+.stats-card > .stats > p {
+  margin: 0;
+}
+
+.stats-card > .covers-list > .covers {
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.stats-card > .covers-list > .covers > a:first-child {
+  margin-left: 1rem;
+}
+
+.stats-card > .covers-list > .covers >  a:last-child {
+  margin-right: 1rem;
+}
+
+.stats-card > .covers-list > Button {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  bottom: 3.5rem;
+  transition: visibility 0.1s, opacity 0.1s ease-in;
+}
+
+.stats-card:hover > .covers-list > Button {
+  visibility: visible;
+  opacity: 1;
+}
+
+.stats-card > .covers-list > Button.next-button {
+  left: 18.5rem;
+}
+
+.stats-card > .covers-list > Button.prev-button {
+  left: 0.75rem;
+}

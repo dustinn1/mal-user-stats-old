@@ -1,0 +1,22 @@
+.profile-header {
+  padding: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #000;
+}
+
+.profile-header > picture > img {
+  width: 150px;
+}
+
+.profile-header > h1 {
+  display: inline-block;
+  vertical-align: bottom;
+  font-size: 3em;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.stats-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
