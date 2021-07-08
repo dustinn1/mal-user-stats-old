@@ -14,6 +14,7 @@ import statsJSON from '../../interfaces/statsjson';
 import { StatsContext } from '../../contexts/statscontext';
 import OverviewStats from './overview';
 import GenresStats from './genres';
+import SingleGenreStats from './genre';
 
 export default function Stats() {
   let { username } = useParams<{ username: string }>();
@@ -58,7 +59,7 @@ export default function Stats() {
           <div>
             <Row>
               <Col lg={2}>
-                <Nav variant="pills" className="flex-column">
+                <Nav variant="pills" className="stats-tabs">
                   <Nav.Item>
                     <LinkContainer to={`${url}/overview`}>
                       <Nav.Link>Overview</Nav.Link>
@@ -83,8 +84,11 @@ export default function Stats() {
                     <Route path={`${path}/overview`}>
                       <OverviewStats />
                     </Route>
-                    <Route path={`${path}/genres`}>
+                    <Route exact path={`${path}/genres`}>
                       <GenresStats />
+                    </Route>
+                    <Route path={`${path}/genres/:genre`}>
+                      <SingleGenreStats />
                     </Route>
                   </Switch>
                 </StatsContext.Provider>

@@ -1,11 +1,12 @@
 .profile-header {
   padding: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #000;
 }
 
 .profile-header > picture > img {
   width: 150px;
+  border-radius: 10px;
 }
 
 .profile-header > h1 {
@@ -19,4 +20,19 @@
 .stats-cards {
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .stats-tabs {
+    justify-content: center;
+    padding-bottom: 7px;
+    margin-bottom: 12px !important;
+    border-bottom: 1px solid #ababab;
+  }
+}
+
+@media (min-width: 992px) {
+  .stats-tabs {
+    flex-direction: column;
+  }
 }

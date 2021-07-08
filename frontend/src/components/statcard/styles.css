@@ -1,10 +1,39 @@
 .card.stats-card {
-  width: 21.5rem;
   margin-left: 7px;
   margin-right: 7px;
   margin-bottom: 14px;
   padding-top: 0.75rem;
   border-color: #ababab;
+}
+
+@media (min-width: 576px) {
+  .card.stats-card {
+    width: 31.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card.stats-card {
+    width: 20.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .card.stats-card {
+    width: 23.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card.stats-card {
+    width: 28rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .card.stats-card {
+    width: 21.5rem;
+  }
 }
 
 .stats-card > .stats-card-header {
@@ -42,11 +71,11 @@
   margin-left: 1rem;
 }
 
-.stats-card > .covers-list > .covers >  a:last-child {
+.stats-card > .covers-list > .covers > a:last-child {
   margin-right: 1rem;
 }
 
-.stats-card > .covers-list > Button {
+.stats-card > .covers-list > button {
   position: absolute;
   visibility: hidden;
   opacity: 0;
@@ -54,15 +83,81 @@
   transition: visibility 0.1s, opacity 0.1s ease-in;
 }
 
-.stats-card:hover > .covers-list > Button {
-  visibility: visible;
-  opacity: 1;
+@media (min-width: 576px) {
+  .stats-card:hover > .covers-list > button {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
-.stats-card > .covers-list > Button.next-button {
+.stats-card > .covers-list > button.prev-button {
+  left: 0.75rem;
+}
+
+.stats-card > .covers-list > button.next-button {
   left: 18.5rem;
 }
 
-.stats-card > .covers-list > Button.prev-button {
-  left: 0.75rem;
+
+@media (min-width: 576px) {
+  .stats-card > .covers-list > button.next-button {
+    left: 28.2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .stats-card > .covers-list > button.next-button {
+    left: 17.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .stats-card > .covers-list > button.next-button {
+    left: 20.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .stats-card > .covers-list > button.next-button {
+    left: 25rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .stats-card > .covers-list > button.next-button {
+    left: 18.5rem;
+  }
+}
+
+.sort-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+
+.sort-section > .sort-buttons > span {
+  margin-right: 7px;
+}
+
+.sort-section > .sort-buttons > button {
+  margin-right: 10px;
+}
+
+.sort-section > .sort-buttons > button:focus {
+  box-shadow: none;
+}
+
+.sort-section > .search-section {
+  width: 15rem;
+}
+
+@media (max-width: 767px) {
+  .sort-section > .search-section {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

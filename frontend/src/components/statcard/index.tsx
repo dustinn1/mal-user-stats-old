@@ -13,6 +13,7 @@ import './styles.css';
 import CoverImage from '../coverimage';
 
 interface Props {
+  index: number,
   genre: number,
   name: string,
   count: number,
@@ -53,12 +54,12 @@ export default function StatCard(props: Props) {
           singleton={source}
           theme="material"
           allowHTML={true}
-          moveTransition="transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)"
+          moveTransition="transform 0.2s ease-out"
         />
       <Card className="stats-card" id={`genre-${props.genre}`}>
         <h2 className="stats-card-header">
           {props.name}
-          <Badge bg="primary">#1</Badge> 
+          <Badge pill bg="dark">{props.index}</Badge> 
         </h2>
         <div className="stats">
           <p>{props.count} <strong>Animes</strong></p>
