@@ -10,28 +10,15 @@ import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import './styles.css';
 
+import statsJSON from '../../interfaces/statsjson';
+import { StatsContext } from '../../contexts/statscontext';
 import OverviewStats from './overview';
 import GenresStats from './genres';
-
-interface dataJSON {
-  mal_id: number,
-  username: string,
-  statistics: {
-    overview: Object,
-    scores: Array<Object>,
-    episode_count: Array<Object>,
-    format_distribution: Array<Object>,
-    status_distribution: Array<Object>,
-    release_years: Array<Object>,
-    watch_years: Array<Object>,
-    genres: Array<Object>
-  }
-}
 
 export default function Stats() {
   let { username } = useParams<{ username: string }>();
   let { path, url } = useRouteMatch();
-  const [data, setData] = useState({} as dataJSON);
+  const [data, setData] = useState({} as statsJSON);
   const [loaded, setLoaded] = useState(false);
 
   function getData() {
@@ -88,17 +75,19 @@ export default function Stats() {
                 </Nav>
               </Col>
               <Col lg={10}>
-                <Switch>
-                  <Route exact path={`${path}/`}>
-                    <Redirect to={`${url}/overview`} />
-                  </Route>
-                  <Route path={`${path}/overview`}>
-                    <OverviewStats />
-                  </Route>
-                  <Route path={`${path}/genres`}>
-                    <GenresStats />
-                  </Route>
-                </Switch>
+                <StatsContext.Provider value={data}>
+                  <Switch>
+                    <Route exact path={`${path}/`}>
+                      <Redirect to={`${url}/overview`} />
+                    </Route>
+                    <Route path={`${path}/overview`}>
+                      <OverviewStats />
+                    </Route>
+                    <Route path={`${path}/genres`}>
+                      <GenresStats />
+                    </Route>
+                  </Switch>
+                </StatsContext.Provider>
               </Col>
             </Row>
           </div>
