@@ -36,3 +36,7 @@
     flex-direction: column;
   }
 }
+
+.breadcrumb a {
+  text-decoration: none;
+}

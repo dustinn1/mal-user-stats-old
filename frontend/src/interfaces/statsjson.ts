@@ -2,7 +2,13 @@ export default interface statsJSON {
   mal_id: number,
   username: string,
   statistics: {
-    overview: Object,
+    overview: {
+      total_anime: number,
+      episodes_watched: number,
+      time_watched: number,
+      mean_score: number,
+      standard_deviation: number
+    },
     scores: Array<Object>,
     episode_count: Array<Object>,
     format_distribution: Array<Object>,

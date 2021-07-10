@@ -17,8 +17,8 @@ import GenresStats from './genres';
 import SingleGenreStats from './genre';
 
 export default function Stats() {
-  let { username } = useParams<{ username: string }>();
-  let { path, url } = useRouteMatch();
+  const { username } = useParams<{ username: string }>();
+  const { path, url } = useRouteMatch();
   const [data, setData] = useState({} as statsJSON);
   const [loaded, setLoaded] = useState(false);
 

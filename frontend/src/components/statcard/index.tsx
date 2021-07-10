@@ -1,3 +1,4 @@
+import { Link, useRouteMatch } from 'react-router-dom';
 import Tippy, { useSingleton } from '@tippyjs/react';
 import prettyMs from 'pretty-ms';
 
@@ -46,6 +47,7 @@ function listButton(genre: number, direction: string) {
 }
 
 export default function StatCard(props: Props) {
+  let { url } = useRouteMatch(); 
   const [source, target] = useSingleton();
 
   return (
@@ -58,7 +60,9 @@ export default function StatCard(props: Props) {
         />
       <Card className="stats-card" id={`genre-${props.genre}`}>
         <h2 className="stats-card-header">
-          {props.name}
+          <Link to={`${url}/${props.name.toLowerCase().replaceAll(' ', '_')}`}>
+            {props.name}
+          </Link>
           <Badge pill bg="dark">{props.index}</Badge> 
         </h2>
         <div className="stats">
@@ -67,12 +71,16 @@ export default function StatCard(props: Props) {
           <p>{prettyMs(props.time_watched * 1000, { verbose: true, unitCount: 2 })} <strong>Time Watched</strong></p>
         </div>
         <div className="covers-list">
-          <Button variant="primary" className="prev-button" onClick={() => listButton(props.genre, "prev")}>
-            <FontAwesomeIcon icon={faAngleLeft} />
-          </Button>
-          <Button variant="primary" className="next-button" onClick={() => listButton(props.genre, "next")}>
-            <FontAwesomeIcon icon={faAngleRight} />
-          </Button>
+          {props.count > 5 && (
+            <>
+              <Button variant="dark" className="prev-button" onClick={() => listButton(props.genre, "prev")}>
+                <FontAwesomeIcon icon={faAngleLeft} />
+              </Button>
+              <Button variant="dark" className="next-button" onClick={() => listButton(props.genre, "next")}>
+                <FontAwesomeIcon icon={faAngleRight} />
+              </Button>
+            </>
+          )}
           <div className="covers">
             {props.animes.map((anime: Anime) => (
               <CoverImage 
@@ -82,6 +90,9 @@ export default function StatCard(props: Props) {
                 malId={anime.id} 
                 imageUrlId={anime.image_url_id} />
             ))}
+            {props.count > 10 && (
+              <div className="covers-view-more">View more</div>
+            )}
           </div>
         </div>
       </Card>
