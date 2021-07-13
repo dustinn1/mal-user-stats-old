@@ -40,3 +40,7 @@
 .breadcrumb a {
   text-decoration: none;
 }
+
+.chart-container {
+  height: 300px;
+}
