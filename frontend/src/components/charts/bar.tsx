@@ -19,7 +19,6 @@ export default function BarGraph(props: Props) {
           ? (value) => prettyMs(value * 1000, { unitCount: 2 })
           : ""
       }
-      //padding={0.45}
       borderRadius={5}
       labelTextColor={"#fff"}
       labelSkipHeight={30}

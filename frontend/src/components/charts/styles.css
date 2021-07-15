@@ -1,9 +1,39 @@
 .chart-container {
-  height: 350px;
+  height: 200px;
   margin-top: 30px;
   padding-bottom: 10px;
 }
 
-.chart-container > .chart-controls .default {
-  background-color: rgba(200, 200, 200, 0.25);
+@media (min-width: 576px) {
+  .chart-container {
+    height: 250px;
+  }
+}
+
+@media (min-width: 768px) {
+  .chart-container {
+    height: 250px;
+  }
+}
+
+@media (min-width: 992px) {
+  .chart-container {
+    height: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .chart-container {
+    height: 300px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .chart-container {
+    height: 300px;
+  }
+}
+
+.chart-container > .nav {
+  flex-wrap: nowrap;
 }
