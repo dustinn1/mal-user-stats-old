@@ -9,7 +9,7 @@ interface WatchYear {
 
 export default async function watchYearStats(animeList: Array<any>): Promise<WatchYear[]> {
   let stats: Array<WatchYear> = [];
-  const years = _.without(_.sortedUniq(_.sortBy(_.map(animeList, function(n) {
+  const years = _.without(_.sortedUniq(_.sortBy(_.map(animeList, function (n) {
     return n.my_list_status.start_date ? parseInt(n.my_list_status.start_date.split('-')[0]) : 0
   }))), 0);
   try {
@@ -20,20 +20,21 @@ export default async function watchYearStats(animeList: Array<any>): Promise<Wat
         time_watched: 0,
         mean_score: 0
       }
-      const animes = _.filter(animeList, { start_season: { year: year }});
+      const animes = _.filter(animeList, { start_season: { year: year } });
       object.count = animes.length;
-      object.time_watched = _.sumBy(animes, function(n) {
+      object.time_watched = _.sumBy(animes, function (n) {
         return n.time_watched;
       });
-      object.mean_score = _.round(_.meanBy(_.filter(animes, function(n) {
+      const mean_score: number = _.round(_.meanBy(_.filter(animes, function (n) {
         return n.my_list_status.score;
-      }), function(n) {
+      }), function (n) {
         return n.my_list_status.score;
       }), 2);
+      if (!Number.isNaN(mean_score)) object.mean_score = mean_score;
       stats.push(object);
     }
     return stats;
-  } catch(err) {
-    throw(err);
+  } catch (err) {
+    throw (err);
   }
 }

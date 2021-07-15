@@ -9,7 +9,7 @@ interface ReleaseYear {
 
 export default async function releaseYearStats(animeList: Array<any>): Promise<ReleaseYear[]> {
   let stats: Array<ReleaseYear> = [];
-  const years = _.sortedUniq(_.sortBy(_.map(animeList, function(n) {
+  const years = _.sortedUniq(_.sortBy(_.map(animeList, function (n) {
     return n.start_season ? n.start_season.year : parseInt(n.start_date.split('-')[0])
   })));
   try {
@@ -21,20 +21,21 @@ export default async function releaseYearStats(animeList: Array<any>): Promise<R
         mean_score: 0
       }
       // TODO: filter in animes without a start season
-      const animes = _.filter(animeList, { start_season: { year: year }});
+      const animes = _.filter(animeList, { start_season: { year: year } });
       object.count = animes.length;
-      object.time_watched = _.sumBy(animes, function(n) {
+      object.time_watched = _.sumBy(animes, function (n) {
         return n.time_watched;
       });
-      object.mean_score = _.round(_.meanBy(_.filter(animes, function(n) {
+      const mean_score: number = _.round(_.meanBy(_.filter(animes, function (n) {
         return n.my_list_status.score;
-      }), function(n) {
+      }), function (n) {
         return n.my_list_status.score;
       }), 2);
+      if (!Number.isNaN(mean_score)) object.mean_score = mean_score;
       stats.push(object);
     }
     return stats;
-  } catch(err) {
-    throw(err);
+  } catch (err) {
+    throw (err);
   }
 }

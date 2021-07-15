@@ -22,23 +22,24 @@ export default async function genreStats(animeList: Array<any>): Promise<Genre[]
         time_watched: 0,
         animes: []
       };
-      let animes = _.filter(animeList, { genres: [{ id: genre.id, name: genre.name }]});
+      let animes = _.filter(animeList, { genres: [{ id: genre.id, name: genre.name }] });
       if (animes.length === 0) {
         continue;
       }
       object.count = animes.length;
-      animes = _.filter(animes, function(n) {
+      animes = _.filter(animes, function (n) {
         return n.mean;
       });
-      object.mean_score = _.round(_.meanBy(_.filter(animes, function(n) {
+      const mean_score: number = _.round(_.meanBy(_.filter(animes, function (n) {
         return n.my_list_status.score;
-      }), function(n) {
+      }), function (n) {
         return n.my_list_status.score;
       }), 2);
-      object.time_watched = _.sumBy(animes, function(n) {
+      if (!Number.isNaN(mean_score)) object.mean_score = mean_score;
+      object.time_watched = _.sumBy(animes, function (n) {
         return n.time_watched;
       });
-      animes = _.map(_.take(_.filter(_.orderBy(animes, 'mean', 'desc'), function(n) {
+      animes = _.map(_.take(_.filter(_.orderBy(animes, 'mean', 'desc'), function (n) {
         return n.mean
       }), 10), _.partialRight(_.pick, ['id', 'title', 'image_url_id', 'alternative_titles.en', 'alternative_titles.ja']));
       object.animes = animes;
@@ -46,7 +47,7 @@ export default async function genreStats(animeList: Array<any>): Promise<Genre[]
     }
     stats = _.orderBy(stats, ['count', 'name'], ['desc', 'asc']);
     return stats;
-  } catch(err) {
-    throw(err);
+  } catch (err) {
+    throw (err);
   }
 }

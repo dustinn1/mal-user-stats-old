@@ -77,10 +77,12 @@ export default function StatCard(props: Props) {
             {props.mean_score} <strong>Average Score</strong>
           </p>
           <p>
-            {prettyMs(props.time_watched * 1000, {
-              verbose: true,
-              unitCount: 2,
-            })}{" "}
+            {props.time_watched !== 0
+              ? prettyMs(props.time_watched * 1000, {
+                  verbose: true,
+                  unitCount: 2,
+                })
+              : 0}{" "}
             <strong>Time Watched</strong>
           </p>
         </div>

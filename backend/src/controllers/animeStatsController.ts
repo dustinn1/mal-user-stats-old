@@ -41,7 +41,7 @@ async function getFullList(access_token: string): Promise<Object[]> {
   let numOfAnimes: number;
   try {
     let response = await fetch('https://api.myanimelist.net/v2/users/@me?fields=anime_statistics', {
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${access_token}`
       }
@@ -50,7 +50,7 @@ async function getFullList(access_token: string): Promise<Object[]> {
     numOfAnimes = responseData.anime_statistics.num_items;
     for (let i = 0; i <= Math.floor(numOfAnimes / 1000); i++) {
       await fetch(`https://api.myanimelist.net/v2/users/@me/animelist?limit=1000&nsfw=1&offset=${1000 * i}&fields=alternative_titles,start_date,end_date,mean,rank,genres,media_type,status,my_list_status,num_episodes,start_season,broadcast,source,average_episode_duration,studios`, {
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${access_token}`
         }
@@ -68,8 +68,8 @@ async function getFullList(access_token: string): Promise<Object[]> {
         .catch(err => console.log(err))
     }
     return list;
-  } catch(err) {
-    throw(err);
+  } catch (err) {
+    throw (err);
   }
 }
 
@@ -98,8 +98,8 @@ async function getStatsJSON(animeList: Array<any>, mal_id: number, username: str
     json.statistics.watch_years = await watchYearStats(animeList);
     json.statistics.genres = await genreStats(animeList);
     return json;
-  } catch(err) {
-    throw(err);
+  } catch (err) {
+    throw (err);
   }
 }
 

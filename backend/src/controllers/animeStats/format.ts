@@ -7,35 +7,61 @@ interface Format {
   mean_score: number
 }
 
-const formats = ['tv', 'ova', 'movie', 'special', 'ona', 'music'];
+const formats = [
+  {
+    id: "tv",
+    name: "TV"
+  },
+  {
+    id: "ova",
+    name: "OVA"
+  },
+  {
+    id: "movie",
+    name: "Movie"
+  },
+  {
+    id: "special",
+    name: "Special"
+  },
+  {
+    id: "ona",
+    name: "ONA"
+  },
+  {
+    id: "music",
+    name: "Music"
+  }
+]
 
 export default async function formatStats(animeList: Array<any>): Promise<Format[]> {
   let stats: Array<Format> = [];
   try {
     for (let format of formats) {
       let object: Format = {
-        format: format,
+        format: format.name,
         count: 0,
         time_watched: 0,
         mean_score: 0
       };
-      const formatArray = _.filter(animeList, { media_type: format });
+      const formatArray = _.filter(animeList, { media_type: format.id });
       if (formatArray.length === 0) {
         continue;
       }
       object.count = formatArray.length;
-      object.time_watched = _.sumBy(formatArray, function(n) {
+      object.time_watched = _.sumBy(formatArray, function (n) {
         return n.time_watched;
       });
-      object.mean_score = _.round(_.meanBy(_.filter(formatArray, function(n) {
+      const mean_score: number = _.round(_.meanBy(_.filter(formatArray, function (n) {
         return n.my_list_status.score;
-      }), function(n) {
+      }), function (n) {
         return n.my_list_status.score;
       }), 2);
+      if (!Number.isNaN(mean_score)) object.mean_score = mean_score;
       stats.push(object);
     }
     return stats;
-  } catch(err) {
-    throw(err);
+  } catch (err) {
+    throw (err);
   }
 }

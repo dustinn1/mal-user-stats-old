@@ -8,14 +8,14 @@ interface EpisodeCount {
 }
 
 const lengths = [
-  {min: 0, max: 0, length: "Unknown"},
-  {min: 1, max: 1, length: "1"}, 
-  {min: 2, max: 6, length: "2-6"}, 
-  {min: 7, max: 16, length: "7-16"}, 
-  {min: 17, max: 28, length: "17-28"}, 
-  {min: 29, max: 55, length: "29-55"}, 
-  {min: 56, max: 100, length: "56-100"}, 
-  {min: 101, max: 10000, length: "101+"}
+  { min: 0, max: 0, length: "Unknown" },
+  { min: 1, max: 1, length: "1" },
+  { min: 2, max: 6, length: "2-6" },
+  { min: 7, max: 16, length: "7-16" },
+  { min: 17, max: 28, length: "17-28" },
+  { min: 29, max: 55, length: "29-55" },
+  { min: 56, max: 100, length: "56-100" },
+  { min: 101, max: 10000, length: "101+" }
 ];
 
 export default async function episodeCountStats(animeList: Array<any>): Promise<EpisodeCount[]> {
@@ -32,18 +32,19 @@ export default async function episodeCountStats(animeList: Array<any>): Promise<
         return n.num_episodes >= length.min && n.num_episodes <= length.max;
       });
       object.count = animes.length;
-      object.time_watched = _.sumBy(animes, function(n) {
+      object.time_watched = _.sumBy(animes, function (n) {
         return n.time_watched;
       });
-      object.mean_score = _.round(_.meanBy(_.filter(animes, function(n) {
+      const mean_score: number = _.round(_.meanBy(_.filter(animes, function (n) {
         return n.my_list_status.score;
-      }), function(n) {
+      }), function (n) {
         return n.my_list_status.score;
       }), 2);
+      if (!Number.isNaN(mean_score)) object.mean_score = mean_score;
       stats.push(object);
     }
     return stats;
-  } catch(err) {
-    throw(err);
+  } catch (err) {
+    throw (err);
   }
 }

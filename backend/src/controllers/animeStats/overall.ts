@@ -18,23 +18,23 @@ export default async function overallStats(animeList: Array<any>): Promise<Overa
   };
   try {
     object.total_anime = animeList.length;
-    object.episodes_watched = _.sumBy(animeList, function(n) {
+    object.episodes_watched = _.sumBy(animeList, function (n) {
       return n.my_list_status.num_episodes_watched;
     });
-    object.time_watched = _.sumBy(animeList, function(n) {
+    object.time_watched = _.sumBy(animeList, function (n) {
       return n.time_watched;
     })
-    const animesWithScore = _.filter(animeList, function(n) {
+    const animesWithScore = _.filter(animeList, function (n) {
       return n.my_list_status.score;
     })
-    object.mean_score = _.round(_.meanBy(animesWithScore, function(n) {
+    object.mean_score = _.round(_.meanBy(animesWithScore, function (n) {
       return n.my_list_status.score;
     }), 2);
-    object.standard_deviation = _.round(Math.sqrt(_.meanBy(animesWithScore, function(n) {
+    object.standard_deviation = _.round(Math.sqrt(_.meanBy(animesWithScore, function (n) {
       return Math.pow(n.my_list_status.score - object.mean_score, 2)
     })), 2)
     return object;
-  } catch(err) {
-    throw(err);
+  } catch (err) {
+    throw (err);
   }
 }

@@ -1,0 +1,9 @@
+.chart-container {
+  height: 350px;
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+.chart-container > .chart-controls .default {
+  background-color: rgba(200, 200, 200, 0.25);
+}
