@@ -1,20 +1,27 @@
-import { useState, useEffect } from 'react';
-import { useParams, Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { LinkContainer } from 'react-router-bootstrap';
+import { useState, useEffect } from "react";
+import {
+  useParams,
+  Switch,
+  Route,
+  useRouteMatch,
+  Redirect,
+} from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { LinkContainer } from "react-router-bootstrap";
 
-import Container from 'react-bootstrap/Container';
-import Spinner from 'react-bootstrap/Spinner';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import './styles.css';
+import Container from "react-bootstrap/Container";
+import Spinner from "react-bootstrap/Spinner";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Nav from "react-bootstrap/Nav";
+import "./styles.css";
 
-import statsJSON from '../../interfaces/statsjson';
-import { StatsContext } from '../../contexts/statscontext';
-import OverviewStats from './overview';
-import GenresStats from './genres';
-import SingleGenreStats from './genre';
+import statsJSON from "../../interfaces/statsjson";
+import { StatsContext } from "../../contexts/statscontext";
+import OverviewStats from "./overview";
+import GenresStats from "./genres";
+import SingleGenreStats from "./genre";
+import HistoryStats from "./history";
 
 export default function Stats() {
   const { username } = useParams<{ username: string }>();
@@ -24,18 +31,20 @@ export default function Stats() {
 
   function getData() {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/stats/generate`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({"user": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYWxfaWQiOjcyOTY1MjksInVzZXJuYW1lIjoidHJpcGxlemtvIiwiaWF0IjoxNjI0MjM3MjMwLCJleHAiOjE2MzQyNDA4MzB9.FmKlVmH5sN7tzkxNe44KlNg76osLKUCVzMnGSpYqzN4"})
+      body: JSON.stringify({
+        user: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYWxfaWQiOjcyOTY1MjksInVzZXJuYW1lIjoidHJpcGxlemtvIiwiaWF0IjoxNjI0MjM3MjMwLCJleHAiOjE2MzQyNDA4MzB9.FmKlVmH5sN7tzkxNe44KlNg76osLKUCVzMnGSpYqzN4",
+      }),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         setData(data);
         setLoaded(true);
       })
-      .catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }
 
   useEffect(() => getData(), []);
@@ -49,12 +58,16 @@ export default function Stats() {
         <Container>
           <div className="profile-header">
             <picture>
-              <source srcSet={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.webp`} type="image/webp" />
-              <img src={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.jpg`} alt="profile"/>
+              <source
+                srcSet={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.webp`}
+                type="image/webp"
+              />
+              <img
+                src={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.jpg`}
+                alt="profile"
+              />
             </picture>
-            <h1>
-              {data.username}
-            </h1>
+            <h1>{data.username}</h1>
           </div>
           <div>
             <Row>
@@ -63,6 +76,11 @@ export default function Stats() {
                   <Nav.Item>
                     <LinkContainer to={`${url}/overview`}>
                       <Nav.Link>Overview</Nav.Link>
+                    </LinkContainer>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <LinkContainer to={`${url}/history`}>
+                      <Nav.Link>History</Nav.Link>
                     </LinkContainer>
                   </Nav.Item>
                   <Nav.Item>
@@ -84,6 +102,9 @@ export default function Stats() {
                     <Route path={`${path}/overview`}>
                       <OverviewStats />
                     </Route>
+                    <Route path={`${path}/history`}>
+                      <HistoryStats />
+                    </Route>
                     <Route exact path={`${path}/genres`}>
                       <GenresStats />
                     </Route>
@@ -96,7 +117,9 @@ export default function Stats() {
             </Row>
           </div>
         </Container>
-      ) : <Spinner animation="border" />}
+      ) : (
+        <Spinner animation="border" />
+      )}
     </>
-  )
+  );
 }

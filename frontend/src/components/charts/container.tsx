@@ -9,6 +9,7 @@ interface Props {
   chartType: "bar" | "line" | "pie";
   data: Array<any>;
   dataIndex: string;
+  reverse?: boolean;
 }
 
 export default function ChartContainer(props: Props) {
@@ -39,27 +40,29 @@ export default function ChartContainer(props: Props) {
           </Nav.Link>
         </Nav.Item>
       </Nav>
-      {props.chartType === "bar" && (
-        <BarGraph
-          data={props.data}
-          dataIndex={props.dataIndex}
-          dataKey={sort}
-        />
-      )}
-      {props.chartType === "line" && (
-        <LineGraph
-          data={props.data}
-          dataIndex={props.dataIndex}
-          dataKey={sort}
-        />
-      )}
-      {props.chartType === "pie" && (
-        <PieChart
-          data={props.data}
-          dataIndex={props.dataIndex}
-          dataKey={sort}
-        />
-      )}
+      <div className={`chart ${props.reverse && "reverse"}`}>
+        {props.chartType === "bar" && (
+          <BarGraph
+            data={props.data}
+            dataIndex={props.dataIndex}
+            dataKey={sort}
+          />
+        )}
+        {props.chartType === "line" && (
+          <LineGraph
+            data={props.data}
+            dataIndex={props.dataIndex}
+            dataKey={sort}
+          />
+        )}
+        {props.chartType === "pie" && (
+          <PieChart
+            data={props.data}
+            dataIndex={props.dataIndex}
+            dataKey={sort}
+          />
+        )}
+      </div>
     </div>
   );
 }
