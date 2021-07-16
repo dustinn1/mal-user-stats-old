@@ -1,0 +1,18 @@
+.chart-table th > .chart-table-header {
+  display: flex;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.chart-table .sort-icon > .fa-sort {
+  opacity: 0.3;
+}
+
+ul.pagination > li,
+ul.pagination > li:focus {
+  box-shadow: none;
+}
+
+ul.pagination > li.disabled {
+  cursor: not-allowed;
+}

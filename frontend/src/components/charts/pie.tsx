@@ -13,7 +13,8 @@ export default function PieChart(props: Props) {
       data={props.data}
       id={props.dataIndex}
       value={props.dataKey}
-      margin={{ top: 30, bottom: 30 }}
+      margin={{ top: 40, bottom: 20 }}
+      fit={true}
       valueFormat={
         props.dataKey === "time_watched"
           ? (value) => prettyMs(value * 1000)
@@ -24,19 +25,10 @@ export default function PieChart(props: Props) {
       padAngle={3}
       arcLabelsSkipAngle={12}
       arcLabelsTextColor={"#fff"}
-      arcLinkLabelsSkipAngle={10}
-      arcLinkLabelsTextOffset={20}
+      arcLinkLabelsSkipAngle={12}
+      arcLinkLabelsStraightLength={10}
       activeInnerRadiusOffset={10}
       activeOuterRadiusOffset={10}
-      legends={[
-        {
-          anchor: "bottom-right",
-          direction: "column",
-          itemWidth: 80,
-          itemHeight: 24,
-          symbolSize: 14,
-        },
-      ]}
       theme={{
         labels: {
           text: {
