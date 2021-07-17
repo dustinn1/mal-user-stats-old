@@ -1,9 +1,14 @@
 export default function Homepage() {
   return (
     <>
-      <div className="d-flex justify-content-center" style={{ height: '100vh' }}>
-        <h1><strong>MyAnimeList User Stats</strong></h1>
+      <div
+        className="d-flex justify-content-center"
+        style={{ height: "100vh" }}
+      >
+        <h1>
+          <strong>MyAnimeList User Stats</strong>
+        </h1>
       </div>
     </>
-  )
+  );
 }

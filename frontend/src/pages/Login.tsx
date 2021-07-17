@@ -1,8 +1,8 @@
-import { Helmet } from 'react-helmet-async';
-import { LinkContainer } from 'react-router-bootstrap';
+import { Helmet } from "react-helmet-async";
+import { LinkContainer } from "react-router-bootstrap";
 
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 export default function Login() {
   return (
@@ -10,10 +10,15 @@ export default function Login() {
       <Helmet>
         <title>Log in</title>
       </Helmet>
-      <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
+      <div
+        className="d-flex justify-content-center align-items-center"
+        style={{ height: "100vh" }}
+      >
         <Card>
           <Card.Body>
-            <Card.Title className="text-center fs-1">MyAnimeList User Stats</Card.Title>
+            <Card.Title className="text-center fs-1">
+              MyAnimeList User Stats
+            </Card.Title>
             <div className="d-grid gap-2">
               <LinkContainer to="/auth">
                 <Button variant="primary" size="lg" className="mt-3">
@@ -25,5 +30,5 @@ export default function Login() {
         </Card>
       </div>
     </>
-  )
+  );
 }
