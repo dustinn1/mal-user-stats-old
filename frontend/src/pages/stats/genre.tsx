@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import { StatsContext } from "../../contexts/statscontext";
+import { StatsContext } from "../../contexts/StatsContext";
 
 const genres = [
   "action",

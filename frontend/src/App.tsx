@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
-import Homepage from "./pages/homepage";
-import Login from "./pages/login";
-import Generate from "./pages/generate";
+import Homepage from "./pages/Homepage";
+import Login from "./pages/Login";
+import Generate from "./pages/Generate";
 import Stats from "./pages/stats";
-import NotFound from "./pages/notfound";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (

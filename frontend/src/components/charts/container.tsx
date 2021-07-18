@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Nav from "react-bootstrap/Nav";
-import BarGraph from "./bar";
-import LineGraph from "./line";
-import PieChart from "./pie";
+import BarGraph from "./Bar";
+import LineGraph from "./Line";
+import PieChart from "./Pie";
 import "./styles.css";
 
 interface Props {

@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import cookie from "cookie";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import statsJSON from "../interfaces/statsjson";
+import statsJSON from "../interfaces/StatsJson";
 
 function saveLocalStorage(data: statsJSON): void {
   localStorage.setItem("data", JSON.stringify(data));
@@ -32,7 +32,8 @@ export default function Generate() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        user: userCookie,
+        //user: userCookie,
+        user: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYWxfaWQiOjcyOTY1MjksInVzZXJuYW1lIjoidHJpcGxlemtvIiwiaWF0IjoxNjI0MjM3MjMwLCJleHAiOjE2MzQyNDA4MzB9.FmKlVmH5sN7tzkxNe44KlNg76osLKUCVzMnGSpYqzN4",
       }),
     })
       .then((response) => response.json())

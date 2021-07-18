@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { StatsContext } from "../../contexts/statscontext";
-import ChartContainer from "../../components/charts/container";
+import { StatsContext } from "../../contexts/StatsContext";
+import ChartContainer from "../../components/charts/Container";
 import Table from "../../components/table";
 import "./styles.css";
 

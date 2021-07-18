@@ -10,12 +10,12 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import "./styles.css";
 
-import statsJSON from "../../interfaces/statsjson";
-import { StatsContext } from "../../contexts/statscontext";
-import OverviewStats from "./overview";
-import GenresStats from "./genres";
-import SingleGenreStats from "./genre";
-import HistoryStats from "./history";
+import statsJSON from "../../interfaces/StatsJson";
+import { StatsContext } from "../../contexts/StatsContext";
+import OverviewStats from "./Overview";
+import GenresStats from "./Genres";
+import SingleGenreStats from "./Genre";
+import HistoryStats from "./History";
 
 export default function Stats() {
   const { path, url } = useRouteMatch();

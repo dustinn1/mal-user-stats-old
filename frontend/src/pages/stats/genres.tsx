@@ -1,5 +1,5 @@
 import { useContext, useState, ChangeEvent } from "react";
-import { StatsContext } from "../../contexts/statscontext";
+import { StatsContext } from "../../contexts/StatsContext";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { StatsContext } from "../../contexts/statscontext";
-import ChartContainer from "../../components/charts/container";
+import { StatsContext } from "../../contexts/StatsContext";
+import ChartContainer from "../../components/charts/Container";
 
 export default function History() {
   const data = useContext(StatsContext).statistics;
