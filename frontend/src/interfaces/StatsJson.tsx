@@ -1,29 +1,30 @@
 export default interface statsJSON {
-  mal_id: number,
-  username: string,
+  mal_id: number;
+  username: string;
   statistics: {
     overview: {
-      total_anime: number,
-      episodes_watched: number,
-      time_watched: number,
-      mean_score: number,
-      standard_deviation: number
-    },
-    scores: Array<Object>,
-    episode_count: Array<Object>,
-    format_distribution: Array<Object>,
-    status_distribution: Array<Object>,
-    release_years: Array<Object>,
-    watch_years: Array<Object>,
+      total_anime: number;
+      episodes_watched: number;
+      time_watched: number;
+      mean_score: number;
+      standard_deviation: number;
+    };
+    scores: Array<Object>;
+    episode_count: Array<Object>;
+    format_distribution: Array<Object>;
+    status_distribution: Array<Object>;
+    release_years: Array<Object>;
+    watch_years: Array<Object>;
     genres: [
       {
-        id: number,
-        name: string,
-        count: number,
-        mean_score: number,
-        time_watched: number,
-        animes: Array<Object>
+        id: number;
+        name: string;
+        count: number;
+        mean_score: number;
+        time_watched: number;
+        animes: Array<number>;
       }
-    ]
-  }
+    ];
+  };
+  animes: Array<Object>;
 }

@@ -1,16 +1,18 @@
-import _ from 'lodash';
-import { genres } from '../../json/genres';
+import _ from "lodash";
+import { genres } from "../../json/genres";
 
 interface Genre {
-  id: number,
-  name: string,
-  count: number,
-  mean_score: number,
-  time_watched: number,
-  animes: Array<Object>
+  id: number;
+  name: string;
+  count: number;
+  mean_score: number;
+  time_watched: number;
+  animes: Array<number>;
 }
 
-export default async function genreStats(animeList: Array<any>): Promise<Genre[]> {
+export default async function genreStats(
+  animeList: Array<any>
+): Promise<Genre[]> {
   let stats: Array<Genre> = [];
   try {
     for (let genre of genres) {
@@ -20,9 +22,11 @@ export default async function genreStats(animeList: Array<any>): Promise<Genre[]
         count: 0,
         mean_score: 0,
         time_watched: 0,
-        animes: []
+        animes: [],
       };
-      let animes = _.filter(animeList, { genres: [{ id: genre.id, name: genre.name }] });
+      let animes = _.filter(animeList, {
+        genres: [{ id: genre.id, name: genre.name }],
+      });
       if (animes.length === 0) {
         continue;
       }
@@ -30,24 +34,29 @@ export default async function genreStats(animeList: Array<any>): Promise<Genre[]
       animes = _.filter(animes, function (n) {
         return n.mean;
       });
-      const mean_score: number = _.round(_.meanBy(_.filter(animes, function (n) {
-        return n.my_list_status.score;
-      }), function (n) {
-        return n.my_list_status.score;
-      }), 2);
+      const mean_score: number = _.round(
+        _.meanBy(
+          _.filter(animes, function (n) {
+            return n.my_list_status.score;
+          }),
+          function (n) {
+            return n.my_list_status.score;
+          }
+        ),
+        2
+      );
       if (!Number.isNaN(mean_score)) object.mean_score = mean_score;
       object.time_watched = _.sumBy(animes, function (n) {
         return n.time_watched;
       });
-      animes = _.map(_.take(_.filter(_.orderBy(animes, 'mean', 'desc'), function (n) {
-        return n.mean
-      }), 10), _.partialRight(_.pick, ['id', 'title', 'image_url_id', 'alternative_titles.en', 'alternative_titles.ja']));
-      object.animes = animes;
+      object.animes = _.map(_.orderBy(animes, "mean", "desc"), function (n) {
+        return n.id;
+      });
       stats.push(object);
     }
-    stats = _.orderBy(stats, ['count', 'name'], ['desc', 'asc']);
+    stats = _.orderBy(stats, ["count", "name"], ["desc", "asc"]);
     return stats;
   } catch (err) {
-    throw (err);
+    throw err;
   }
 }

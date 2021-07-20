@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import Tippy, { useSingleton } from "@tippyjs/react";
 import prettyMs from "pretty-ms";
@@ -10,6 +11,7 @@ import "tippy.js/dist/tippy.css";
 import "tippy.js/themes/material.css";
 import "./styles.css";
 
+import { StatsContext } from "../../contexts/StatsContext";
 import CoverImage from "../coverimage";
 
 interface Props {
@@ -19,7 +21,7 @@ interface Props {
   count: number;
   mean_score: number;
   time_watched: number;
-  animes: Array<any>;
+  animes: Array<number>;
 }
 
 interface Anime {
@@ -50,6 +52,12 @@ function listButton(genre: number, direction: string) {
 export default function StatCard(props: Props) {
   let { url } = useRouteMatch();
   const [source, target] = useSingleton();
+  const allAnimes = useContext(StatsContext).animes;
+  const animes: Array<Anime> = [];
+
+  for (let animeId of [...props.animes].splice(0, 10)) {
+    animes.push(allAnimes.find((anime: any) => anime.id === animeId) as Anime);
+  }
 
   return (
     <>
@@ -105,7 +113,7 @@ export default function StatCard(props: Props) {
             </>
           )}
           <div className="covers">
-            {props.animes.map((anime: Anime) => (
+            {animes.map((anime: Anime) => (
               <CoverImage
                 key={anime.id}
                 title={anime.title}

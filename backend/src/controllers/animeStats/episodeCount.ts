@@ -1,10 +1,10 @@
-import _ from 'lodash';
+import _ from "lodash";
 
 interface EpisodeCount {
-  length: string,
-  count: number,
-  time_watched: number,
-  mean_score: number
+  length: string;
+  count: number;
+  time_watched: number;
+  mean_score: number;
 }
 
 const lengths = [
@@ -15,10 +15,12 @@ const lengths = [
   { min: 17, max: 28, length: "17-28" },
   { min: 29, max: 55, length: "29-55" },
   { min: 56, max: 100, length: "56-100" },
-  { min: 101, max: 10000, length: "101+" }
+  { min: 101, max: 10000, length: "101+" },
 ];
 
-export default async function episodeCountStats(animeList: Array<any>): Promise<EpisodeCount[]> {
+export default async function episodeCountStats(
+  animeList: Array<any>
+): Promise<EpisodeCount[]> {
   let stats: Array<EpisodeCount> = [];
   try {
     for (let length of lengths) {
@@ -26,7 +28,7 @@ export default async function episodeCountStats(animeList: Array<any>): Promise<
         length: length.length,
         count: 0,
         time_watched: 0,
-        mean_score: 0
+        mean_score: 0,
       };
       const animes = _.filter(animeList, function (n) {
         return n.num_episodes >= length.min && n.num_episodes <= length.max;
@@ -35,16 +37,22 @@ export default async function episodeCountStats(animeList: Array<any>): Promise<
       object.time_watched = _.sumBy(animes, function (n) {
         return n.time_watched;
       });
-      const mean_score: number = _.round(_.meanBy(_.filter(animes, function (n) {
-        return n.my_list_status.score;
-      }), function (n) {
-        return n.my_list_status.score;
-      }), 2);
+      const mean_score: number = _.round(
+        _.meanBy(
+          _.filter(animes, function (n) {
+            return n.my_list_status.score;
+          }),
+          function (n) {
+            return n.my_list_status.score;
+          }
+        ),
+        2
+      );
       if (!Number.isNaN(mean_score)) object.mean_score = mean_score;
       stats.push(object);
     }
     return stats;
   } catch (err) {
-    throw (err);
+    throw err;
   }
 }

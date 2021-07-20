@@ -1,9 +1,7 @@
 import { useContext, useState, ChangeEvent } from "react";
 import { StatsContext } from "../../contexts/StatsContext";
-
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
 import StatCard from "../../components/statcard";
 import "./styles.css";
 
