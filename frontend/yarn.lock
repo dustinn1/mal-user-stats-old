@@ -9848,10 +9848,10 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
-react-bootstrap@2.0.0-beta.2:
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-2.0.0-beta.2.tgz#3ad0ded5e854391eae549e759ce9d51f213b5a69"
-  integrity sha512-2WqlAj54LaSWtJ6rsNs/uKP8kzomNrELymaaekajkIE6jQXPRNFe9mSIKYP/MtqLQGc4MYPBB3rywZ7UIvbV/w==
+react-bootstrap@2.0.0-beta.4:
+  version "2.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-2.0.0-beta.4.tgz#670382f73044b7b9618292d041b9cdcbb53ef45d"
+  integrity sha512-ETCvuZV78orCqGg4XA4WrhytXxTcnvshPDveSc3uK2mvnj6IRQue5O5188xsazbD3nnhX52T63uQjM4HjeRBEw==
   dependencies:
     "@babel/runtime" "^7.14.0"
     "@restart/context" "^2.1.4"
@@ -9866,7 +9866,7 @@ react-bootstrap@2.0.0-beta.2:
     invariant "^2.2.4"
     prop-types "^15.7.2"
     prop-types-extra "^1.1.0"
-    react-overlays "^5.0.1"
+    react-overlays "^5.1.1"
     react-transition-group "^4.4.1"
     uncontrollable "^7.2.1"
     warning "^4.0.3"
@@ -9955,10 +9955,10 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-react-overlays@^5.0.1:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-5.1.0.tgz#107fbe4ff88e61f9c379f976b049a1554141d06b"
-  integrity sha512-Qp8dqDIIYgQoHxOGVKHwvQUkDe70/Ja/6dn8iCQAXyPvvpks3+T8scLTZLK8MPBBu+X8ustas6y4U6M6zdmCjA==
+react-overlays@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-5.1.1.tgz#2e7cf49744b56537c7828ccb94cfc63dd778ae4f"
+  integrity sha512-eCN2s2/+GVZzpnId4XVWtvDPYYBD2EtOGP74hE+8yDskPzFy9+pV1H3ZZihxuRdEbQzzacySaaDkR7xE0ydl4Q==
   dependencies:
     "@babel/runtime" "^7.13.8"
     "@popperjs/core" "^2.8.6"

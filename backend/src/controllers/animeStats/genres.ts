@@ -7,7 +7,8 @@ interface Genre {
   count: number;
   mean_score: number;
   time_watched: number;
-  animes: Array<number>;
+  top_animes: Array<number>;
+  all_animes: Array<number>;
 }
 
 export default async function genreStats(
@@ -22,7 +23,8 @@ export default async function genreStats(
         count: 0,
         mean_score: 0,
         time_watched: 0,
-        animes: [],
+        top_animes: [],
+        all_animes: [],
       };
       let animes = _.filter(animeList, {
         genres: [{ id: genre.id, name: genre.name }],
@@ -31,6 +33,12 @@ export default async function genreStats(
         continue;
       }
       object.count = animes.length;
+      object.all_animes = _.map(
+        _.orderBy(animes, "title", "asc"),
+        function (n) {
+          return n.id;
+        }
+      );
       animes = _.filter(animes, function (n) {
         return n.mean;
       });
@@ -49,9 +57,17 @@ export default async function genreStats(
       object.time_watched = _.sumBy(animes, function (n) {
         return n.time_watched;
       });
-      object.animes = _.map(_.orderBy(animes, "mean", "desc"), function (n) {
-        return n.id;
-      });
+      object.top_animes = _.map(
+        _.take(
+          _.filter(_.orderBy(animes, "mean", "desc"), function (n) {
+            return n.mean;
+          }),
+          10
+        ),
+        function (n) {
+          return n.id;
+        }
+      );
       stats.push(object);
     }
     stats = _.orderBy(stats, ["count", "name"], ["desc", "asc"]);

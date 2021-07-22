@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { StatsContext } from "../../contexts/StatsContext";
+import LargeCoverImage from "../../components/coverimage/large";
 
 const genres = [
   "action",
@@ -50,6 +50,12 @@ const genres = [
   "josei",
 ];
 
+interface Anime {
+  id: number;
+  title: string;
+  image_url_id: string;
+}
+
 export default function Genre() {
   const data = useContext(StatsContext);
   const { genre } = useParams<{ genre: string }>();
@@ -57,6 +63,13 @@ export default function Genre() {
   const genreStats = data.statistics.genres.find(
     (element) => element.name.toLowerCase() === genre.replaceAll("_", " ")
   )!;
+
+  const animes: Array<Anime> = [];
+  for (let animeId of genreStats.all_animes) {
+    animes.push(
+      data.animes.find((anime: any) => anime.id === animeId) as Anime
+    );
+  }
 
   if (genres.includes(genre)) {
     return (
@@ -69,6 +82,18 @@ export default function Genre() {
         </Breadcrumb>
         <h1>{genreStats.name}</h1>
         <p>{genreStats.count}</p>
+        <h3>Animes ({animes.length})</h3>
+        <hr />
+        <div className="cover-images-grid">
+          {animes.map((anime: Anime) => (
+            <LargeCoverImage
+              key={anime.id}
+              title={anime.title}
+              malId={anime.id}
+              imageUrlId={anime.image_url_id}
+            />
+          ))}
+        </div>
       </>
     );
   } else {

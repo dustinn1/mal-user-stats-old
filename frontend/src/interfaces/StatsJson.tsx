@@ -22,7 +22,8 @@ export default interface statsJSON {
         count: number;
         mean_score: number;
         time_watched: number;
-        animes: Array<number>;
+        top_animes: Array<number>;
+        all_animes: Array<number>;
       }
     ];
   };

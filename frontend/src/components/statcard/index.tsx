@@ -27,7 +27,7 @@ interface Props {
 interface Anime {
   id: number;
   title: string;
-  image_url_id: number;
+  image_url_id: string;
 }
 
 function listButton(genre: number, direction: string) {
@@ -67,7 +67,7 @@ export default function StatCard(props: Props) {
         allowHTML={true}
         moveTransition="transform 0.2s ease-out"
       />
-      <Card className="stats-card" id={`genre-${props.genre}`}>
+      <Card className="stats-card shadow-sm" id={`genre-${props.genre}`}>
         <h2 className="stats-card-header">
           <Link to={`${url}/${props.name.toLowerCase().replaceAll(" ", "_")}`}>
             {props.name}
@@ -122,9 +122,6 @@ export default function StatCard(props: Props) {
                 imageUrlId={anime.image_url_id}
               />
             ))}
-            {props.count > 10 && (
-              <div className="covers-view-more">View more</div>
-            )}
           </div>
         </div>
       </Card>

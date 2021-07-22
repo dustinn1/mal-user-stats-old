@@ -5,7 +5,7 @@ interface Props {
   target: any;
   title: string;
   malId: number;
-  imageUrlId: number;
+  imageUrlId: string;
 }
 
 export default function CoverImage(props: Props) {

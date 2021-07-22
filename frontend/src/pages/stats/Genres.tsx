@@ -11,7 +11,8 @@ interface Genre {
   count: number;
   mean_score: number;
   time_watched: number;
-  animes: Array<Object>;
+  top_animes: Array<Object>;
+  all_animes: Array<Object>;
 }
 
 function compare(prop: string) {
@@ -92,7 +93,7 @@ export default function Genres() {
               count={genre.count}
               mean_score={genre.mean_score}
               time_watched={genre.time_watched}
-              animes={genre.animes}
+              animes={genre.top_animes}
             />
           ))}
       </div>
