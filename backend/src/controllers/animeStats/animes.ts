@@ -20,8 +20,8 @@ export default async function genreStats(
         "id",
         "title",
         "image_url_id",
-        "alternative_titles.en",
-        "alternative_titles.ja",
+        "title_en",
+        "title_ja",
       ])
     ) as Array<Anime>;
   } catch (err) {

@@ -76,6 +76,14 @@ async function getFullList(access_token: string): Promise<Object[]> {
             anime.node.time_watched =
               anime.node.my_list_status.num_episodes_watched *
               anime.node.average_episode_duration;
+            anime.node.title_en =
+              anime.node.alternative_titles.en.length !== 0
+                ? anime.node.alternative_titles.en
+                : anime.node.title;
+            anime.node.title_ja =
+              anime.node.alternative_titles.ja.length !== 0
+                ? anime.node.alternative_titles.ja
+                : anime.node.title;
             list.push(anime.node);
           }
         })
@@ -140,10 +148,16 @@ export function getStats(req: Request, res: Response) {
             return res.sendStatus(404);
           } else {
             /* getFullList(user.access_token)
-              .then(response => getResponseJSON(response, decodedUserJWT.mal_id, decodedUserJWT.username)
-                .then(response => res.json(response))
-                .catch(err => res.send(err)))
-              .catch(err => res.send(err)) */
+              .then((response) =>
+                getStatsJSON(
+                  response,
+                  decodedUserJWT.mal_id,
+                  decodedUserJWT.username
+                )
+                  .then((response) => res.json(response))
+                  .catch((err) => res.send(err))
+              )
+              .catch((err) => res.send(err)); */
             getStatsJSON(test, decodedUserJWT.mal_id, decodedUserJWT.username)
               .then((response) => res.json(response))
               .catch((err) => res.send(err));

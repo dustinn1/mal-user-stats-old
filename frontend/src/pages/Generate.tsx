@@ -8,6 +8,7 @@ import statsJSON from "../interfaces/StatsJson";
 
 function saveLocalStorage(data: statsJSON): void {
   localStorage.setItem("data", JSON.stringify(data));
+  localStorage.setItem("language", "romaji");
 }
 
 export default function Generate() {

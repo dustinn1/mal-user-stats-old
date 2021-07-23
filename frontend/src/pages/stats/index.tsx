@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Switch, Route, useRouteMatch, Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { LinkContainer } from "react-router-bootstrap";
-
 import Container from "react-bootstrap/Container";
 import Spinner from "react-bootstrap/Spinner";
 import Row from "react-bootstrap/Row";
@@ -10,8 +9,9 @@ import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import "./styles.css";
 
-import statsJSON from "../../interfaces/StatsJson";
-import { StatsContext } from "../../contexts/StatsContext";
+import { StatsContextProvider } from "../../contexts/StatsContext";
+import { SettingsContextProvider } from "../../contexts/SettingsContext";
+import Header from "../../components/header";
 import OverviewStats from "./Overview";
 import GenresStats from "./Genres";
 import SingleGenreStats from "./Genre";
@@ -19,16 +19,11 @@ import HistoryStats from "./History";
 
 export default function Stats() {
   const { path, url } = useRouteMatch();
-  const [data, setData] = useState({} as statsJSON);
   const [loaded, setLoaded] = useState(false);
 
-  function getData() {
-    const data = JSON.parse(localStorage.getItem("data") as string);
-    setData(data as statsJSON);
+  useEffect(() => {
     setLoaded(true);
-  }
-
-  useEffect(() => getData(), []);
+  }, []);
 
   return (
     <>
@@ -36,46 +31,34 @@ export default function Stats() {
         <title>Stats</title>
       </Helmet>
       {loaded ? (
-        <Container>
-          <div className="profile-header">
-            <picture>
-              <source
-                srcSet={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.webp`}
-                type="image/webp"
-              />
-              <img
-                src={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.jpg`}
-                alt="profile"
-              />
-            </picture>
-            <h1>{data.username}</h1>
-          </div>
-          <div>
-            <Row>
-              <Col lg={2}>
-                <Nav variant="pills" className="stats-tabs">
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/overview`}>
-                      <Nav.Link>Overview</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/history`}>
-                      <Nav.Link>History</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/genres`}>
-                      <Nav.Link>Genres</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <Nav.Link>Studios</Nav.Link>
-                  </Nav.Item>
-                </Nav>
-              </Col>
-              <Col lg={10}>
-                <StatsContext.Provider value={data}>
+        <SettingsContextProvider>
+          <StatsContextProvider>
+            <Container>
+              <Header />
+              <Row>
+                <Col lg={2}>
+                  <Nav variant="pills" className="stats-tabs">
+                    <Nav.Item>
+                      <LinkContainer to={`${url}/overview`}>
+                        <Nav.Link>Overview</Nav.Link>
+                      </LinkContainer>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <LinkContainer to={`${url}/history`}>
+                        <Nav.Link>History</Nav.Link>
+                      </LinkContainer>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <LinkContainer to={`${url}/genres`}>
+                        <Nav.Link>Genres</Nav.Link>
+                      </LinkContainer>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link>Studios</Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                </Col>
+                <Col lg={10}>
                   <Switch>
                     <Route exact path={`${path}/`}>
                       <Redirect to={`${url}/overview`} />
@@ -93,11 +76,11 @@ export default function Stats() {
                       <SingleGenreStats />
                     </Route>
                   </Switch>
-                </StatsContext.Provider>
-              </Col>
-            </Row>
-          </div>
-        </Container>
+                </Col>
+              </Row>
+            </Container>
+          </StatsContextProvider>
+        </SettingsContextProvider>
       ) : (
         <Spinner animation="border" />
       )}

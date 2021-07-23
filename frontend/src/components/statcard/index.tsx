@@ -28,6 +28,8 @@ interface Anime {
   id: number;
   title: string;
   image_url_id: string;
+  title_en: string;
+  title_ja: string;
 }
 
 function listButton(genre: number, direction: string) {
@@ -114,13 +116,7 @@ export default function StatCard(props: Props) {
           )}
           <div className="covers">
             {animes.map((anime: Anime) => (
-              <CoverImage
-                key={anime.id}
-                title={anime.title}
-                target={target}
-                malId={anime.id}
-                imageUrlId={anime.image_url_id}
-              />
+              <CoverImage key={anime.id} target={target} anime={anime} />
             ))}
           </div>
         </div>

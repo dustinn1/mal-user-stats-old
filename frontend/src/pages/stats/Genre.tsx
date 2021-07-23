@@ -1,5 +1,7 @@
 import { useContext } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
+import prettyMs from "pretty-ms";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 import { StatsContext } from "../../contexts/StatsContext";
 import LargeCoverImage from "../../components/coverimage/large";
@@ -54,6 +56,8 @@ interface Anime {
   id: number;
   title: string;
   image_url_id: string;
+  title_en: string;
+  title_ja: string;
 }
 
 export default function Genre() {
@@ -71,32 +75,27 @@ export default function Genre() {
     );
   }
 
-  if (genres.includes(genre)) {
-    return (
-      <>
-        <Breadcrumb>
-          <Breadcrumb.Item>
-            <Link to={"../genres"}>Genres</Link>
-          </Breadcrumb.Item>
-          <Breadcrumb.Item active>{genreStats.name}</Breadcrumb.Item>
-        </Breadcrumb>
-        <h1>{genreStats.name}</h1>
-        <p>{genreStats.count}</p>
-        <h3>Animes ({animes.length})</h3>
-        <hr />
-        <div className="cover-images-grid">
-          {animes.map((anime: Anime) => (
-            <LargeCoverImage
-              key={anime.id}
-              title={anime.title}
-              malId={anime.id}
-              imageUrlId={anime.image_url_id}
-            />
-          ))}
-        </div>
-      </>
-    );
-  } else {
-    return <div>Nothing</div>;
-  }
+  return genres.includes(genre) ? (
+    <>
+      <Breadcrumb>
+        <LinkContainer to={"../genres"}>
+          <Breadcrumb.Item>Genres</Breadcrumb.Item>
+        </LinkContainer>
+        <Breadcrumb.Item active>{genreStats.name}</Breadcrumb.Item>
+      </Breadcrumb>
+      <h1>{genreStats.name}</h1>
+      <p>{genreStats.count}</p>
+      <p>{genreStats.mean_score}</p>
+      <p>{prettyMs(genreStats.time_watched * 1000, { verbose: true })}</p>
+      <h3>Animes ({animes.length})</h3>
+      <hr />
+      <div className="cover-images-grid">
+        {animes.map((anime: Anime) => (
+          <LargeCoverImage key={anime.id} anime={anime} />
+        ))}
+      </div>
+    </>
+  ) : (
+    <div>Nothing</div>
+  );
 }
