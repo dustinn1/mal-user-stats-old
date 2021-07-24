@@ -1,5 +1,7 @@
+import LazyLoad from "react-lazyload";
 import { useContext } from "react";
 import { SettingsContext } from "../../contexts/SettingsContext";
+import Placeholder from "./placeholder";
 
 interface Props {
   anime: {
@@ -22,16 +24,18 @@ export default function LargeCoverImage(props: Props) {
       rel="noreferrer"
       className="large-cover-image"
     >
-      <picture>
-        <source
-          srcSet={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}l.webp`}
-          type="image/webp"
-        />
-        <img
-          src={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}l.jpg`}
-          alt="anime cover"
-        />
-      </picture>
+      <LazyLoad once offset={250} placeholder={<Placeholder />}>
+        <picture>
+          <source
+            srcSet={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}l.webp`}
+            type="image/webp"
+          />
+          <img
+            src={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}l.jpg`}
+            alt="anime cover"
+          />
+        </picture>
+      </LazyLoad>
       <span>
         {settings.language === "romaji" && anime.title}
         {settings.language === "english" && anime.title_en}

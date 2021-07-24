@@ -12,7 +12,7 @@ import "tippy.js/themes/material.css";
 import "./styles.css";
 
 import { StatsContext } from "../../contexts/StatsContext";
-import CoverImage from "../coverimage";
+import SmallCoverImage from "../coverimage/small";
 
 interface Props {
   index: number;
@@ -116,7 +116,7 @@ export default function StatCard(props: Props) {
           )}
           <div className="covers">
             {animes.map((anime: Anime) => (
-              <CoverImage key={anime.id} target={target} anime={anime} />
+              <SmallCoverImage key={anime.id} target={target} anime={anime} />
             ))}
           </div>
         </div>

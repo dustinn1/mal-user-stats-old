@@ -1,7 +1,9 @@
 import { useContext } from "react";
+import LazyLoad from "react-lazyload";
 import { SettingsContext } from "../../contexts/SettingsContext";
 import Tippy from "@tippyjs/react";
 import "./styles.css";
+import Placeholder from "./placeholder";
 
 interface Props {
   target: any;
@@ -14,7 +16,7 @@ interface Props {
   };
 }
 
-export default function CoverImage(props: Props) {
+export default function SmallCoverImage(props: Props) {
   const settings = useContext(SettingsContext);
   const anime = props.anime;
 
@@ -35,16 +37,18 @@ export default function CoverImage(props: Props) {
           target="_blank"
           rel="noreferrer"
         >
-          <picture className="cover-image">
-            <source
-              srcSet={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.webp`}
-              type="image/webp"
-            />
-            <img
-              src={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.jpg`}
-              alt="anime cover"
-            />
-          </picture>
+          <LazyLoad once offset={200} placeholder={<Placeholder />}>
+            <picture className="small-cover-image">
+              <source
+                srcSet={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.webp`}
+                type="image/webp"
+              />
+              <img
+                src={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.jpg`}
+                alt="anime cover"
+              />
+            </picture>
+          </LazyLoad>
         </a>
       </Tippy>
     </>
