@@ -1,14 +1,11 @@
 import { useContext } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import Tippy, { useSingleton } from "@tippyjs/react";
 import prettyMs from "pretty-ms";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import "tippy.js/dist/tippy.css";
-import "tippy.js/themes/material.css";
 import "./index.styles.css";
 
 import { StatsContext } from "../../contexts/StatsContext";
@@ -53,7 +50,6 @@ function listButton(genre: number, direction: string) {
 
 export default function StatCard(props: Props) {
   let { url } = useRouteMatch();
-  const [source, target] = useSingleton();
   const allAnimes = useContext(StatsContext).animes;
   const animes: Array<Anime> = [];
 
@@ -63,12 +59,6 @@ export default function StatCard(props: Props) {
 
   return (
     <>
-      <Tippy
-        singleton={source}
-        theme="material"
-        allowHTML={true}
-        moveTransition="transform 0.2s ease-out"
-      />
       <Card className="stats-card shadow-sm" id={`genre-${props.genre}`}>
         <h2 className="stats-card-header">
           <Link to={`${url}/${props.name.toLowerCase().replaceAll(" ", "_")}`}>
@@ -116,7 +106,11 @@ export default function StatCard(props: Props) {
           )}
           <div className="covers">
             {animes.map((anime: Anime) => (
-              <SmallCoverImage key={anime.id} target={target} anime={anime} />
+              <SmallCoverImage
+                key={anime.id}
+                genre={props.genre}
+                anime={anime}
+              />
             ))}
           </div>
         </div>

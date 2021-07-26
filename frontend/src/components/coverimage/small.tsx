@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import LazyLoad from "react-lazyload";
 import { SettingsContext } from "../../contexts/SettingsContext";
-import Tippy from "@tippyjs/react";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import "./styles.css";
-import Placeholder from "./placeholder";
 
 interface Props {
-  target: any;
+  genre: number;
   anime: {
     id: number;
     title: string;
@@ -22,35 +21,35 @@ export default function SmallCoverImage(props: Props) {
 
   return (
     <>
-      <Tippy
-        content={
-          <p className="text-center m-0">
-            {settings.language === "romaji" && anime.title}
-            {settings.language === "english" && anime.title_en}
-            {settings.language === "japanese" && anime.title_ja}
-          </p>
+      <OverlayTrigger
+        placement="top"
+        overlay={
+          <Tooltip id={`tooltip-${props.genre}-${props.anime.id}`}>
+            <strong>
+              {settings.language === "romaji" && anime.title}
+              {settings.language === "english" && anime.title_en}
+              {settings.language === "japanese" && anime.title_ja}
+            </strong>
+          </Tooltip>
         }
-        singleton={props.target}
       >
         <a
           href={`https://myanimelist.net/anime/${anime.id}`}
           target="_blank"
           rel="noreferrer"
         >
-          <LazyLoad once offset={200} placeholder={<Placeholder />}>
-            <picture className="small-cover-image">
-              <source
-                srcSet={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.webp`}
-                type="image/webp"
-              />
-              <img
-                src={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.jpg`}
-                alt="anime cover"
-              />
-            </picture>
-          </LazyLoad>
+          <picture className="small-cover-image">
+            <source
+              srcSet={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.webp`}
+              type="image/webp"
+            />
+            <img
+              src={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.jpg`}
+              alt="anime cover"
+            />
+          </picture>
         </a>
-      </Tippy>
+      </OverlayTrigger>
     </>
   );
 }
