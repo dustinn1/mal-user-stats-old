@@ -1,10 +1,17 @@
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { LinkContainer } from "react-router-bootstrap";
 import prettyMs from "pretty-ms";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
+import {
+  faPlusCircle,
+  faDivide,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
 import { StatsContext } from "../../contexts/StatsContext";
 import LargeCoverImage from "../../components/coverimage/large";
+import ValueStatCard from "../../components/statcard/value";
 
 const genres = [
   "action",
@@ -77,17 +84,36 @@ export default function Genre() {
 
   return genres.includes(genre) ? (
     <>
+      <Helmet>
+        <title>{`${genreStats.name} Genre Stats`}</title>
+      </Helmet>
       <Breadcrumb>
         <LinkContainer to={"../genres"}>
           <Breadcrumb.Item>Genres</Breadcrumb.Item>
         </LinkContainer>
         <Breadcrumb.Item active>{genreStats.name}</Breadcrumb.Item>
       </Breadcrumb>
-      <h1>{genreStats.name}</h1>
-      <p>{genreStats.count}</p>
-      <p>{genreStats.mean_score}</p>
-      <p>{prettyMs(genreStats.time_watched * 1000, { verbose: true })}</p>
-      <h3>Animes ({animes.length})</h3>
+      <h1 className="stats-header">{genreStats.name}</h1>
+      <div className="d-flex flex-wrap justify-content-evenly mb-3">
+        <ValueStatCard
+          stat="Total Anime"
+          value={genreStats.count}
+          icon={faPlusCircle}
+        />
+        <ValueStatCard
+          stat="Mean Score"
+          value={genreStats.mean_score}
+          icon={faDivide}
+        />
+        <ValueStatCard
+          stat="Total Anime"
+          value={prettyMs(genreStats.time_watched * 1000, {
+            unitCount: 3,
+          })}
+          icon={faClock}
+        />
+      </div>
+      <h3>Animes</h3>
       <hr />
       <div className="cover-images-grid">
         {animes.map((anime: Anime) => (

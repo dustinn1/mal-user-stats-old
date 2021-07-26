@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/themes/material.css";
-import "./styles.css";
+import "./index.styles.css";
 
 import { StatsContext } from "../../contexts/StatsContext";
 import SmallCoverImage from "../coverimage/small";

@@ -24,7 +24,7 @@ export default function LargeCoverImage(props: Props) {
       rel="noreferrer"
       className="large-cover-image"
     >
-      <LazyLoad once offset={250} placeholder={<Placeholder />}>
+      <LazyLoad once offset={200} placeholder={<Placeholder />}>
         <picture>
           <source
             srcSet={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}l.webp`}

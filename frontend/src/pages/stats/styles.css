@@ -2,23 +2,12 @@
   margin-bottom: 50px;
 }
 
-.profile-header {
-  padding: 25px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #000;
-}
-
-.profile-header > picture > img {
-  width: 150px;
-  border-radius: 10px;
-}
-
-.profile-header > h1 {
+.stats-header {
   display: inline-block;
-  vertical-align: bottom;
-  font-size: 3em;
-  margin-bottom: 0;
-  margin-left: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  border-bottom: 4px solid #000;
 }
 
 .stats-cards {

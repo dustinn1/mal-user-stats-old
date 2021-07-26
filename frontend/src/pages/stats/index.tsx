@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Switch, Route, useRouteMatch, Redirect } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Spinner from "react-bootstrap/Spinner";
@@ -27,9 +26,6 @@ export default function Stats() {
 
   return (
     <>
-      <Helmet>
-        <title>Stats</title>
-      </Helmet>
       {loaded ? (
         <SettingsContextProvider>
           <StatsContextProvider>
@@ -60,9 +56,6 @@ export default function Stats() {
                 </Col>
                 <Col lg={10}>
                   <Switch>
-                    <Route exact path={`${path}/`}>
-                      <Redirect to={`${url}/overview`} />
-                    </Route>
                     <Route path={`${path}/overview`}>
                       <OverviewStats />
                     </Route>
@@ -74,6 +67,9 @@ export default function Stats() {
                     </Route>
                     <Route path={`${path}/genres/:genre`}>
                       <SingleGenreStats />
+                    </Route>
+                    <Route path={`${path}` || `${path}/*`}>
+                      <Redirect to={`${url}/overview`} />
                     </Route>
                   </Switch>
                 </Col>

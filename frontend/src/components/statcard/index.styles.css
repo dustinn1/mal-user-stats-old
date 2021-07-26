@@ -109,7 +109,6 @@
   left: 18.5rem;
 }
 
-
 @media (min-width: 576px) {
   .stats-card > .covers-list > button.next-button {
     left: 28.2rem;
@@ -149,6 +148,9 @@
   margin-bottom: 15px;
 }
 
+.sort-section > .sort-buttons {
+  margin-top: 10px;
+}
 
 .sort-section > .sort-buttons > span {
   margin-right: 7px;

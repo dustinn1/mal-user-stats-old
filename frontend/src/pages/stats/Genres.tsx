@@ -1,4 +1,5 @@
 import { useContext, useState, ChangeEvent } from "react";
+import { Helmet } from "react-helmet-async";
 import { StatsContext } from "../../contexts/StatsContext";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -40,6 +41,10 @@ export default function Genres() {
 
   return (
     <>
+      <Helmet>
+        <title>Genres Stats</title>
+      </Helmet>
+      <h1 className="stats-header">Genres</h1>
       <div className="sort-section">
         <div className="sort-buttons">
           <span>Sort by:</span>
