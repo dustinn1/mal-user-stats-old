@@ -13,6 +13,7 @@ import statusStats from "./animeStats/status";
 import releaseYearStats from "./animeStats/releaseYear";
 import watchYearStats from "./animeStats/watchYear";
 import genreStats from "./animeStats/genres";
+import studioStats from "./animeStats/studios";
 import allAnimes from "./animeStats/animes";
 
 interface userJWT {
@@ -34,6 +35,7 @@ interface Stats {
     release_years: Array<Object>;
     watch_years: Array<Object>;
     genres: Array<Object>;
+    studios: Array<Object>;
   };
   animes: Array<Object>;
 }
@@ -112,6 +114,7 @@ async function getStatsJSON(
       release_years: [],
       watch_years: [],
       genres: [],
+      studios: [],
     },
     animes: [],
   };
@@ -124,6 +127,7 @@ async function getStatsJSON(
     json.statistics.release_years = await releaseYearStats(animeList);
     json.statistics.watch_years = await watchYearStats(animeList);
     json.statistics.genres = await genreStats(animeList);
+    json.statistics.studios = await studioStats(animeList);
     json.animes = await allAnimes(animeList);
     return json;
   } catch (err) {

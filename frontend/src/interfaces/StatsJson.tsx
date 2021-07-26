@@ -26,6 +26,17 @@ export default interface statsJSON {
         all_animes: Array<number>;
       }
     ];
+    studios: [
+      {
+        id: number;
+        name: string;
+        count: number;
+        mean_score: number;
+        time_watched: number;
+        top_animes: Array<number>;
+        all_animes: Array<number>;
+      }
+    ];
   };
   animes: Array<Object>;
 }

@@ -12,9 +12,11 @@ import { StatsContextProvider } from "../../contexts/StatsContext";
 import { SettingsContextProvider } from "../../contexts/SettingsContext";
 import Header from "../../components/header";
 import OverviewStats from "./Overview";
+import HistoryStats from "./History";
 import GenresStats from "./Genres";
 import SingleGenreStats from "./Genre";
-import HistoryStats from "./History";
+import StudiosStats from "./Studios";
+import SingleStudioStats from "./Studio";
 
 export default function Stats() {
   const { path, url } = useRouteMatch();
@@ -50,7 +52,9 @@ export default function Stats() {
                       </LinkContainer>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link>Studios</Nav.Link>
+                      <LinkContainer to={`${url}/studios`}>
+                        <Nav.Link>Studios</Nav.Link>
+                      </LinkContainer>
                     </Nav.Item>
                   </Nav>
                 </Col>
@@ -67,6 +71,12 @@ export default function Stats() {
                     </Route>
                     <Route path={`${path}/genres/:genre`}>
                       <SingleGenreStats />
+                    </Route>
+                    <Route exact path={`${path}/studios`}>
+                      <StudiosStats />
+                    </Route>
+                    <Route path={`${path}/studios/:studio`}>
+                      <SingleStudioStats />
                     </Route>
                     <Route path={`${path}` || `${path}/*`}>
                       <Redirect to={`${url}/overview`} />

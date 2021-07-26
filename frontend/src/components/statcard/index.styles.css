@@ -43,6 +43,7 @@
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 0;
+  align-items: flex-start;
 }
 
 .stats-card > .stats-card-header > a {

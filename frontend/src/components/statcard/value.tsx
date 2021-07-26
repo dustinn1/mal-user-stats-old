@@ -11,7 +11,7 @@ interface Props {
 
 export default function ValueStatCard(props: Props) {
   return (
-    <Card className="value-stats-card">
+    <Card className="value-stats-card shadow-sm">
       <div className="icon">
         <FontAwesomeIcon icon={props.icon} />
       </div>
