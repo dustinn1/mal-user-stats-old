@@ -1,19 +1,26 @@
 import { useContext } from "react";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import relativeTime from "dayjs/plugin/relativeTime";
 import { StatsContext } from "../../contexts/StatsContext";
-import { SettingsContext } from "../../contexts/SettingsContext";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import "./styles.css";
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.extend(localizedFormat);
+dayjs.extend(relativeTime);
+
 export default function Header() {
   const data = useContext(StatsContext);
-  const settings = useContext(SettingsContext);
 
   return (
-    <div className="profile-header">
-      <Row>
-        <Col>
+    <header className="profile-header bg-light">
+      <Container>
+        <span>
           <picture>
             <source
               srcSet={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.webp`}
@@ -25,31 +32,35 @@ export default function Header() {
             />
           </picture>
           <h1>{data.username}</h1>
-        </Col>
-        <Col>
-          <Button
-            variant="outline-primary"
-            onClick={() => settings.updateLanguage("romaji")}
-            active={settings.language === "romaji"}
-          >
-            Romaji
-          </Button>{" "}
-          <Button
-            variant="outline-primary"
-            onClick={() => settings.updateLanguage("english")}
-            active={settings.language === "english"}
-          >
-            English
-          </Button>{" "}
-          <Button
-            variant="outline-primary"
-            onClick={() => settings.updateLanguage("japanese")}
-            active={settings.language === "japanese"}
-          >
-            Japanese
-          </Button>{" "}
-        </Col>
-      </Row>
-    </div>
+        </span>
+        <Button variant="outline-primary">Update Stats</Button>
+      </Container>
+      <div className="stats-generated-time">
+        Stats generated on{" "}
+        {dayjs(data.generated_on).tz(dayjs.tz.guess()).format("LLL")} (
+        {dayjs(data.generated_on).fromNow()})
+      </div>
+      {/* <Button
+          variant="outline-primary"
+          onClick={() => settings.updateLanguage("romaji")}
+          active={settings.language === "romaji"}
+        >
+          Romaji
+        </Button>{" "}
+        <Button
+          variant="outline-primary"
+          onClick={() => settings.updateLanguage("english")}
+          active={settings.language === "english"}
+        >
+          English
+        </Button>{" "}
+        <Button
+          variant="outline-primary"
+          onClick={() => settings.updateLanguage("japanese")}
+          active={settings.language === "japanese"}
+        >
+          Japanese
+        </Button> */}
+    </header>
   );
 }

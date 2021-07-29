@@ -139,39 +139,3 @@
     left: 18.5rem;
   }
 }
-
-.sort-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 15px;
-}
-
-.sort-section > .sort-buttons {
-  margin-top: 10px;
-}
-
-.sort-section > .sort-buttons > span {
-  margin-right: 7px;
-}
-
-.sort-section > .sort-buttons > button {
-  margin-right: 10px;
-}
-
-.sort-section > .sort-buttons > button:focus {
-  box-shadow: none;
-}
-
-.sort-section > .search-section {
-  width: 15rem;
-}
-
-@media (max-width: 767px) {
-  .sort-section > .search-section {
-    width: 100%;
-    margin-top: 10px;
-  }
-}

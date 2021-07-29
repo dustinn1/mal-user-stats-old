@@ -1,18 +1,96 @@
 .profile-header {
-  padding: 25px;
+  padding-top: 15px;
+  padding-bottom: 10px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.profile-header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+@media (max-width: 767px) {
+  .profile-header > .container > span {
+    width: 100%;
+    text-align: center;
+    order: 2;
+  }
+
+  .profile-header > .container > .btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .profile-header picture > img {
-  width: 100px;
   border-radius: 10px;
 }
 
 .profile-header h1 {
   display: inline-block;
   vertical-align: middle;
-  font-size: 2.8em;
   margin-bottom: 0;
-  margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+  .profile-header picture > img {
+    width: 75px;
+  }
+
+  .profile-header h1 {
+    font-size: 2em;
+    margin-left: 10px;
+    word-break: break-all;
+    margin-top: 10px;
+  }
+
+  .profile-header > .container > span {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile-header picture > img {
+    width: 70px;
+  }
+
+  .profile-header h1 {
+    font-size: 2em;
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile-header picture > img {
+    width: 80px;
+  }
+
+  .profile-header h1 {
+    font-size: 2.5em;
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile-header picture > img {
+    width: 100px;
+  }
+
+  .profile-header h1 {
+    font-size: 2.8em;
+    margin-left: 20px;
+  }
+}
+
+.profile-header > .stats-generated-time {
+  width: 100%;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

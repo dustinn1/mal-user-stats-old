@@ -1,4 +1,6 @@
 export default interface statsJSON {
+  version: string;
+  generated_on: Date;
   mal_id: number;
   username: string;
   statistics: {

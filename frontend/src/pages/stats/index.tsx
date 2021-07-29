@@ -11,6 +11,7 @@ import "./styles.css";
 import { StatsContextProvider } from "../../contexts/StatsContext";
 import { SettingsContextProvider } from "../../contexts/SettingsContext";
 import Header from "../../components/header";
+import Footer from "../../components/footer";
 import OverviewStats from "./Overview";
 import HistoryStats from "./History";
 import GenresStats from "./Genres";
@@ -31,8 +32,8 @@ export default function Stats() {
       {loaded ? (
         <SettingsContextProvider>
           <StatsContextProvider>
+            <Header />
             <Container>
-              <Header />
               <Row>
                 <Col lg={2}>
                   <Nav variant="pills" className="stats-tabs">
@@ -85,6 +86,7 @@ export default function Stats() {
                 </Col>
               </Row>
             </Container>
+            <Footer />
           </StatsContextProvider>
         </SettingsContextProvider>
       ) : (

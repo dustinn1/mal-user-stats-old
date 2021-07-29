@@ -24,6 +24,8 @@ interface userJWT {
 }
 
 interface Stats {
+  version: string;
+  generated_on: Date;
   mal_id: number;
   username: string;
   statistics: {
@@ -103,6 +105,8 @@ async function getStatsJSON(
   username: string
 ): Promise<Stats> {
   let json: Stats = {
+    version: "1.0.0",
+    generated_on: new Date(),
     mal_id: mal_id,
     username: username,
     statistics: {

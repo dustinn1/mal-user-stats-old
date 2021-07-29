@@ -4,8 +4,7 @@
   margin-right: 5px;
 }
 
-.small-cover-image > img,
-.covers-list img.placeholder-image {
+.small-cover-image > img {
   height: 120px;
   width: 85px;
   border-radius: 5px;
