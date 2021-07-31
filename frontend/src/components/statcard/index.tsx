@@ -50,7 +50,7 @@ function listButton(genre: number, direction: string) {
 
 export default function StatCard(props: Props) {
   let { url } = useRouteMatch();
-  const allAnimes = useContext(StatsContext).animes;
+  const allAnimes = useContext(StatsContext).data.animes;
   const animes: Array<Anime> = [];
 
   for (let animeId of [...props.animes].splice(0, 10)) {

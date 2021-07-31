@@ -29,11 +29,11 @@ function compare(prop: string) {
 }
 
 export default function Studios() {
-  const data = useContext(StatsContext);
+  const stats = useContext(StatsContext);
   const [sort, setSort] = useState("count");
   const [search, setSearch] = useState("");
 
-  const studiosCopy = [...data.statistics.studios];
+  const studiosCopy = [...stats.data.statistics.studios];
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);

@@ -29,11 +29,11 @@ function compare(prop: string) {
 }
 
 export default function Genres() {
-  const data = useContext(StatsContext);
+  const stats = useContext(StatsContext);
   const [sort, setSort] = useState("count");
   const [search, setSearch] = useState("");
 
-  const genresCopy = [...data.statistics.genres];
+  const genresCopy = [...stats.data.statistics.genres];
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);

@@ -22,22 +22,22 @@ interface Anime {
 }
 
 export default function Studio() {
-  const data = useContext(StatsContext);
+  const stats = useContext(StatsContext);
   const { studio } = useParams<{ studio: string }>();
 
-  const validStudio: boolean = data.statistics.studios.some(
+  const validStudio: boolean = stats.data.statistics.studios.some(
     (n) => n.name.toLowerCase() === studio.replaceAll("_", " ")
   );
 
   if (validStudio) {
-    const studioStats = data.statistics.studios.find(
+    const studioStats = stats.data.statistics.studios.find(
       (element) => element.name.toLowerCase() === studio.replaceAll("_", " ")
     )!;
 
     const animes: Array<Anime> = [];
     for (let animeId of studioStats.all_animes) {
       animes.push(
-        data.animes.find((anime: any) => anime.id === animeId) as Anime
+        stats.data.animes.find((anime: any) => anime.id === animeId) as Anime
       );
     }
 

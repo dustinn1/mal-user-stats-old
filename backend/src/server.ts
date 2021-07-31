@@ -18,6 +18,7 @@ app.use(cors(options));
 app.use(express.json());
 
 app.use("/api/stats", statsRoute);
+app.use("/api/status", (req, res) => res.sendStatus(200));
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.sendStatus(404);
 });

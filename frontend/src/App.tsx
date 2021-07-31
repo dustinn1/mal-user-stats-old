@@ -3,7 +3,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 
 import Homepage from "./pages/homepage";
 import Login from "./pages/Login";
-import Generate from "./pages/Generate";
 import Stats from "./pages/stats";
 import NotFound from "./pages/NotFound";
 
@@ -24,9 +23,6 @@ export default function App() {
           </Route>
           <Route path="/auth">
             {() => window.location.replace("/.netlify/functions/auth")}
-          </Route>
-          <Route path="/generate">
-            <Generate />
           </Route>
           <Route path="/stats">
             <Stats />

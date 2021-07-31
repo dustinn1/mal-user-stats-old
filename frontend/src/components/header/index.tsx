@@ -18,7 +18,7 @@ dayjs.extend(localizedFormat);
 dayjs.extend(relativeTime);
 
 export default function Header() {
-  const data = useContext(StatsContext);
+  const stats = useContext(StatsContext);
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -28,21 +28,21 @@ export default function Header() {
           <span>
             <picture>
               <source
-                srcSet={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.webp`}
+                srcSet={`https://cdn.myanimelist.net/images/userimages/${stats.data.mal_id}.webp`}
                 type="image/webp"
               />
               <img
-                src={`https://cdn.myanimelist.net/images/userimages/${data.mal_id}.jpg`}
+                src={`https://cdn.myanimelist.net/images/userimages/${stats.data.mal_id}.jpg`}
                 alt="profile"
               />
             </picture>
             <a
-              href={`https://myanimelist.net/profile/${data.username}`}
+              href={`https://myanimelist.net/profile/${stats.data.username}`}
               target="_blank"
               rel="noreferrer"
             >
               <h1>
-                {data.username}
+                {stats.data.username}
                 <FontAwesomeIcon icon={faExternalLinkAlt} />
               </h1>
             </a>
@@ -53,8 +53,8 @@ export default function Header() {
         </Container>
         <div className="stats-generated-time">
           Stats generated on{" "}
-          {dayjs(data.generated_on).tz(dayjs.tz.guess()).format("LLL")} (
-          {dayjs(data.generated_on).fromNow()})
+          {dayjs(stats.data.generated_on).tz(dayjs.tz.guess()).format("LLL")} (
+          {dayjs(stats.data.generated_on).fromNow()})
         </div>
         {/* <Button
             variant="outline-primary"
@@ -78,7 +78,11 @@ export default function Header() {
             Japanese
           </Button> */}
       </header>
-      <StatsGenerateModal show={showModal} onHide={() => setShowModal(false)} />
+      <StatsGenerateModal
+        update
+        show={showModal}
+        onHide={() => setShowModal(false)}
+      />
     </>
   );
 }

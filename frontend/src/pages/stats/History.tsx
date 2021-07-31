@@ -5,7 +5,7 @@ import ChartContainer from "../../components/charts/Container";
 import Table from "../../components/table";
 
 export default function History() {
-  const data = useContext(StatsContext).statistics;
+  const stats = useContext(StatsContext).data.statistics;
   return (
     <>
       <Helmet>
@@ -14,20 +14,20 @@ export default function History() {
       <h1 className="stats-header">History</h1>
       <ChartContainer
         chartType="line"
-        data={data.release_years}
+        data={stats.release_years}
         dataIndex="year"
         reverse={true}
         title="Release Years"
       />
-      <Table data={data.release_years} dataIndex="year" />
+      <Table data={stats.release_years} dataIndex="year" />
       <ChartContainer
         chartType="line"
-        data={data.watch_years}
+        data={stats.watch_years}
         dataIndex="year"
         reverse={true}
         title="Watch Years"
       />
-      <Table data={data.watch_years} dataIndex="year" />
+      <Table data={stats.watch_years} dataIndex="year" />
     </>
   );
 }

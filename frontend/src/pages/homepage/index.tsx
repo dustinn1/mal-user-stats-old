@@ -29,7 +29,12 @@ export default function Homepage() {
         <h1>MyAnimeList User Stats</h1>
         <HomepageButton />
       </Container>
-      <StatsGenerateModal show={showModal} onHide={() => setShowModal(false)} />
+      {showModal && (
+        <StatsGenerateModal
+          show={showModal}
+          onHide={() => setShowModal(false)}
+        />
+      )}
     </div>
   );
 }
