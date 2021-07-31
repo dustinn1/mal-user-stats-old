@@ -1,7 +1,35 @@
 .chart-container {
   margin-top: 30px;
   padding-bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.chart-container > .chart-container-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.chart-container > .chart-container-header > h3 {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.chart-container > .chart-container-header > .nav {
+  justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+  .chart-container > .chart-container-header > h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .chart-container > .chart-container-header > .nav {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .chart-container > .chart {

@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import prettyMs from "pretty-ms";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import {
   faPlusCircle,
   faPlayCircle,
@@ -55,46 +53,42 @@ export default function Overview() {
             icon={faPercentage}
           />
         </div>
-        <ChartContainer chartType="bar" data={data.scores} dataIndex="score" />
+        <ChartContainer
+          chartType="bar"
+          data={data.scores}
+          dataIndex="score"
+          title="Scores"
+        />
         <Table data={data.scores} dataIndex="score" />
         <ChartContainer
           chartType="bar"
           data={data.episode_count}
           dataIndex="length"
+          title="Episode Count"
         />
         <Table data={data.episode_count} dataIndex="length" />
-        <Row>
-          <Col xs={12} lg={6} className="mt-4 order-2 order-lg-1">
-            <Table
-              data={data.format_distribution}
-              dataIndex="format"
-              sortBy="count"
-            />
-          </Col>
-          <Col xs={12} lg={6} className="order-1 order-lg-2">
-            <ChartContainer
-              chartType="pie"
-              data={data.format_distribution}
-              dataIndex="format"
-            />
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12} lg={6} className="mt-4 order-2 order-lg-1">
-            <Table
-              data={data.status_distribution}
-              dataIndex="status"
-              sortBy="count"
-            />
-          </Col>
-          <Col xs={12} lg={6} className="order-1 order-lg-2">
-            <ChartContainer
-              chartType="pie"
-              data={data.status_distribution}
-              dataIndex="status"
-            />
-          </Col>
-        </Row>
+        <ChartContainer
+          chartType="pie"
+          data={data.format_distribution}
+          dataIndex="format"
+          title="Format Distribution"
+        />
+        <Table
+          data={data.format_distribution}
+          dataIndex="format"
+          sortBy="count"
+        />
+        <ChartContainer
+          chartType="pie"
+          data={data.status_distribution}
+          dataIndex="status"
+          title="Status Distribution"
+        />
+        <Table
+          data={data.status_distribution}
+          dataIndex="status"
+          sortBy="count"
+        />
       </div>
     </>
   );

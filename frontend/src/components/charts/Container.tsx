@@ -10,6 +10,7 @@ interface Props {
   data: Array<any>;
   dataIndex: string;
   reverse?: boolean;
+  title: string;
 }
 
 export default function ChartContainer(props: Props) {
@@ -17,29 +18,35 @@ export default function ChartContainer(props: Props) {
 
   return (
     <div className="chart-container">
-      <Nav variant="pills" className="justify-content-end">
-        <Nav.Item>
-          <Nav.Link active={sort === "count"} onClick={() => setSort("count")}>
-            Count
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            active={sort === "time_watched"}
-            onClick={() => setSort("time_watched")}
-          >
-            Time Watched
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            active={sort === "mean_score"}
-            onClick={() => setSort("mean_score")}
-          >
-            Mean Score
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
+      <div className="chart-container-header">
+        <h3>{props.title}</h3>
+        <Nav variant="pills">
+          <Nav.Item>
+            <Nav.Link
+              active={sort === "count"}
+              onClick={() => setSort("count")}
+            >
+              Count
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              active={sort === "time_watched"}
+              onClick={() => setSort("time_watched")}
+            >
+              Time Watched
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              active={sort === "mean_score"}
+              onClick={() => setSort("mean_score")}
+            >
+              Mean Score
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </div>
       <div className={`chart ${props.reverse && "reverse"}`}>
         {props.chartType === "bar" && (
           <BarGraph

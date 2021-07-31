@@ -17,6 +17,7 @@ export default function History() {
         data={data.release_years}
         dataIndex="year"
         reverse={true}
+        title="Release Years"
       />
       <Table data={data.release_years} dataIndex="year" />
       <ChartContainer
@@ -24,6 +25,7 @@ export default function History() {
         data={data.watch_years}
         dataIndex="year"
         reverse={true}
+        title="Watch Years"
       />
       <Table data={data.watch_years} dataIndex="year" />
     </>
