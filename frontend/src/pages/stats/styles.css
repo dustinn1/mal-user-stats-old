@@ -45,8 +45,15 @@
   margin-right: 7px;
 }
 
+@media (max-width: 575px) {
+  .sort-section > .sort-buttons > span {
+    display: block;
+    margin-bottom: 3px;
+  }
+}
+
 .sort-section > .sort-buttons > button {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .sort-section > .sort-buttons > button:focus {

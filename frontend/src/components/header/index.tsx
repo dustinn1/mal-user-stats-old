@@ -78,11 +78,13 @@ export default function Header() {
             Japanese
           </Button> */}
       </header>
-      <StatsGenerateModal
-        update
-        show={showModal}
-        onHide={() => setShowModal(false)}
-      />
+      {showModal && (
+        <StatsGenerateModal
+          update
+          show={showModal}
+          onHide={() => setShowModal(false)}
+        />
+      )}
     </>
   );
 }
