@@ -1,6 +1,6 @@
 import _ from "lodash";
 
-interface Anime {
+interface Manga {
   id: number;
   title: string;
   image_url_id: number;
@@ -10,12 +10,12 @@ interface Anime {
   };
 }
 
-export default async function allAnimes(
-  animeList: Array<any>
-): Promise<Anime[]> {
+export default async function allMangas(
+  mangaList: Array<any>
+): Promise<Manga[]> {
   try {
     return _.map(
-      animeList,
+      mangaList,
       _.partialRight(_.pick, [
         "id",
         "title",
@@ -23,7 +23,7 @@ export default async function allAnimes(
         "title_en",
         "title_ja",
       ])
-    ) as Array<Anime>;
+    ) as Array<Manga>;
   } catch (err) {
     throw err;
   }
