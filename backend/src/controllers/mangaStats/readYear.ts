@@ -1,6 +1,6 @@
 import _ from "lodash";
 
-interface WatchYear {
+interface ReadYear {
   year: number;
   count: number;
   time_watched: number;
@@ -8,13 +8,13 @@ interface WatchYear {
 }
 
 export default async function watchYearStats(
-  animeList: Array<any>
-): Promise<WatchYear[]> {
-  let stats: Array<WatchYear> = [];
+  mangaList: Array<any>
+): Promise<ReadYear[]> {
+  let stats: Array<ReadYear> = [];
   const years = _.without(
     _.sortedUniq(
       _.sortBy(
-        _.map(animeList, function (n) {
+        _.map(mangaList, function (n) {
           return n.my_list_status.start_date
             ? parseInt(n.my_list_status.start_date.split("-")[0])
             : 0;
@@ -25,25 +25,25 @@ export default async function watchYearStats(
   );
   try {
     for (let year of years) {
-      let object: WatchYear = {
+      let object: ReadYear = {
         year: year,
         count: 0,
         time_watched: 0,
         mean_score: 0,
       };
-      const animes = _.filter(animeList, function (n) {
+      const mangas = _.filter(mangaList, function (n) {
         return (
           n.my_list_status.start_date &&
           parseInt(n.my_list_status.start_date.split("-")[0]) === year
         );
       });
-      object.count = animes.length;
-      object.time_watched = _.sumBy(animes, function (n) {
+      object.count = mangas.length;
+      object.time_watched = _.sumBy(mangas, function (n) {
         return n.time_watched;
       });
       const mean_score: number = _.round(
         _.meanBy(
-          _.filter(animes, function (n) {
+          _.filter(mangas, function (n) {
             return n.my_list_status.score;
           }),
           function (n) {

@@ -14,7 +14,7 @@ export const test = [
     start_date: "2017-08-09",
     end_date: "2020-02-19",
     mean: 7.97,
-    rank: 737,
+    rank: 752,
     genres: [
       {
         id: 22,
@@ -38,7 +38,6 @@ export const test = [
       },
     ],
     media_type: "manga",
-    status: "finished",
     my_list_status: {
       status: "completed",
       is_rereading: false,
@@ -51,6 +50,7 @@ export const test = [
     },
     num_volumes: 14,
     num_chapters: 122,
+    image_url_id: "2/201572",
     title_en: "The Quintessential Quintuplets",
     title_ja: "五等分の花嫁",
   },
@@ -93,7 +93,6 @@ export const test = [
       },
     ],
     media_type: "manga",
-    status: "finished",
     my_list_status: {
       status: "reading",
       is_rereading: false,
@@ -105,6 +104,7 @@ export const test = [
     },
     num_volumes: 16,
     num_chapters: 125,
+    image_url_id: "2/245008",
     title_en: "Horimiya",
     title_ja: "ホリミヤ",
   },
@@ -160,7 +160,6 @@ export const test = [
       },
     ],
     media_type: "manga",
-    status: "finished",
     my_list_status: {
       status: "plan_to_read",
       is_rereading: false,
@@ -171,6 +170,7 @@ export const test = [
     },
     num_volumes: 26,
     num_chapters: 271,
+    image_url_id: "2/188974",
     title_en: "Kami nomi zo Shiru Sekai",
     title_ja: "神のみぞ知るセカイ",
   },
@@ -189,7 +189,7 @@ export const test = [
     start_date: "2011-09-20",
     end_date: "2014-09-24",
     mean: 7.38,
-    rank: 3445,
+    rank: 3495,
     genres: [
       {
         id: 22,
@@ -213,7 +213,6 @@ export const test = [
       },
     ],
     media_type: "manga",
-    status: "finished",
     my_list_status: {
       status: "completed",
       is_rereading: false,
@@ -226,6 +225,7 @@ export const test = [
     },
     num_volumes: 13,
     num_chapters: 111,
+    image_url_id: "2/164478",
     title_en: "My Wife Is Wagatsuma-san",
     title_ja: "我妻さんは俺のヨメ",
   },
@@ -244,7 +244,7 @@ export const test = [
     start_date: "2012-05-25",
     end_date: "2019-05-22",
     mean: 8.22,
-    rank: 364,
+    rank: 359,
     genres: [
       {
         id: 4,
@@ -264,7 +264,6 @@ export const test = [
       },
     ],
     media_type: "manga",
-    status: "finished",
     my_list_status: {
       status: "reading",
       is_rereading: false,
@@ -276,6 +275,7 @@ export const test = [
     },
     num_volumes: 16,
     num_chapters: 81,
+    image_url_id: "1/107515",
     title_en: "He does not have any friends.",
     title_ja: "湯神くんには友達がいない",
   },

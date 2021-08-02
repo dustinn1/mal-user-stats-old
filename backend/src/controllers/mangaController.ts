@@ -1,6 +1,15 @@
 import fetch from "node-fetch";
 import { test } from "../json/manga_test";
 
+import overviewStats from "./mangaStats/overview";
+import scoreStats from "./mangaStats/scores";
+import chapterCountStats from "./mangaStats/chapterCount";
+import volumeCountStats from "./mangaStats/volumeCount";
+import formatStats from "./mangaStats/format";
+import statusStats from "./mangaStats/status";
+import releaseYearStats from "./mangaStats/releaseYear";
+import readYearStats from "./mangaStats/readYear";
+import genreStats from "./mangaStats/genres";
 import allMangas from "./mangaStats/mangas";
 
 interface Stats {
@@ -41,9 +50,6 @@ async function getFullList(access_token: string): Promise<Object[]> {
             manga.node.image_url_id = `${image_url_split[5]}/${
               image_url_split[6].split(".")[0]
             }`;
-            /* manga.node.time_watched =
-              manga.node.my_list_status.num_episodes_watched *
-              manga.node.average_episode_duration; */
             manga.node.title_en =
               manga.node.alternative_titles.en.length !== 0
                 ? manga.node.alternative_titles.en
@@ -82,6 +88,15 @@ async function getStatsJSON(mangaList: Array<any>): Promise<Stats> {
     all_mangas: [],
   };
   try {
+    json.overview = await overviewStats(mangaList);
+    json.scores = await scoreStats(mangaList);
+    json.chapter_count = await chapterCountStats(mangaList);
+    json.volume_count = await volumeCountStats(mangaList);
+    json.format_distribution = await formatStats(mangaList);
+    json.status_distribution = await statusStats(mangaList);
+    json.release_years = await releaseYearStats(mangaList);
+    json.read_years = await readYearStats(mangaList);
+    json.genres = await genreStats(mangaList);
     json.all_mangas = await allMangas(mangaList);
     return json;
   } catch (err) {

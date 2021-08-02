@@ -9,8 +9,8 @@ interface Status {
 
 const statuses = [
   {
-    id: "watching",
-    name: "Watching",
+    id: "reading",
+    name: "Reading",
   },
   {
     id: "completed",
@@ -25,13 +25,13 @@ const statuses = [
     name: "Dropped",
   },
   {
-    id: "plan_to_watch",
-    name: "Plan To Watch",
+    id: "plan_to_read",
+    name: "Plan To Read",
   },
 ];
 
 export default async function statusStats(
-  animeList: Array<any>
+  mangaList: Array<any>
 ): Promise<Status[]> {
   let stats: Array<Status> = [];
   try {
@@ -42,7 +42,7 @@ export default async function statusStats(
         time_watched: 0,
         mean_score: 0,
       };
-      const statusArray = _.filter(animeList, {
+      const statusArray = _.filter(mangaList, {
         my_list_status: { status: status.id },
       });
       if (statusArray.length === 0) {

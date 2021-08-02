@@ -48,9 +48,9 @@ async function getFullList(access_token: string): Promise<Object[]> {
   try {
     do {
       await fetch(
-        `https://api.myanimelist.net/v2/users/@me/mangalist?limit=1000&nsfw=1&offset=${
+        `https://api.myanimelist.net/v2/users/@me/animelist?limit=1000&nsfw=1&offset=${
           1000 * offset
-        }&fields=alternative_titles,start_date,end_date,mean,rank,genres,media_type,my_list_status,num_volumes,num_chapters`,
+        }&fields=alternative_titles,start_date,end_date,mean,rank,genres,media_type,status,my_list_status,num_episodes,start_season,broadcast,source,average_episode_duration,studios`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -61,23 +61,23 @@ async function getFullList(access_token: string): Promise<Object[]> {
         .then((response) => response.json())
         .then((response) => {
           let data = response.data;
-          for (let manga of data) {
-            let image_url_split = manga.node.main_picture.medium.split("/");
-            manga.node.image_url_id = `${image_url_split[5]}/${
+          for (let anime of data) {
+            let image_url_split = anime.node.main_picture.medium.split("/");
+            anime.node.image_url_id = `${image_url_split[5]}/${
               image_url_split[6].split(".")[0]
             }`;
-            /* manga.node.time_watched =
-              manga.node.my_list_status.num_episodes_watched *
-              manga.node.average_episode_duration; */
-            manga.node.title_en =
-              manga.node.alternative_titles.en.length !== 0
-                ? manga.node.alternative_titles.en
-                : manga.node.title;
-            manga.node.title_ja =
-              manga.node.alternative_titles.ja.length !== 0
-                ? manga.node.alternative_titles.ja
-                : manga.node.title;
-            list.push(manga.node);
+            anime.node.time_watched =
+              anime.node.my_list_status.num_episodes_watched *
+              anime.node.average_episode_duration;
+            anime.node.title_en =
+              anime.node.alternative_titles.en.length !== 0
+                ? anime.node.alternative_titles.en
+                : anime.node.title;
+            anime.node.title_ja =
+              anime.node.alternative_titles.ja.length !== 0
+                ? anime.node.alternative_titles.ja
+                : anime.node.title;
+            list.push(anime.node);
           }
           if (response.paging.next === undefined) {
             isEnd = true;

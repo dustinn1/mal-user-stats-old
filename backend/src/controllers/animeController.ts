@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import { test } from "../json/anime_test";
 
-import overallStats from "./animeStats/overall";
+import overviewStats from "./animeStats/overview";
 import scoresStats from "./animeStats/scores";
 import episodeCountStats from "./animeStats/episodeCount";
 import formatStats from "./animeStats/format";
@@ -91,7 +91,7 @@ async function getStatsJSON(animeList: Array<any>): Promise<Stats> {
     all_animes: [],
   };
   try {
-    json.overview = await overallStats(animeList);
+    json.overview = await overviewStats(animeList);
     json.scores = await scoresStats(animeList);
     json.episode_count = await episodeCountStats(animeList);
     json.format_distribution = await formatStats(animeList);

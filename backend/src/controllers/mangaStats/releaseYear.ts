@@ -8,15 +8,13 @@ interface ReleaseYear {
 }
 
 export default async function releaseYearStats(
-  animeList: Array<any>
+  mangaList: Array<any>
 ): Promise<ReleaseYear[]> {
   let stats: Array<ReleaseYear> = [];
   const years = _.sortedUniq(
     _.sortBy(
-      _.map(animeList, function (n) {
-        return n.start_season
-          ? n.start_season.year
-          : parseInt(n.start_date.split("-")[0]);
+      _.map(mangaList, function (n) {
+        return parseInt(n.start_date.split("-")[0]);
       })
     )
   );
@@ -28,19 +26,16 @@ export default async function releaseYearStats(
         time_watched: 0,
         mean_score: 0,
       };
-      const animes = _.filter(animeList, function (n) {
-        return (
-          (n.start_season && n.start_season.year === year) ||
-          (n.start_date && parseInt(n.start_date.split("-")[0]) === year)
-        );
+      const mangas = _.filter(mangaList, function (n) {
+        return n.start_date && parseInt(n.start_date.split("-")[0]) === year;
       });
-      object.count = animes.length;
-      object.time_watched = _.sumBy(animes, function (n) {
+      object.count = mangas.length;
+      object.time_watched = _.sumBy(mangas, function (n) {
         return n.time_watched;
       });
       const mean_score: number = _.round(
         _.meanBy(
-          _.filter(animes, function (n) {
+          _.filter(mangas, function (n) {
             return n.my_list_status.score;
           }),
           function (n) {
