@@ -1,21 +1,18 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import prettyMs from "pretty-ms";
 import {
   faPlusCircle,
-  faPlayCircle,
   faDivide,
-  faClock,
   faPercentage,
 } from "@fortawesome/free-solid-svg-icons";
-import { StatsContext } from "../../contexts/StatsContext";
-import ChartContainer from "../../components/charts/Container";
-import Table from "../../components/table";
-import ValueStatCard from "../../components/statcard/value";
-import "./styles.css";
+import { StatsContext } from "../../../contexts/StatsContext";
+import ChartContainer from "../../../components/charts/Container";
+import Table from "../../../components/table/manga";
+import ValueStatCard from "../../../components/statcard/value";
+import "../styles.css";
 
 export default function Overview() {
-  const stats = useContext(StatsContext).data.statistics;
+  const stats = useContext(StatsContext).data.manga_statistics;
 
   return (
     <>
@@ -26,26 +23,24 @@ export default function Overview() {
         <h1 className="stats-header">Overview</h1>
         <div className="d-flex flex-wrap justify-content-evenly">
           <ValueStatCard
-            stat="Total Anime"
-            value={stats.overview.total_anime}
+            stat="Total Manga"
+            value={stats.overview.total_manga}
             icon={faPlusCircle}
           />
           <ValueStatCard
-            stat="Episodes Watched"
-            value={stats.overview.episodes_watched}
-            icon={faPlayCircle}
+            stat="Chapters Read"
+            value={stats.overview.chapters_read}
+            icon={faPlusCircle}
+          />
+          <ValueStatCard
+            stat="Volume Read"
+            value={stats.overview.volumes_read}
+            icon={faPlusCircle}
           />
           <ValueStatCard
             stat="Mean Score"
             value={stats.overview.mean_score}
             icon={faDivide}
-          />
-          <ValueStatCard
-            stat="Time Watched"
-            value={prettyMs(stats.overview.time_watched * 1000, {
-              unitCount: 3,
-            })}
-            icon={faClock}
           />
           <ValueStatCard
             stat="Standard Deviation"
@@ -54,6 +49,7 @@ export default function Overview() {
           />
         </div>
         <ChartContainer
+          type="manga"
           chartType="bar"
           data={stats.scores}
           dataIndex="score"
@@ -61,13 +57,23 @@ export default function Overview() {
         />
         <Table data={stats.scores} dataIndex="score" />
         <ChartContainer
+          type="manga"
           chartType="bar"
-          data={stats.episode_count}
+          data={stats.chapter_count}
           dataIndex="length"
-          title="Episode Count"
+          title="Chapter Count"
         />
-        <Table data={stats.episode_count} dataIndex="length" />
+        <Table data={stats.chapter_count} dataIndex="length" />
         <ChartContainer
+          type="manga"
+          chartType="bar"
+          data={stats.volume_count}
+          dataIndex="length"
+          title="Volume Count"
+        />
+        <Table data={stats.volume_count} dataIndex="length" />
+        <ChartContainer
+          type="manga"
           chartType="pie"
           data={stats.format_distribution}
           dataIndex="format"
@@ -79,6 +85,7 @@ export default function Overview() {
           sortBy="count"
         />
         <ChartContainer
+          type="manga"
           chartType="pie"
           data={stats.status_distribution}
           dataIndex="status"

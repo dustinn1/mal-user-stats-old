@@ -9,9 +9,9 @@ import {
   faDivide,
   faClock,
 } from "@fortawesome/free-solid-svg-icons";
-import { StatsContext } from "../../contexts/StatsContext";
-import LargeCoverImage from "../../components/coverimage/large";
-import ValueStatCard from "../../components/statcard/value";
+import { StatsContext } from "../../../contexts/StatsContext";
+import LargeCoverImage from "../../../components/coverimage/large";
+import ValueStatCard from "../../../components/statcard/value";
 
 interface Anime {
   id: number;
@@ -21,52 +21,54 @@ interface Anime {
   title_ja: string;
 }
 
-export default function Studio() {
+export default function Genre() {
   const stats = useContext(StatsContext);
-  const { studio } = useParams<{ studio: string }>();
+  const { genre } = useParams<{ genre: string }>();
 
-  const validStudio: boolean = stats.data.statistics.studios.some(
-    (n) => n.name.toLowerCase() === studio.replaceAll("_", " ")
+  const validGenre: boolean = stats.data.anime_statistics.genres.some(
+    (n) => n.name.toLowerCase() === genre.replaceAll("_", " ")
   );
 
-  if (validStudio) {
-    const studioStats = stats.data.statistics.studios.find(
-      (element) => element.name.toLowerCase() === studio.replaceAll("_", " ")
+  if (validGenre) {
+    const genreStats = stats.data.anime_statistics.genres.find(
+      (element) => element.name.toLowerCase() === genre.replaceAll("_", " ")
     )!;
 
     const animes: Array<Anime> = [];
-    for (let animeId of studioStats.all_animes) {
+    for (let animeId of genreStats.all_animes) {
       animes.push(
-        stats.data.animes.find((anime: any) => anime.id === animeId) as Anime
+        stats.data.anime_statistics.all_animes.find(
+          (anime: any) => anime.id === animeId
+        ) as Anime
       );
     }
 
     return (
       <>
         <Helmet>
-          <title>{`${studioStats.name} Studio Stats`}</title>
+          <title>{`${genreStats.name} Genre Stats`}</title>
         </Helmet>
         <Breadcrumb>
-          <LinkContainer to={"../studios"}>
-            <Breadcrumb.Item>Studios</Breadcrumb.Item>
+          <LinkContainer to={"../genres"}>
+            <Breadcrumb.Item>Genres</Breadcrumb.Item>
           </LinkContainer>
-          <Breadcrumb.Item active>{studioStats.name}</Breadcrumb.Item>
+          <Breadcrumb.Item active>{genreStats.name}</Breadcrumb.Item>
         </Breadcrumb>
-        <h1 className="stats-header">{studioStats.name}</h1>
+        <h1 className="stats-header">{genreStats.name}</h1>
         <div className="d-flex flex-wrap justify-content-evenly mb-3">
           <ValueStatCard
             stat="Total Anime"
-            value={studioStats.count}
+            value={genreStats.count}
             icon={faPlusCircle}
           />
           <ValueStatCard
             stat="Mean Score"
-            value={studioStats.mean_score}
+            value={genreStats.mean_score}
             icon={faDivide}
           />
           <ValueStatCard
-            stat="Total Anime"
-            value={prettyMs(studioStats.time_watched * 1000, {
+            stat="Time Watched"
+            value={prettyMs(genreStats.time_watched * 1000, {
               unitCount: 3,
             })}
             icon={faClock}
@@ -76,7 +78,7 @@ export default function Studio() {
         <hr />
         <div className="cover-images-grid">
           {animes.map((anime: Anime) => (
-            <LargeCoverImage key={anime.id} anime={anime} />
+            <LargeCoverImage key={anime.id} type="anime" title={anime} />
           ))}
         </div>
       </>

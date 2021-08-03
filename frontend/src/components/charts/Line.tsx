@@ -2,6 +2,7 @@ import { ResponsiveLine, Line } from "@nivo/line";
 import prettyMs from "pretty-ms";
 
 interface Props {
+  type: "anime" | "manga";
   data: Array<any>;
   dataIndex: string;
   dataKey: string;
@@ -76,7 +77,17 @@ export default function LineGraph(props: Props) {
           <br />
           Mean Score: {data.mean_score ?? 0}
           <br />
-          Time Watched: {prettyMs(data.time_watched * 1000, { unitCount: 2 })}
+          {props.type === "anime" && (
+            <>
+              Time Watched:{" "}
+              {prettyMs((data.time_watched as number) * 1000, {
+                unitCount: 2,
+              })}
+            </>
+          )}
+          {props.type === "manga" && (
+            <>Chapters Read: {data.chapters_read ?? 0}</>
+          )}
         </div>
       );
     },

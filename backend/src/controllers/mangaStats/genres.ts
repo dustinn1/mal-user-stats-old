@@ -4,6 +4,7 @@ interface Genre {
   id: number;
   name: string;
   count: number;
+  chapters_read: number;
   mean_score: number;
   top_mangas: Array<number>;
   all_mangas: Array<number>;
@@ -39,6 +40,7 @@ export default async function genreStats(
         id: genre.id,
         name: genre.name,
         count: 0,
+        chapters_read: 0,
         mean_score: 0,
         top_mangas: [],
         all_mangas: [],
@@ -50,6 +52,9 @@ export default async function genreStats(
         continue;
       }
       object.count = mangas.length;
+      object.chapters_read = _.sumBy(mangas, function (n) {
+        return n.my_list_status.num_chapters_read;
+      });
       object.all_mangas = _.map(
         _.orderBy(mangas, "title", "asc"),
         function (n) {

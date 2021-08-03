@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import prettyMs from "pretty-ms";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
@@ -17,11 +16,11 @@ interface Props {
   name: string;
   count: number;
   mean_score: number;
-  time_watched: number;
-  animes: Array<number>;
+  chapters_read: number;
+  mangas: Array<number>;
 }
 
-interface Anime {
+interface Manga {
   id: number;
   title: string;
   image_url_id: string;
@@ -50,11 +49,11 @@ function listButton(genre: number, direction: string) {
 
 export default function StatCard(props: Props) {
   let { url } = useRouteMatch();
-  const allAnimes = useContext(StatsContext).data.animes;
-  const animes: Array<Anime> = [];
+  const allMangas = useContext(StatsContext).data.manga_statistics.all_mangas;
+  const mangas: Array<Manga> = [];
 
-  for (let animeId of [...props.animes].splice(0, 10)) {
-    animes.push(allAnimes.find((anime: any) => anime.id === animeId) as Anime);
+  for (let mangaId of [...props.mangas].splice(0, 10)) {
+    mangas.push(allMangas.find((manga: any) => manga.id === mangaId) as Manga);
   }
 
   return (
@@ -70,23 +69,17 @@ export default function StatCard(props: Props) {
         </h2>
         <div className="stats">
           <p>
-            {props.count} <strong>Animes</strong>
+            {props.count} <strong>Mangas</strong>
           </p>
           <p>
             {props.mean_score} <strong>Average Score</strong>
           </p>
           <p>
-            {props.time_watched !== 0
-              ? prettyMs(props.time_watched * 1000, {
-                  verbose: true,
-                  unitCount: 2,
-                })
-              : 0}{" "}
-            <strong>Time Watched</strong>
+            {props.chapters_read} <strong>Chapters Read</strong>
           </p>
         </div>
         <div className="covers-list">
-          {props.count > 5 && (
+          {props.count > 4 && (
             <>
               <Button
                 variant="dark"
@@ -105,11 +98,12 @@ export default function StatCard(props: Props) {
             </>
           )}
           <div className="covers">
-            {animes.map((anime: Anime) => (
+            {mangas.map((manga: Manga) => (
               <SmallCoverImage
-                key={anime.id}
+                key={manga.id}
+                type="manga"
                 genre={props.genre}
-                anime={anime}
+                title={manga}
               />
             ))}
           </div>

@@ -3,7 +3,7 @@ import _ from "lodash";
 interface Score {
   score: number;
   count: number;
-  time_watched: number;
+  chapters_read: number;
   mean_score: number;
 }
 
@@ -16,7 +16,7 @@ export default async function scoreStats(
       let object: Score = {
         score: i,
         count: 0,
-        time_watched: 0,
+        chapters_read: 0,
         mean_score: 0,
       };
       const scoreArray = _.filter(mangaList, { my_list_status: { score: i } });
@@ -24,8 +24,8 @@ export default async function scoreStats(
         continue;
       }
       object.count = scoreArray.length;
-      object.time_watched = _.sumBy(scoreArray, function (n) {
-        return n.time_watched;
+      object.chapters_read = _.sumBy(scoreArray, function (n) {
+        return n.my_list_status.num_chapters_read;
       });
       const mean_score: number = _.round(
         _.meanBy(

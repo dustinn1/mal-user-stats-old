@@ -2,6 +2,7 @@ import { ResponsiveBar, Bar } from "@nivo/bar";
 import prettyMs from "pretty-ms";
 
 interface Props {
+  type: "anime" | "manga";
   data: Array<any>;
   dataIndex: string;
   dataKey: string;
@@ -56,8 +57,17 @@ export default function BarGraph(props: Props) {
           <br />
           Mean Score: {d.data.mean_score ?? 0}
           <br />
-          Time Watched:{" "}
-          {prettyMs((d.data.time_watched as number) * 1000, { unitCount: 2 })}
+          {props.type === "anime" && (
+            <>
+              Time Watched:{" "}
+              {prettyMs((d.data.time_watched as number) * 1000, {
+                unitCount: 2,
+              })}
+            </>
+          )}
+          {props.type === "manga" && (
+            <>Chapters Read: {d.data.chapters_read ?? 0}</>
+          )}
         </div>
       );
     },

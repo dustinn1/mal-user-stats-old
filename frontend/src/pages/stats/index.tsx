@@ -10,12 +10,16 @@ import { StatsContextProvider } from "../../contexts/StatsContext";
 import { SettingsContextProvider } from "../../contexts/SettingsContext";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
-import OverviewStats from "./Overview";
-import HistoryStats from "./History";
-import GenresStats from "./Genres";
-import SingleGenreStats from "./Genre";
-import StudiosStats from "./Studios";
-import SingleStudioStats from "./Studio";
+import AnimeOverviewStats from "./anime/Overview";
+import AnimeHistoryStats from "./anime/History";
+import AnimeGenresStats from "./anime/Genres";
+import AnimeSingleGenreStats from "./anime/Genre";
+import AnimeStudiosStats from "./anime/Studios";
+import AnimeSingleStudioStats from "./anime/Studio";
+import MangaOverviewStats from "./manga/Overview";
+import MangaHistoryStats from "./manga/History";
+import MangaGenresStats from "./manga/Genres";
+import MangaSingleGenreStats from "./manga/Genre";
 
 export default function Stats() {
   const { path, url } = useRouteMatch();
@@ -29,49 +33,78 @@ export default function Stats() {
             <Col lg={2}>
               <Nav variant="pills" className="stats-tabs">
                 <Nav.Item>
-                  <LinkContainer to={`${url}/overview`}>
+                  <LinkContainer to={`${url}/anime/overview`}>
                     <Nav.Link>Overview</Nav.Link>
                   </LinkContainer>
                 </Nav.Item>
                 <Nav.Item>
-                  <LinkContainer to={`${url}/history`}>
+                  <LinkContainer to={`${url}/anime/history`}>
                     <Nav.Link>History</Nav.Link>
                   </LinkContainer>
                 </Nav.Item>
                 <Nav.Item>
-                  <LinkContainer to={`${url}/genres`}>
+                  <LinkContainer to={`${url}/anime/genres`}>
                     <Nav.Link>Genres</Nav.Link>
                   </LinkContainer>
                 </Nav.Item>
                 <Nav.Item>
-                  <LinkContainer to={`${url}/studios`}>
+                  <LinkContainer to={`${url}/anime/studios`}>
                     <Nav.Link>Studios</Nav.Link>
+                  </LinkContainer>
+                </Nav.Item>
+                <Nav.Item>
+                  <LinkContainer to={`${url}/manga/overview`}>
+                    <Nav.Link>Overview</Nav.Link>
+                  </LinkContainer>
+                </Nav.Item>
+                <Nav.Item>
+                  <LinkContainer to={`${url}/manga/history`}>
+                    <Nav.Link>History</Nav.Link>
+                  </LinkContainer>
+                </Nav.Item>
+                <Nav.Item>
+                  <LinkContainer to={`${url}/manga/genres`}>
+                    <Nav.Link>Genres</Nav.Link>
                   </LinkContainer>
                 </Nav.Item>
               </Nav>
             </Col>
             <Col lg={10}>
               <Switch>
-                <Route path={`${path}/overview`}>
-                  <OverviewStats />
+                {/* Anime */}
+                <Route path={`${path}/anime/overview`}>
+                  <AnimeOverviewStats />
                 </Route>
-                <Route path={`${path}/history`}>
-                  <HistoryStats />
+                <Route path={`${path}/anime/history`}>
+                  <AnimeHistoryStats />
                 </Route>
-                <Route exact path={`${path}/genres`}>
-                  <GenresStats />
+                <Route exact path={`${path}/anime/genres`}>
+                  <AnimeGenresStats />
                 </Route>
-                <Route path={`${path}/genres/:genre`}>
-                  <SingleGenreStats />
+                <Route path={`${path}/anime/genres/:genre`}>
+                  <AnimeSingleGenreStats />
                 </Route>
-                <Route exact path={`${path}/studios`}>
-                  <StudiosStats />
+                <Route exact path={`${path}/anime/studios`}>
+                  <AnimeStudiosStats />
                 </Route>
-                <Route path={`${path}/studios/:studio`}>
-                  <SingleStudioStats />
+                <Route path={`${path}/anime/studios/:studio`}>
+                  <AnimeSingleStudioStats />
+                </Route>
+                {/* Manga */}
+                <Route path={`${path}/manga/overview`}>
+                  <MangaOverviewStats />
+                </Route>
+                <Route path={`${path}/manga/history`}>
+                  <MangaHistoryStats />
+                </Route>
+                <Route exact path={`${path}/manga/genres`}>
+                  <MangaGenresStats />
+                </Route>
+                <Route path={`${path}/manga/genres/:genre`}>
+                  <MangaSingleGenreStats />
                 </Route>
                 <Route path={`${path}` || `${path}/*`}>
-                  <Redirect to={`${url}/overview`} />
+                  <Redirect to={`${url}/anime/overview`} />
                 </Route>
               </Switch>
             </Col>

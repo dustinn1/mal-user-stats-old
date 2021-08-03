@@ -1,12 +1,12 @@
 import { useContext, useState, ChangeEvent } from "react";
 import { Helmet } from "react-helmet-async";
-import { StatsContext } from "../../contexts/StatsContext";
+import { StatsContext } from "../../../contexts/StatsContext";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import StatCard from "../../components/statcard";
-import "./styles.css";
+import StatCard from "../../../components/statcard/anime";
+import "../styles.css";
 
-interface Genre {
+interface Studio {
   id: number;
   name: string;
   count: number;
@@ -18,22 +18,22 @@ interface Genre {
 
 function compare(prop: string) {
   if (prop === "count" || prop === "mean_score" || prop === "time_watched") {
-    return function (a: Genre, b: Genre) {
+    return function (a: Studio, b: Studio) {
       return b[prop] - a[prop];
     };
   } else {
-    return function (a: Genre, b: Genre) {
+    return function (a: Studio, b: Studio) {
       return b.count - a.count;
     };
   }
 }
 
-export default function Genres() {
+export default function Studios() {
   const stats = useContext(StatsContext);
   const [sort, setSort] = useState("count");
   const [search, setSearch] = useState("");
 
-  const genresCopy = [...stats.data.statistics.genres];
+  const studiosCopy = [...stats.data.anime_statistics.studios];
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);
@@ -42,9 +42,9 @@ export default function Genres() {
   return (
     <>
       <Helmet>
-        <title>Genres Stats</title>
+        <title>Studios Stats</title>
       </Helmet>
-      <h1 className="stats-header">Genres</h1>
+      <h1 className="stats-header">Studios</h1>
       <div className="sort-section">
         <div className="sort-buttons">
           <span>Sort by:</span>
@@ -84,21 +84,21 @@ export default function Genres() {
         </div>
       </div>
       <div className="stats-cards">
-        {genresCopy
+        {studiosCopy
           .sort(compare(sort))
-          .filter((genre) =>
-            genre.name.toLowerCase().includes(search.toLowerCase())
+          .filter((studio) =>
+            studio.name.toLowerCase().includes(search.toLowerCase())
           )
-          .map((genre, index: number) => (
+          .map((studio, index: number) => (
             <StatCard
-              key={genre.id}
+              key={studio.id}
               index={index + 1}
-              genre={genre.id}
-              name={genre.name}
-              count={genre.count}
-              mean_score={genre.mean_score}
-              time_watched={genre.time_watched}
-              animes={genre.top_animes}
+              genre={studio.id}
+              name={studio.name}
+              count={studio.count}
+              mean_score={studio.mean_score}
+              time_watched={studio.time_watched}
+              animes={studio.top_animes}
             />
           ))}
       </div>

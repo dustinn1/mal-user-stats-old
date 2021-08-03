@@ -3,7 +3,7 @@ import _ from "lodash";
 interface Status {
   status: string;
   count: number;
-  time_watched: number;
+  chapters_read: number;
   mean_score: number;
 }
 
@@ -39,7 +39,7 @@ export default async function statusStats(
       let object: Status = {
         status: status.name,
         count: 0,
-        time_watched: 0,
+        chapters_read: 0,
         mean_score: 0,
       };
       const statusArray = _.filter(mangaList, {
@@ -49,8 +49,8 @@ export default async function statusStats(
         continue;
       }
       object.count = statusArray.length;
-      object.time_watched = _.sumBy(statusArray, function (n) {
-        return n.time_watched;
+      object.chapters_read = _.sumBy(statusArray, function (n) {
+        return n.my_list_status.num_chapters_read;
       });
       const mean_score: number = _.round(
         _.meanBy(

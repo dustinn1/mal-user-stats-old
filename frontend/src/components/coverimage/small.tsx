@@ -5,8 +5,9 @@ import Tooltip from "react-bootstrap/Tooltip";
 import "./styles.css";
 
 interface Props {
+  type: "anime" | "manga";
   genre: number;
-  anime: {
+  title: {
     id: number;
     title: string;
     image_url_id: string;
@@ -17,34 +18,34 @@ interface Props {
 
 export default function SmallCoverImage(props: Props) {
   const settings = useContext(SettingsContext);
-  const anime = props.anime;
+  const title = props.title;
 
   return (
     <>
       <OverlayTrigger
         placement="top"
         overlay={
-          <Tooltip id={`tooltip-${props.genre}-${props.anime.id}`}>
+          <Tooltip id={`tooltip-${props.genre}-${props.title.id}`}>
             <strong>
-              {settings.language === "romaji" && anime.title}
-              {settings.language === "english" && anime.title_en}
-              {settings.language === "japanese" && anime.title_ja}
+              {settings.language === "romaji" && title.title}
+              {settings.language === "english" && title.title_en}
+              {settings.language === "japanese" && title.title_ja}
             </strong>
           </Tooltip>
         }
       >
         <a
-          href={`https://myanimelist.net/anime/${anime.id}`}
+          href={`https://myanimelist.net/${props.type}/${title.id}`}
           target="_blank"
           rel="noreferrer"
         >
           <picture className="small-cover-image">
             <source
-              srcSet={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.webp`}
+              srcSet={`https://cdn.myanimelist.net/images/${props.type}/${title.image_url_id}.webp`}
               type="image/webp"
             />
             <img
-              src={`https://cdn.myanimelist.net/images/anime/${anime.image_url_id}.jpg`}
+              src={`https://cdn.myanimelist.net/images/${props.type}/${title.image_url_id}.jpg`}
               alt="anime cover"
             />
           </picture>

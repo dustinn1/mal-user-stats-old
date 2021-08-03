@@ -1,39 +1,39 @@
 import { useContext, useState, ChangeEvent } from "react";
 import { Helmet } from "react-helmet-async";
-import { StatsContext } from "../../contexts/StatsContext";
+import { StatsContext } from "../../../contexts/StatsContext";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import StatCard from "../../components/statcard";
-import "./styles.css";
+import StatCard from "../../../components/statcard/manga";
+import "../styles.css";
 
-interface Studio {
+interface Genre {
   id: number;
   name: string;
   count: number;
+  chapters_read: number;
   mean_score: number;
-  time_watched: number;
-  top_animes: Array<Object>;
-  all_animes: Array<Object>;
+  top_mangas: Array<Object>;
+  all_mangas: Array<Object>;
 }
 
 function compare(prop: string) {
-  if (prop === "count" || prop === "mean_score" || prop === "time_watched") {
-    return function (a: Studio, b: Studio) {
+  if (prop === "count" || prop === "mean_score" || prop === "chapters_read") {
+    return function (a: Genre, b: Genre) {
       return b[prop] - a[prop];
     };
   } else {
-    return function (a: Studio, b: Studio) {
+    return function (a: Genre, b: Genre) {
       return b.count - a.count;
     };
   }
 }
 
-export default function Studios() {
+export default function Genres() {
   const stats = useContext(StatsContext);
   const [sort, setSort] = useState("count");
   const [search, setSearch] = useState("");
 
-  const studiosCopy = [...stats.data.statistics.studios];
+  const genresCopy = [...stats.data.manga_statistics.genres];
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);
@@ -42,9 +42,9 @@ export default function Studios() {
   return (
     <>
       <Helmet>
-        <title>Studios Stats</title>
+        <title>Genres Stats</title>
       </Helmet>
-      <h1 className="stats-header">Studios</h1>
+      <h1 className="stats-header">Genres</h1>
       <div className="sort-section">
         <div className="sort-buttons">
           <span>Sort by:</span>
@@ -54,7 +54,7 @@ export default function Studios() {
             onClick={() => setSort("count")}
             active={sort === "count"}
           >
-            Anime Count
+            Manga Count
           </Button>
           <Button
             variant="outline-primary"
@@ -67,10 +67,10 @@ export default function Studios() {
           <Button
             variant="outline-primary"
             size="sm"
-            onClick={() => setSort("time_watched")}
-            active={sort === "time_watched"}
+            onClick={() => setSort("chapters_read")}
+            active={sort === "chapters_read"}
           >
-            Time Watched
+            Chapters Read
           </Button>
         </div>
         <div className="search-section">
@@ -84,21 +84,21 @@ export default function Studios() {
         </div>
       </div>
       <div className="stats-cards">
-        {studiosCopy
+        {genresCopy
           .sort(compare(sort))
-          .filter((studio) =>
-            studio.name.toLowerCase().includes(search.toLowerCase())
+          .filter((genre) =>
+            genre.name.toLowerCase().includes(search.toLowerCase())
           )
-          .map((studio, index: number) => (
+          .map((genre, index: number) => (
             <StatCard
-              key={studio.id}
+              key={genre.id}
               index={index + 1}
-              genre={studio.id}
-              name={studio.name}
-              count={studio.count}
-              mean_score={studio.mean_score}
-              time_watched={studio.time_watched}
-              animes={studio.top_animes}
+              genre={genre.id}
+              name={genre.name}
+              count={genre.count}
+              mean_score={genre.mean_score}
+              chapters_read={genre.chapters_read}
+              mangas={genre.top_mangas}
             />
           ))}
       </div>

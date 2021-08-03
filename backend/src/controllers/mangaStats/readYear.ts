@@ -3,7 +3,7 @@ import _ from "lodash";
 interface ReadYear {
   year: number;
   count: number;
-  time_watched: number;
+  chapters_read: number;
   mean_score: number;
 }
 
@@ -28,7 +28,7 @@ export default async function watchYearStats(
       let object: ReadYear = {
         year: year,
         count: 0,
-        time_watched: 0,
+        chapters_read: 0,
         mean_score: 0,
       };
       const mangas = _.filter(mangaList, function (n) {
@@ -38,8 +38,8 @@ export default async function watchYearStats(
         );
       });
       object.count = mangas.length;
-      object.time_watched = _.sumBy(mangas, function (n) {
-        return n.time_watched;
+      object.chapters_read = _.sumBy(mangas, function (n) {
+        return n.my_list_status.num_chapters_read;
       });
       const mean_score: number = _.round(
         _.meanBy(

@@ -6,6 +6,7 @@ import PieChart from "./Pie";
 import "./styles.css";
 
 interface Props {
+  type: "anime" | "manga";
   chartType: "bar" | "line" | "pie";
   data: Array<any>;
   dataIndex: string;
@@ -29,14 +30,26 @@ export default function ChartContainer(props: Props) {
               Count
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link
-              active={sort === "time_watched"}
-              onClick={() => setSort("time_watched")}
-            >
-              Time Watched
-            </Nav.Link>
-          </Nav.Item>
+          {props.type === "anime" && (
+            <Nav.Item>
+              <Nav.Link
+                active={sort === "time_watched"}
+                onClick={() => setSort("time_watched")}
+              >
+                Time Watched
+              </Nav.Link>
+            </Nav.Item>
+          )}
+          {props.type === "manga" && (
+            <Nav.Item>
+              <Nav.Link
+                active={sort === "chapters_read"}
+                onClick={() => setSort("chapters_read")}
+              >
+                Chapters Read
+              </Nav.Link>
+            </Nav.Item>
+          )}
           <Nav.Item>
             <Nav.Link
               active={sort === "mean_score"}
@@ -50,6 +63,7 @@ export default function ChartContainer(props: Props) {
       <div className={`chart ${props.reverse && "reverse"}`}>
         {props.chartType === "bar" && (
           <BarGraph
+            type={props.type}
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
@@ -57,6 +71,7 @@ export default function ChartContainer(props: Props) {
         )}
         {props.chartType === "line" && (
           <LineGraph
+            type={props.type}
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
@@ -64,6 +79,7 @@ export default function ChartContainer(props: Props) {
         )}
         {props.chartType === "pie" && (
           <PieChart
+            type={props.type}
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
