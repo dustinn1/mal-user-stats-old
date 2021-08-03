@@ -14,16 +14,44 @@
 
 @media (max-width: 991px) {
   .stats-tabs {
+    margin-top: -8px;
     justify-content: center;
-    padding-bottom: 7px;
+    padding-bottom: 5px;
     margin-bottom: 12px !important;
     border-bottom: 1px solid #ababab;
+  }
+
+  .stats-tabs > .stats-tab-section {
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: 8px;
+  }
+
+  .stats-tabs > .stats-tab-divider {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    /* margin-top: 2px; */
+    margin-bottom: 6px;
+    padding-bottom: 2px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
   }
 }
 
 @media (min-width: 992px) {
   .stats-tabs {
     flex-direction: column;
+  }
+
+  .stats-tabs > .stats-tab-divider {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
   }
 }
 

@@ -32,41 +32,47 @@ export default function Stats() {
           <Row>
             <Col lg={2}>
               <Nav variant="pills" className="stats-tabs">
-                <Nav.Item>
-                  <LinkContainer to={`${url}/anime/overview`}>
-                    <Nav.Link>Overview</Nav.Link>
-                  </LinkContainer>
-                </Nav.Item>
-                <Nav.Item>
-                  <LinkContainer to={`${url}/anime/history`}>
-                    <Nav.Link>History</Nav.Link>
-                  </LinkContainer>
-                </Nav.Item>
-                <Nav.Item>
-                  <LinkContainer to={`${url}/anime/genres`}>
-                    <Nav.Link>Genres</Nav.Link>
-                  </LinkContainer>
-                </Nav.Item>
-                <Nav.Item>
-                  <LinkContainer to={`${url}/anime/studios`}>
-                    <Nav.Link>Studios</Nav.Link>
-                  </LinkContainer>
-                </Nav.Item>
-                <Nav.Item>
-                  <LinkContainer to={`${url}/manga/overview`}>
-                    <Nav.Link>Overview</Nav.Link>
-                  </LinkContainer>
-                </Nav.Item>
-                <Nav.Item>
-                  <LinkContainer to={`${url}/manga/history`}>
-                    <Nav.Link>History</Nav.Link>
-                  </LinkContainer>
-                </Nav.Item>
-                <Nav.Item>
-                  <LinkContainer to={`${url}/manga/genres`}>
-                    <Nav.Link>Genres</Nav.Link>
-                  </LinkContainer>
-                </Nav.Item>
+                <div className="stats-tab-divider">Anime</div>
+                <div className="stats-tab-section">
+                  <Nav.Item>
+                    <LinkContainer to={`${url}/anime/overview`}>
+                      <Nav.Link>Overview</Nav.Link>
+                    </LinkContainer>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <LinkContainer to={`${url}/anime/history`}>
+                      <Nav.Link>History</Nav.Link>
+                    </LinkContainer>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <LinkContainer to={`${url}/anime/genres`}>
+                      <Nav.Link>Genres</Nav.Link>
+                    </LinkContainer>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <LinkContainer to={`${url}/anime/studios`}>
+                      <Nav.Link>Studios</Nav.Link>
+                    </LinkContainer>
+                  </Nav.Item>
+                </div>
+                <div className="stats-tab-divider">Manga</div>
+                <div className="stats-tab-section">
+                  <Nav.Item>
+                    <LinkContainer to={`${url}/manga/overview`}>
+                      <Nav.Link>Overview</Nav.Link>
+                    </LinkContainer>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <LinkContainer to={`${url}/manga/history`}>
+                      <Nav.Link>History</Nav.Link>
+                    </LinkContainer>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <LinkContainer to={`${url}/manga/genres`}>
+                      <Nav.Link>Genres</Nav.Link>
+                    </LinkContainer>
+                  </Nav.Item>
+                </div>
               </Nav>
             </Col>
             <Col lg={10}>
@@ -103,7 +109,10 @@ export default function Stats() {
                 <Route path={`${path}/manga/genres/:genre`}>
                   <MangaSingleGenreStats />
                 </Route>
-                <Route path={`${path}` || `${path}/*`}>
+                <Route path={`${path}/manga` || `${path}/manga/*`}>
+                  <Redirect to={`${url}/manga/overview`} />
+                </Route>
+                <Route path={`${path}` || `${path}/anime` || `${path}/anime/*`}>
                   <Redirect to={`${url}/anime/overview`} />
                 </Route>
               </Switch>
