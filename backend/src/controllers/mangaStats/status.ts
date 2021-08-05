@@ -50,7 +50,7 @@ export default async function statusStats(
       }
       object.count = statusArray.length;
       object.chapters_read = _.sumBy(statusArray, function (n) {
-        return n.my_list_status.num_chapters_read;
+        return n.chapters_read;
       });
       const mean_score: number = _.round(
         _.meanBy(

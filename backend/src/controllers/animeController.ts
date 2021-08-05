@@ -34,7 +34,7 @@ async function getFullList(access_token: string): Promise<Object[]> {
       await fetch(
         `https://api.myanimelist.net/v2/users/@me/animelist?limit=1000&nsfw=1&offset=${
           1000 * offset
-        }&fields=alternative_titles,start_date,end_date,mean,rank,genres,media_type,status,my_list_status,num_episodes,start_season,broadcast,source,average_episode_duration,studios`,
+        }&fields=alternative_titles,start_date,end_date,mean,genres,media_type,status,my_list_status{num_times_rewatched},num_episodes,start_season,broadcast,source,average_episode_duration,studios`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -51,8 +51,12 @@ async function getFullList(access_token: string): Promise<Object[]> {
               image_url_split[6].split(".")[0]
             }`;
             anime.node.time_watched =
+              (anime.node.my_list_status.num_times_rewatched +
+                (anime.node.my_list_status.is_rewatching ? 1 : 0)) *
+                (anime.node.num_episodes *
+                  anime.node.average_episode_duration) +
               anime.node.my_list_status.num_episodes_watched *
-              anime.node.average_episode_duration;
+                anime.node.average_episode_duration;
             anime.node.title_en =
               anime.node.alternative_titles.en.length !== 0
                 ? anime.node.alternative_titles.en

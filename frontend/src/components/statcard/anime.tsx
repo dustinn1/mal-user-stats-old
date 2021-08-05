@@ -86,7 +86,7 @@ export default function StatCard(props: Props) {
           </p>
         </div>
         <div className="covers-list">
-          {props.count > 5 && (
+          {props.count > 3 && (
             <>
               <Button
                 variant="dark"

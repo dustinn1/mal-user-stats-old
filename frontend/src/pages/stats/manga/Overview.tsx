@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import {
   faPlusCircle,
+  faBook,
   faDivide,
   faPercentage,
 } from "@fortawesome/free-solid-svg-icons";
@@ -30,12 +31,12 @@ export default function Overview() {
           <ValueStatCard
             stat="Chapters Read"
             value={stats.overview.chapters_read}
-            icon={faPlusCircle}
+            icon={faBook}
           />
           <ValueStatCard
             stat="Volume Read"
             value={stats.overview.volumes_read}
-            icon={faPlusCircle}
+            icon={faBook}
           />
           <ValueStatCard
             stat="Mean Score"

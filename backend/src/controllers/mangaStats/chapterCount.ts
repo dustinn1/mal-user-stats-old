@@ -35,7 +35,7 @@ export default async function chapterCountStats(
       });
       object.count = mangas.length;
       object.chapters_read = _.sumBy(mangas, function (n) {
-        return n.my_list_status.num_chapters_read;
+        return n.chapters_read;
       });
       const mean_score: number = _.round(
         _.meanBy(

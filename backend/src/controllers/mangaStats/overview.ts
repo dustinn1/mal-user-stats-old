@@ -21,7 +21,7 @@ export default async function overallStats(
   try {
     object.total_manga = mangaList.length;
     object.chapters_read = _.sumBy(mangaList, function (n) {
-      return n.my_list_status.num_chapters_read;
+      return n.chapters_read;
     });
     object.volumes_read = _.sumBy(mangaList, function (n) {
       return n.my_list_status.num_volumes_read;

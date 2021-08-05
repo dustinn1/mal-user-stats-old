@@ -6,7 +6,7 @@ import Breadcrumb from "react-bootstrap/Breadcrumb";
 import {
   faPlusCircle,
   faDivide,
-  faClock,
+  faBook,
 } from "@fortawesome/free-solid-svg-icons";
 import { StatsContext } from "../../../contexts/StatsContext";
 import LargeCoverImage from "../../../components/coverimage/large";
@@ -68,7 +68,7 @@ export default function Genre() {
           <ValueStatCard
             stat="Chapters Read"
             value={genreStats.chapters_read}
-            icon={faClock}
+            icon={faBook}
           />
         </div>
         <h3>Mangas ({mangas.length})</h3>

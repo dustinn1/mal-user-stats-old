@@ -34,7 +34,7 @@ async function getFullList(access_token: string): Promise<Object[]> {
       await fetch(
         `https://api.myanimelist.net/v2/users/@me/mangalist?limit=1000&nsfw=1&offset=${
           1000 * offset
-        }&fields=alternative_titles,start_date,end_date,mean,rank,genres,media_type,my_list_status,num_volumes,num_chapters`,
+        }&fields=alternative_titles,start_date,end_date,mean,genres,media_type,my_list_status{num_times_reread},num_volumes,num_chapters`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -50,6 +50,11 @@ async function getFullList(access_token: string): Promise<Object[]> {
             manga.node.image_url_id = `${image_url_split[5]}/${
               image_url_split[6].split(".")[0]
             }`;
+            manga.node.chapters_read =
+              (manga.node.my_list_status.num_times_reread +
+                (manga.node.my_list_status.is_rereading ? 1 : 0)) *
+                manga.node.num_chapters +
+              manga.node.my_list_status.num_chapters_read;
             manga.node.title_en =
               manga.node.alternative_titles.en.length !== 0
                 ? manga.node.alternative_titles.en

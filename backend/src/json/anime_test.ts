@@ -14,7 +14,6 @@ export const test = [
     start_date: "2016-10-08",
     end_date: "2017-03-18",
     mean: 8.41,
-    rank: 146,
     genres: [
       {
         id: 8,
@@ -42,6 +41,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-03-10T07:35:59+00:00",
       start_date: "2019-02-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 22,
     start_season: {
@@ -80,7 +80,6 @@ export const test = [
     start_date: "2018-04-04",
     end_date: "2018-06-20",
     mean: 6.81,
-    rank: 4473,
     genres: [
       {
         id: 22,
@@ -104,6 +103,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-01-29T23:01:53+00:00",
       start_date: "2018-12-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -142,7 +142,6 @@ export const test = [
     start_date: "2019-01-11",
     end_date: "2019-03-29",
     mean: 7.67,
-    rank: 1112,
     genres: [
       {
         id: 35,
@@ -175,6 +174,7 @@ export const test = [
       updated_at: "2019-03-29T00:54:48+00:00",
       start_date: "2019-01-10",
       finish_date: "2019-03-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -218,7 +218,6 @@ export const test = [
     start_date: "2021-01-08",
     end_date: "2021-03-26",
     mean: 8.16,
-    rank: 353,
     genres: [
       {
         id: 35,
@@ -251,6 +250,7 @@ export const test = [
       updated_at: "2021-03-26T21:16:43+00:00",
       start_date: "2021-01-07",
       finish_date: "2021-03-26",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -289,7 +289,6 @@ export const test = [
     start_date: "2010-04-03",
     end_date: "2010-06-26",
     mean: 8.11,
-    rank: 403,
     genres: [
       {
         id: 1,
@@ -320,6 +319,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-06-27T23:04:27+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -354,7 +354,6 @@ export const test = [
     start_date: "2017-04-07",
     end_date: "2017-06-23",
     mean: 7.46,
-    rank: 1732,
     genres: [
       {
         id: 36,
@@ -379,6 +378,7 @@ export const test = [
       updated_at: "2019-10-06T04:33:35+00:00",
       start_date: "2019-10-05",
       finish_date: "2019-10-05",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -424,7 +424,6 @@ export const test = [
     start_date: "2018-07-09",
     end_date: "2018-12-17",
     mean: 7.72,
-    rank: 996,
     genres: [
       {
         id: 4,
@@ -449,6 +448,7 @@ export const test = [
       updated_at: "2019-10-08T18:53:14+00:00",
       start_date: "2019-10-05",
       finish_date: "2019-10-08",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -494,7 +494,6 @@ export const test = [
     start_date: "2019-10-07",
     end_date: "2019-12-23",
     mean: 7.67,
-    rank: 1116,
     genres: [
       {
         id: 36,
@@ -519,6 +518,7 @@ export const test = [
       updated_at: "2019-12-25T03:07:03+00:00",
       start_date: "2019-10-08",
       finish_date: "2019-12-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -561,7 +561,6 @@ export const test = [
     start_date: "2018-10-07",
     end_date: "2018-12-23",
     mean: 6.92,
-    rank: 4023,
     genres: [
       {
         id: 4,
@@ -586,6 +585,7 @@ export const test = [
       updated_at: "2018-12-24T00:42:15+00:00",
       start_date: "2018-10-10",
       finish_date: "2018-12-23",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -626,8 +626,7 @@ export const test = [
     },
     start_date: "2011-04-15",
     end_date: "2011-06-24",
-    mean: 8.38,
-    rank: 166,
+    mean: 8.37,
     genres: [
       {
         id: 36,
@@ -652,6 +651,7 @@ export const test = [
       updated_at: "2019-10-22T21:40:49+00:00",
       start_date: "2019-10-17",
       finish_date: "2019-10-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 11,
     start_season: {
@@ -690,7 +690,6 @@ export const test = [
     start_date: "2014-07-08",
     end_date: "2014-09-23",
     mean: 7.66,
-    rank: 1146,
     genres: [
       {
         id: 4,
@@ -727,6 +726,7 @@ export const test = [
       updated_at: "2018-12-27T06:42:15+00:00",
       start_date: "2018-12-25",
       finish_date: "2018-12-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -773,7 +773,6 @@ export const test = [
     start_date: "2014-08-25",
     end_date: "2014-12-12",
     mean: 7.59,
-    rank: 1312,
     genres: [
       {
         id: 36,
@@ -800,6 +799,7 @@ export const test = [
       num_episodes_watched: 2,
       is_rewatching: false,
       updated_at: "2018-12-27T07:26:57+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 2,
     start_season: {
@@ -833,8 +833,7 @@ export const test = [
     },
     start_date: "2019-07-06",
     end_date: "2019-09-21",
-    mean: 7.44,
-    rank: 1803,
+    mean: 7.43,
     genres: [
       {
         id: 4,
@@ -867,6 +866,7 @@ export const test = [
       updated_at: "2019-09-21T20:21:05+00:00",
       start_date: "2019-07-05",
       finish_date: "2019-09-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -905,7 +905,6 @@ export const test = [
     start_date: "2018-07-08",
     end_date: "2018-09-23",
     mean: 8.19,
-    rank: 322,
     genres: [
       {
         id: 4,
@@ -928,6 +927,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-06-26T16:20:04+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -966,7 +966,6 @@ export const test = [
     start_date: "2014-04-06",
     end_date: "2014-09-21",
     mean: 7.83,
-    rank: 783,
     genres: [
       {
         id: 22,
@@ -995,6 +994,7 @@ export const test = [
       updated_at: "2019-05-20T03:43:34+00:00",
       start_date: "2019-05-12",
       finish_date: "2019-05-19",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -1033,7 +1033,6 @@ export const test = [
     start_date: "2010-01-07",
     end_date: "2010-04-01",
     mean: 7.57,
-    rank: 1374,
     genres: [
       {
         id: 4,
@@ -1062,6 +1061,7 @@ export const test = [
       updated_at: "2020-05-13T06:11:29+00:00",
       start_date: "2018-10-08",
       finish_date: "2018-10-11",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -1106,7 +1106,6 @@ export const test = [
     start_date: "2011-07-08",
     end_date: "2011-09-30",
     mean: 7.73,
-    rank: 971,
     genres: [
       {
         id: 4,
@@ -1135,6 +1134,7 @@ export const test = [
       updated_at: "2018-10-30T03:30:54+00:00",
       start_date: "2018-10-22",
       finish_date: "2018-10-29",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -1172,7 +1172,6 @@ export const test = [
     start_date: "2009-07-03",
     end_date: "2010-06-25",
     mean: 8.35,
-    rank: 186,
     genres: [
       {
         id: 22,
@@ -1199,6 +1198,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2021-06-25T23:28:53+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 15,
     start_season: {
@@ -1237,7 +1237,6 @@ export const test = [
     start_date: "2017-07-09",
     end_date: "2017-12-17",
     mean: 8.2,
-    rank: 315,
     genres: [
       {
         id: 4,
@@ -1274,6 +1273,7 @@ export const test = [
       updated_at: "2019-09-02T22:14:22+00:00",
       start_date: "2019-08-25",
       finish_date: "2019-09-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -1311,8 +1311,7 @@ export const test = [
     },
     start_date: "2017-01-21",
     end_date: "2017-04-22",
-    mean: 6.96,
-    rank: 3868,
+    mean: 6.97,
     genres: [
       {
         id: 19,
@@ -1329,6 +1328,7 @@ export const test = [
       updated_at: "2018-12-30T07:16:40+00:00",
       start_date: "2018-12-27",
       finish_date: "2018-12-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -1371,7 +1371,6 @@ export const test = [
     start_date: "2019-10-10",
     end_date: "2019-12-26",
     mean: 7.96,
-    rank: 603,
     genres: [
       {
         id: 36,
@@ -1404,6 +1403,7 @@ export const test = [
       updated_at: "2019-12-27T02:45:53+00:00",
       start_date: "2019-10-10",
       finish_date: "2019-12-26",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -1442,7 +1442,6 @@ export const test = [
     start_date: "2021-01-07",
     end_date: "2021-03-25",
     mean: 7.99,
-    rank: 559,
     genres: [
       {
         id: 36,
@@ -1474,6 +1473,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-07-02T21:32:06+00:00",
       start_date: "2021-01-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -1512,7 +1512,6 @@ export const test = [
     start_date: "2017-10-08",
     end_date: "2017-12-24",
     mean: 7.33,
-    rank: 2221,
     genres: [
       {
         id: 36,
@@ -1533,6 +1532,7 @@ export const test = [
       updated_at: "2019-10-16T04:39:55+00:00",
       start_date: "2019-10-09",
       finish_date: "2019-10-15",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -1570,8 +1570,7 @@ export const test = [
     },
     start_date: "2016-04-03",
     end_date: "2016-06-26",
-    mean: 8.02,
-    rank: 522,
+    mean: 8.01,
     genres: [
       {
         id: 1,
@@ -1604,6 +1603,7 @@ export const test = [
       updated_at: "2019-01-10T05:41:00+00:00",
       start_date: "2018-08-17",
       finish_date: "2018-08-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -1641,8 +1641,7 @@ export const test = [
     },
     start_date: "2017-04-01",
     end_date: "2017-09-30",
-    mean: 8.24,
-    rank: 272,
+    mean: 8.23,
     genres: [
       {
         id: 1,
@@ -1675,6 +1674,7 @@ export const test = [
       updated_at: "2018-08-24T03:09:22+00:00",
       start_date: "2018-08-21",
       finish_date: "2018-08-23",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -1713,7 +1713,6 @@ export const test = [
     start_date: "2018-04-07",
     end_date: "2018-09-29",
     mean: 8.16,
-    rank: 355,
     genres: [
       {
         id: 1,
@@ -1746,6 +1745,7 @@ export const test = [
       updated_at: "2018-09-30T00:17:06+00:00",
       start_date: "2018-08-24",
       finish_date: "2018-09-29",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -1784,7 +1784,6 @@ export const test = [
     start_date: "2019-10-12",
     end_date: "2020-04-04",
     mean: 8.01,
-    rank: 530,
     genres: [
       {
         id: 1,
@@ -1817,6 +1816,7 @@ export const test = [
       updated_at: "2020-04-07T05:14:00+00:00",
       start_date: "2019-10-12",
       finish_date: "2020-04-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -1853,8 +1853,7 @@ export const test = [
       ja: "僕のヒーローアカデミア",
     },
     start_date: "2021-03-27",
-    mean: 7.57,
-    rank: 1377,
+    mean: 7.55,
     genres: [
       {
         id: 1,
@@ -1886,6 +1885,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-03-28T21:14:52+00:00",
       start_date: "2021-03-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -1923,8 +1923,7 @@ export const test = [
     },
     start_date: "2018-08-03",
     end_date: "2018-08-03",
-    mean: 7.64,
-    rank: 1195,
+    mean: 7.63,
     genres: [
       {
         id: 1,
@@ -1949,6 +1948,7 @@ export const test = [
       updated_at: "2019-02-17T22:21:14+00:00",
       start_date: "2019-02-17",
       finish_date: "2019-02-17",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -1983,7 +1983,6 @@ export const test = [
     start_date: "2019-12-20",
     end_date: "2019-12-20",
     mean: 8.06,
-    rank: 470,
     genres: [
       {
         id: 1,
@@ -2008,6 +2007,7 @@ export const test = [
       updated_at: "2020-07-14T08:14:53+00:00",
       start_date: "2020-07-14",
       finish_date: "2020-07-14",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -2045,7 +2045,6 @@ export const test = [
     start_date: "2017-04-04",
     end_date: "2017-04-04",
     mean: 7.29,
-    rank: 2403,
     genres: [
       {
         id: 1,
@@ -2076,6 +2075,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-08-26T22:00:06+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -2110,7 +2110,6 @@ export const test = [
     start_date: "2017-06-02",
     end_date: "2017-06-02",
     mean: 7.29,
-    rank: 2404,
     genres: [
       {
         id: 1,
@@ -2141,6 +2140,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-08-26T21:45:00+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -2175,7 +2175,6 @@ export const test = [
     start_date: "2011-10-07",
     end_date: "2011-12-23",
     mean: 7.23,
-    rank: 2680,
     genres: [
       {
         id: 9,
@@ -2212,6 +2211,7 @@ export const test = [
       updated_at: "2019-02-09T05:46:30+00:00",
       start_date: "2019-02-05",
       finish_date: "2019-02-08",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -2249,8 +2249,7 @@ export const test = [
     },
     start_date: "2013-01-11",
     end_date: "2013-03-29",
-    mean: 7.36,
-    rank: 2107,
+    mean: 7.35,
     genres: [
       {
         id: 35,
@@ -2283,6 +2282,7 @@ export const test = [
       updated_at: "2019-02-12T05:07:02+00:00",
       start_date: "2019-02-09",
       finish_date: "2019-02-11",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -2317,7 +2317,6 @@ export const test = [
     start_date: "2006-07-04",
     end_date: "2006-12-26",
     mean: 7.29,
-    rank: 2405,
     genres: [
       {
         id: 36,
@@ -2344,6 +2343,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-06-24T18:30:16+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -2380,13 +2380,8 @@ export const test = [
       ja: "ぼくたちのリメイク",
     },
     start_date: "2021-07-03",
-    mean: 7.9,
-    rank: 694,
+    mean: 7.85,
     genres: [
-      {
-        id: 36,
-        name: "Slice of Life",
-      },
       {
         id: 8,
         name: "Drama",
@@ -2395,16 +2390,21 @@ export const test = [
         id: 22,
         name: "Romance",
       },
+      {
+        id: 36,
+        name: "Slice of Life",
+      },
     ],
     media_type: "tv",
     status: "currently_airing",
     my_list_status: {
       status: "watching",
       score: 0,
-      num_episodes_watched: 3,
+      num_episodes_watched: 4,
       is_rewatching: false,
-      updated_at: "2021-07-17T19:35:18+00:00",
+      updated_at: "2021-07-31T23:46:47+00:00",
       start_date: "2021-07-03",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -2424,7 +2424,7 @@ export const test = [
       },
     ],
     image_url_id: "1737/112772",
-    time_watched: 4320,
+    time_watched: 5760,
     title_en: "Remake our Life!",
     title_ja: "ぼくたちのリメイク",
   },
@@ -2443,7 +2443,6 @@ export const test = [
     start_date: "2019-04-07",
     end_date: "2019-06-30",
     mean: 7.31,
-    rank: 2308,
     genres: [
       {
         id: 35,
@@ -2476,6 +2475,7 @@ export const test = [
       updated_at: "2019-06-29T23:27:27+00:00",
       start_date: "2019-04-07",
       finish_date: "2019-06-29",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -2522,7 +2522,6 @@ export const test = [
     start_date: "2019-10-06",
     end_date: "2019-12-29",
     mean: 7.35,
-    rank: 2132,
     genres: [
       {
         id: 35,
@@ -2555,6 +2554,7 @@ export const test = [
       updated_at: "2019-12-29T05:16:13+00:00",
       start_date: "2019-10-05",
       finish_date: "2019-12-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -2598,7 +2598,6 @@ export const test = [
     start_date: "2020-04-03",
     end_date: "2020-04-03",
     mean: 7.34,
-    rank: 2198,
     genres: [
       {
         id: 35,
@@ -2627,6 +2626,7 @@ export const test = [
       updated_at: "2020-07-26T00:01:26+00:00",
       start_date: "2020-04-07",
       finish_date: "2020-04-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -2667,7 +2667,6 @@ export const test = [
     start_date: "2019-11-01",
     end_date: "2019-11-01",
     mean: 7.28,
-    rank: 2469,
     genres: [
       {
         id: 35,
@@ -2700,6 +2699,7 @@ export const test = [
       updated_at: "2020-07-26T00:01:36+00:00",
       start_date: "2019-11-25",
       finish_date: "2019-11-25",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -2740,7 +2740,6 @@ export const test = [
     start_date: "2015-07-05",
     end_date: "2015-09-27",
     mean: 7.76,
-    rank: 918,
     genres: [
       {
         id: 8,
@@ -2764,6 +2763,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-01-27T22:00:09+00:00",
       start_date: "2018-10-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -2801,8 +2801,7 @@ export const test = [
     },
     start_date: "2011-10-05",
     end_date: "2012-03-28",
-    mean: 8.22,
-    rank: 292,
+    mean: 8.21,
     genres: [
       {
         id: 8,
@@ -2839,6 +2838,7 @@ export const test = [
       updated_at: "2018-12-02T08:50:01+00:00",
       start_date: "2018-11-25",
       finish_date: "2018-12-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -2876,7 +2876,6 @@ export const test = [
     start_date: "2013-01-12",
     end_date: "2013-06-29",
     mean: 8.41,
-    rank: 147,
     genres: [
       {
         id: 8,
@@ -2913,6 +2912,7 @@ export const test = [
       updated_at: "2019-03-29T14:07:07+00:00",
       start_date: "2018-12-02",
       finish_date: "2019-03-29",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -2947,7 +2947,6 @@ export const test = [
     start_date: "2013-09-13",
     end_date: "2013-09-13",
     mean: 7.03,
-    rank: 3597,
     genres: [
       {
         id: 4,
@@ -2974,6 +2973,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2019-03-30T03:41:45+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -3008,7 +3008,6 @@ export const test = [
     start_date: "2019-10-23",
     end_date: "2020-03-25",
     mean: 8.49,
-    rank: 113,
     genres: [
       {
         id: 11,
@@ -3044,6 +3043,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-10-07T05:43:38+00:00",
       start_date: "2019-10-23",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -3085,7 +3085,6 @@ export const test = [
     start_date: "2012-10-04",
     end_date: "2012-12-20",
     mean: 7.74,
-    rank: 963,
     genres: [
       {
         id: 36,
@@ -3118,6 +3117,7 @@ export const test = [
       updated_at: "2018-12-03T16:07:41+00:00",
       start_date: "2018-09-21",
       finish_date: "2018-09-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -3160,7 +3160,6 @@ export const test = [
     start_date: "2012-09-27",
     end_date: "2012-10-31",
     mean: 7.26,
-    rank: 2574,
     genres: [
       {
         id: 4,
@@ -3179,6 +3178,7 @@ export const test = [
       num_episodes_watched: 6,
       is_rewatching: false,
       updated_at: "2018-09-26T00:02:15+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 6,
     start_season: {
@@ -3213,7 +3213,6 @@ export const test = [
     start_date: "2018-01-06",
     end_date: "2018-01-06",
     mean: 8.14,
-    rank: 374,
     genres: [
       {
         id: 4,
@@ -3244,6 +3243,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-09-26T01:55:36+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -3281,7 +3281,6 @@ export const test = [
     start_date: "2014-01-09",
     end_date: "2014-03-27",
     mean: 7.55,
-    rank: 1427,
     genres: [
       {
         id: 4,
@@ -3314,6 +3313,7 @@ export const test = [
       updated_at: "2018-09-25T01:54:00+00:00",
       start_date: "2018-09-23",
       finish_date: "2018-09-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -3356,7 +3356,6 @@ export const test = [
     start_date: "2013-12-26",
     end_date: "2014-03-16",
     mean: 7.17,
-    rank: 2944,
     genres: [
       {
         id: 4,
@@ -3375,6 +3374,7 @@ export const test = [
       num_episodes_watched: 6,
       is_rewatching: false,
       updated_at: "2018-09-25T03:09:56+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 6,
     start_season: {
@@ -3412,7 +3412,6 @@ export const test = [
     start_date: "2014-03-19",
     end_date: "2014-09-17",
     mean: 7.11,
-    rank: 3240,
     genres: [
       {
         id: 4,
@@ -3427,6 +3426,7 @@ export const test = [
       num_episodes_watched: 7,
       is_rewatching: false,
       updated_at: "2018-09-25T02:46:38+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 7,
     start_season: {
@@ -3464,7 +3464,6 @@ export const test = [
     start_date: "2014-09-17",
     end_date: "2014-09-17",
     mean: 7.46,
-    rank: 1737,
     genres: [
       {
         id: 4,
@@ -3495,6 +3494,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-09-25T02:20:35+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -3533,7 +3533,6 @@ export const test = [
     start_date: "2013-06-19",
     end_date: "2013-06-19",
     mean: 7.5,
-    rank: 1611,
     genres: [
       {
         id: 4,
@@ -3564,6 +3563,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-09-23T05:30:41+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -3599,7 +3599,6 @@ export const test = [
     start_date: "2007-10-05",
     end_date: "2008-03-28",
     mean: 8.04,
-    rank: 499,
     genres: [
       {
         id: 4,
@@ -3636,6 +3635,7 @@ export const test = [
       updated_at: "2019-07-30T02:03:42+00:00",
       start_date: "2018-08-08",
       finish_date: "2018-08-16",
+      num_times_rewatched: 0,
     },
     num_episodes: 23,
     start_season: {
@@ -3674,7 +3674,6 @@ export const test = [
     start_date: "2008-10-03",
     end_date: "2009-03-27",
     mean: 8.95,
-    rank: 15,
     genres: [
       {
         id: 36,
@@ -3706,6 +3705,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2018-10-29T03:32:02+00:00",
       start_date: "2018-08-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -3744,7 +3744,6 @@ export const test = [
     start_date: "2008-07-16",
     end_date: "2008-07-16",
     mean: 7.97,
-    rank: 583,
     genres: [
       {
         id: 8,
@@ -3771,6 +3770,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-08-17T00:37:51+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -3805,7 +3805,6 @@ export const test = [
     start_date: "2009-04-05",
     end_date: "2010-03-28",
     mean: 8.41,
-    rank: 148,
     genres: [
       {
         id: 4,
@@ -3841,6 +3840,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2018-10-14T05:51:49+00:00",
       start_date: "2018-09-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 50,
     start_season: {
@@ -3875,7 +3875,6 @@ export const test = [
     start_date: "2014-01-07",
     end_date: "2014-03-25",
     mean: 7.55,
-    rank: 1428,
     genres: [
       {
         id: 11,
@@ -3904,6 +3903,7 @@ export const test = [
       updated_at: "2018-09-29T01:07:33+00:00",
       start_date: "2018-09-27",
       finish_date: "2018-09-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -3938,7 +3938,6 @@ export const test = [
     start_date: "2014-09-22",
     end_date: "2014-09-22",
     mean: 7.35,
-    rank: 2136,
     genres: [
       {
         id: 4,
@@ -3957,6 +3956,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-10-25T14:07:03+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -3991,7 +3991,6 @@ export const test = [
     start_date: "2012-01-10",
     end_date: "2012-03-27",
     mean: 8.26,
-    rank: 257,
     genres: [
       {
         id: 36,
@@ -4014,6 +4013,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-05-18T05:33:42+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -4051,8 +4051,7 @@ export const test = [
     },
     start_date: "2018-01-13",
     end_date: "2018-07-07",
-    mean: 7.29,
-    rank: 2407,
+    mean: 7.28,
     genres: [
       {
         id: 1,
@@ -4084,6 +4083,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-04-08T19:42:50+00:00",
       start_date: "2019-03-31",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -4130,7 +4130,6 @@ export const test = [
     start_date: "2013-04-06",
     end_date: "2013-06-22",
     mean: 7.19,
-    rank: 2868,
     genres: [
       {
         id: 24,
@@ -4166,6 +4165,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-03-29T16:28:42+00:00",
       start_date: "2018-10-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -4204,7 +4204,6 @@ export const test = [
     start_date: "2006-10-04",
     end_date: "2007-06-27",
     mean: 8.63,
-    rank: 61,
     genres: [
       {
         id: 7,
@@ -4239,6 +4238,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-06-16T06:07:45+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 37,
     start_season: {
@@ -4276,8 +4276,7 @@ export const test = [
     },
     start_date: "2019-01-12",
     end_date: "2019-03-30",
-    mean: 6.74,
-    rank: 4826,
+    mean: 6.73,
     genres: [
       {
         id: 8,
@@ -4306,6 +4305,7 @@ export const test = [
       updated_at: "2019-05-05T15:41:05+00:00",
       start_date: "2019-01-12",
       finish_date: "2019-03-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -4347,7 +4347,6 @@ export const test = [
     start_date: "2019-01-09",
     end_date: "2019-03-27",
     mean: 7.74,
-    rank: 964,
     genres: [
       {
         id: 36,
@@ -4368,6 +4367,7 @@ export const test = [
       updated_at: "2019-03-29T04:03:21+00:00",
       start_date: "2019-01-09",
       finish_date: "2019-03-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -4406,7 +4406,6 @@ export const test = [
     start_date: "2019-07-05",
     end_date: "2019-12-13",
     mean: 8.31,
-    rank: 220,
     genres: [
       {
         id: 24,
@@ -4435,6 +4434,7 @@ export const test = [
       updated_at: "2019-12-14T22:04:43+00:00",
       start_date: "2019-07-05",
       finish_date: "2019-12-14",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -4473,7 +4473,6 @@ export const test = [
     start_date: "2021-01-14",
     end_date: "2021-03-25",
     mean: 8.2,
-    rank: 318,
     genres: [
       {
         id: 24,
@@ -4502,6 +4501,7 @@ export const test = [
       updated_at: "2021-03-26T19:59:52+00:00",
       start_date: "2021-01-15",
       finish_date: "2021-03-26",
+      num_times_rewatched: 0,
     },
     num_episodes: 11,
     start_season: {
@@ -4540,7 +4540,6 @@ export const test = [
     start_date: "2019-07-03",
     end_date: "2019-09-18",
     mean: 7.31,
-    rank: 2315,
     genres: [
       {
         id: 36,
@@ -4569,6 +4568,7 @@ export const test = [
       updated_at: "2019-09-22T20:48:36+00:00",
       start_date: "2019-07-03",
       finish_date: "2019-09-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -4610,7 +4610,6 @@ export const test = [
     start_date: "2015-04-04",
     end_date: "2015-06-27",
     mean: 7.59,
-    rank: 1319,
     genres: [
       {
         id: 1,
@@ -4643,6 +4642,7 @@ export const test = [
       updated_at: "2019-07-12T04:29:32+00:00",
       start_date: "2019-06-19",
       finish_date: "2019-07-11",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -4683,8 +4683,7 @@ export const test = [
     },
     start_date: "2019-07-13",
     end_date: "2019-09-28",
-    mean: 7.22,
-    rank: 2740,
+    mean: 7.23,
     genres: [
       {
         id: 1,
@@ -4717,6 +4716,7 @@ export const test = [
       updated_at: "2019-09-27T22:56:05+00:00",
       start_date: "2019-07-12",
       finish_date: "2019-09-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -4758,7 +4758,6 @@ export const test = [
     start_date: "2020-10-03",
     end_date: "2020-12-19",
     mean: 7.45,
-    rank: 1760,
     genres: [
       {
         id: 1,
@@ -4790,6 +4789,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-01-11T05:34:35+00:00",
       start_date: "2020-10-06",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -4828,7 +4828,6 @@ export const test = [
     start_date: "2019-07-06",
     end_date: "2019-12-28",
     mean: 7.67,
-    rank: 1123,
     genres: [
       {
         id: 1,
@@ -4853,6 +4852,7 @@ export const test = [
       updated_at: "2020-07-03T04:21:21+00:00",
       start_date: "2019-07-06",
       finish_date: "2020-07-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -4891,7 +4891,6 @@ export const test = [
     start_date: "2020-07-04",
     end_date: "2020-12-12",
     mean: 7.75,
-    rank: 928,
     genres: [
       {
         id: 1,
@@ -4915,6 +4914,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-11-24T00:48:11+00:00",
       start_date: "2020-07-06",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -4953,7 +4953,6 @@ export const test = [
     start_date: "2019-04-06",
     end_date: "2019-09-21",
     mean: 8.22,
-    rank: 294,
     genres: [
       {
         id: 36,
@@ -4990,6 +4989,7 @@ export const test = [
       updated_at: "2019-09-21T18:38:25+00:00",
       start_date: "2019-04-05",
       finish_date: "2019-09-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -5032,7 +5032,6 @@ export const test = [
     start_date: "2020-04-07",
     end_date: "2020-09-22",
     mean: 8.58,
-    rank: 78,
     genres: [
       {
         id: 36,
@@ -5068,6 +5067,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-11-24T00:48:16+00:00",
       start_date: "2020-04-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -5110,8 +5110,7 @@ export const test = [
     },
     start_date: "2009-04-05",
     end_date: "2010-07-04",
-    mean: 9.17,
-    rank: 1,
+    mean: 9.16,
     genres: [
       {
         id: 1,
@@ -5155,6 +5154,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2018-10-05T17:44:52+00:00",
       start_date: "2018-07-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 64,
     start_season: {
@@ -5193,7 +5193,6 @@ export const test = [
     start_date: "2017-01-09",
     end_date: "2017-03-27",
     mean: 7.47,
-    rank: 1690,
     genres: [
       {
         id: 4,
@@ -5226,6 +5225,7 @@ export const test = [
       updated_at: "2020-01-09T06:37:05+00:00",
       start_date: "2020-01-06",
       finish_date: "2020-01-09",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -5264,7 +5264,6 @@ export const test = [
     start_date: "2017-03-24",
     end_date: "2017-05-24",
     mean: 7.64,
-    rank: 1204,
     genres: [
       {
         id: 4,
@@ -5297,6 +5296,7 @@ export const test = [
       updated_at: "2020-01-09T07:34:11+00:00",
       start_date: "2020-01-09",
       finish_date: "2020-01-09",
+      num_times_rewatched: 0,
     },
     num_episodes: 2,
     start_season: {
@@ -5331,7 +5331,6 @@ export const test = [
     start_date: "2015-10-03",
     end_date: "2015-12-19",
     mean: 6.86,
-    rank: 4290,
     genres: [
       {
         id: 1,
@@ -5380,6 +5379,7 @@ export const test = [
       updated_at: "2019-05-02T05:42:17+00:00",
       start_date: "2019-04-29",
       finish_date: "2019-05-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -5417,8 +5417,7 @@ export const test = [
     },
     start_date: "2016-04-02",
     end_date: "2016-06-18",
-    mean: 7.05,
-    rank: 3502,
+    mean: 7.04,
     genres: [
       {
         id: 24,
@@ -5462,6 +5461,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-05-27T18:41:25+00:00",
       start_date: "2019-05-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -5500,7 +5500,6 @@ export const test = [
     start_date: "2017-07-13",
     end_date: "2017-09-28",
     mean: 6.85,
-    rank: 4316,
     genres: [
       {
         id: 11,
@@ -5529,6 +5528,7 @@ export const test = [
       updated_at: "2019-05-06T22:47:03+00:00",
       start_date: "2018-08-29",
       finish_date: "2018-08-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -5567,7 +5567,6 @@ export const test = [
     start_date: "2014-07-07",
     end_date: "2014-09-22",
     mean: 7.9,
-    rank: 695,
     genres: [
       {
         id: 4,
@@ -5590,6 +5589,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-01-03T07:46:09+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -5629,16 +5629,15 @@ export const test = [
       ja: "現実主義勇者の王国再建記",
     },
     start_date: "2021-07-04",
-    mean: 7.43,
-    rank: 1830,
+    mean: 7.36,
     genres: [
       {
         id: 1,
         name: "Action",
       },
       {
-        id: 38,
-        name: "Military",
+        id: 10,
+        name: "Fantasy",
       },
       {
         id: 35,
@@ -5649,12 +5648,12 @@ export const test = [
         name: "Magic",
       },
       {
-        id: 22,
-        name: "Romance",
+        id: 38,
+        name: "Military",
       },
       {
-        id: 10,
-        name: "Fantasy",
+        id: 22,
+        name: "Romance",
       },
     ],
     media_type: "tv",
@@ -5662,10 +5661,11 @@ export const test = [
     my_list_status: {
       status: "watching",
       score: 0,
-      num_episodes_watched: 3,
+      num_episodes_watched: 5,
       is_rewatching: false,
-      updated_at: "2021-07-18T06:58:56+00:00",
+      updated_at: "2021-08-01T07:03:12+00:00",
       start_date: "2021-07-05",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -5685,7 +5685,7 @@ export const test = [
       },
     ],
     image_url_id: "1706/115694",
-    time_watched: 4320,
+    time_watched: 7200,
     title_en: "How a Realist Hero Rebuilt the Kingdom",
     title_ja: "現実主義勇者の王国再建記",
   },
@@ -5704,7 +5704,6 @@ export const test = [
     start_date: "2013-07-12",
     end_date: "2013-09-20",
     mean: 8.1,
-    rank: 421,
     genres: [
       {
         id: 4,
@@ -5733,6 +5732,7 @@ export const test = [
       updated_at: "2020-05-05T02:43:44+00:00",
       start_date: "2020-05-03",
       finish_date: "2020-05-04",
+      num_times_rewatched: 0,
     },
     num_episodes: 11,
     start_season: {
@@ -5771,7 +5771,6 @@ export const test = [
     start_date: "2014-01-10",
     end_date: "2014-03-28",
     mean: 8.28,
-    rank: 238,
     genres: [
       {
         id: 4,
@@ -5800,6 +5799,7 @@ export const test = [
       updated_at: "2020-05-06T22:23:56+00:00",
       start_date: "2020-05-05",
       finish_date: "2020-05-06",
+      num_times_rewatched: 0,
     },
     num_episodes: 11,
     start_season: {
@@ -5838,7 +5838,6 @@ export const test = [
     start_date: "2013-01-10",
     end_date: "2013-03-28",
     mean: 7.33,
-    rank: 2231,
     genres: [
       {
         id: 4,
@@ -5861,6 +5860,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-05-15T17:43:53+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -5895,7 +5895,6 @@ export const test = [
     start_date: "2013-10-04",
     end_date: "2014-03-28",
     mean: 7.77,
-    rank: 897,
     genres: [
       {
         id: 4,
@@ -5920,6 +5919,7 @@ export const test = [
       updated_at: "2019-03-18T02:17:36+00:00",
       start_date: "2019-03-05",
       finish_date: "2019-03-17",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -5957,8 +5957,7 @@ export const test = [
     },
     start_date: "2014-10-05",
     end_date: "2014-12-28",
-    mean: 7.53,
-    rank: 1510,
+    mean: 7.52,
     genres: [
       {
         id: 8,
@@ -5989,6 +5988,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-09-04T20:06:28+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -6027,7 +6027,6 @@ export const test = [
     start_date: "2016-01-11",
     end_date: "2016-03-28",
     mean: 7.67,
-    rank: 1125,
     genres: [
       {
         id: 1,
@@ -6054,6 +6053,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-07-04T03:42:37+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -6092,7 +6092,6 @@ export const test = [
     start_date: "2014-04-06",
     end_date: "2014-09-21",
     mean: 8.48,
-    rank: 116,
     genres: [
       {
         id: 4,
@@ -6123,6 +6122,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-07-25T04:58:59+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -6161,7 +6161,6 @@ export const test = [
     start_date: "2012-04-10",
     end_date: "2012-06-26",
     mean: 7.04,
-    rank: 3578,
     genres: [
       {
         id: 24,
@@ -6184,6 +6183,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-12-22T03:09:47+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -6218,7 +6218,6 @@ export const test = [
     start_date: "2011-04-03",
     end_date: "2011-09-25",
     mean: 7.94,
-    rank: 629,
     genres: [
       {
         id: 36,
@@ -6243,6 +6242,7 @@ export const test = [
       updated_at: "2019-01-03T22:53:34+00:00",
       start_date: "2018-12-31",
       finish_date: "2019-01-03",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -6281,7 +6281,6 @@ export const test = [
     start_date: "2013-03-09",
     end_date: "2013-03-09",
     mean: 7.87,
-    rank: 724,
     genres: [
       {
         id: 36,
@@ -6306,6 +6305,7 @@ export const test = [
       updated_at: "2019-01-07T22:02:25+00:00",
       start_date: "2019-01-07",
       finish_date: "2019-01-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -6340,7 +6340,6 @@ export const test = [
     start_date: "2013-04-04",
     end_date: "2013-06-27",
     mean: 7.8,
-    rank: 850,
     genres: [
       {
         id: 4,
@@ -6373,6 +6372,7 @@ export const test = [
       updated_at: "2019-03-10T05:47:52+00:00",
       start_date: "2019-03-08",
       finish_date: "2019-03-09",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -6411,7 +6411,6 @@ export const test = [
     start_date: "2018-07-08",
     end_date: "2018-09-30",
     mean: 7.59,
-    rank: 1325,
     genres: [
       {
         id: 4,
@@ -6430,6 +6429,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2021-01-09T08:18:53+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -6473,7 +6473,6 @@ export const test = [
     start_date: "2015-04-06",
     end_date: "2015-06-22",
     mean: 7.52,
-    rank: 1556,
     genres: [
       {
         id: 36,
@@ -6501,6 +6500,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-07-23T01:35:24+00:00",
       start_date: "2020-01-10",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -6539,7 +6539,6 @@ export const test = [
     start_date: "2015-04-08",
     end_date: "2015-07-01",
     mean: 7.99,
-    rank: 560,
     genres: [
       {
         id: 19,
@@ -6564,6 +6563,7 @@ export const test = [
       updated_at: "2018-12-22T19:38:24+00:00",
       start_date: "2018-12-21",
       finish_date: "2018-12-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -6602,7 +6602,6 @@ export const test = [
     start_date: "2016-10-06",
     end_date: "2016-12-29",
     mean: 8.29,
-    rank: 233,
     genres: [
       {
         id: 19,
@@ -6627,6 +6626,7 @@ export const test = [
       updated_at: "2018-12-27T00:03:35+00:00",
       start_date: "2018-12-23",
       finish_date: "2018-12-26",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -6668,7 +6668,6 @@ export const test = [
     start_date: "2019-04-19",
     end_date: "2019-04-19",
     mean: 7.76,
-    rank: 922,
     genres: [
       {
         id: 19,
@@ -6691,6 +6690,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-09-21T01:11:24+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -6725,7 +6725,6 @@ export const test = [
     start_date: "2015-12-16",
     end_date: "2015-12-16",
     mean: 7.47,
-    rank: 1691,
     genres: [
       {
         id: 19,
@@ -6748,6 +6747,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-12-22T22:07:28+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -6784,8 +6784,7 @@ export const test = [
     },
     start_date: "2021-04-05",
     end_date: "2021-06-28",
-    mean: 7.39,
-    rank: 1984,
+    mean: 7.38,
     genres: [
       {
         id: 8,
@@ -6806,6 +6805,7 @@ export const test = [
       updated_at: "2021-07-05T01:15:27+00:00",
       start_date: "2021-04-05",
       finish_date: "2021-07-04",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -6844,8 +6844,7 @@ export const test = [
     },
     start_date: "2018-04-06",
     end_date: "2018-06-22",
-    mean: 8.19,
-    rank: 325,
+    mean: 8.18,
     genres: [
       {
         id: 24,
@@ -6878,6 +6877,7 @@ export const test = [
       updated_at: "2020-03-07T08:04:10+00:00",
       start_date: "2020-03-05",
       finish_date: "2020-03-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -6916,7 +6916,6 @@ export const test = [
     start_date: "2019-04-06",
     end_date: "2019-06-22",
     mean: 7.5,
-    rank: 1618,
     genres: [
       {
         id: 4,
@@ -6945,6 +6944,7 @@ export const test = [
       updated_at: "2019-06-22T05:16:48+00:00",
       start_date: "2019-04-05",
       finish_date: "2019-06-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -6984,7 +6984,6 @@ export const test = [
     start_date: "2019-10-03",
     end_date: "2019-12-26",
     mean: 8.02,
-    rank: 528,
     genres: [
       {
         id: 36,
@@ -7005,6 +7004,7 @@ export const test = [
       updated_at: "2019-12-26T05:56:39+00:00",
       start_date: "2019-10-04",
       finish_date: "2019-12-25",
+      num_times_rewatched: 0,
     },
     num_episodes: 14,
     start_season: {
@@ -7044,7 +7044,6 @@ export const test = [
     start_date: "2020-04-05",
     end_date: "2020-06-21",
     mean: 8.14,
-    rank: 377,
     genres: [
       {
         id: 36,
@@ -7064,6 +7063,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-11-24T00:48:25+00:00",
       start_date: "2020-04-05",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -7103,7 +7103,6 @@ export const test = [
     start_date: "2021-01-10",
     end_date: "2021-04-04",
     mean: 8.23,
-    rank: 280,
     genres: [
       {
         id: 36,
@@ -7136,6 +7135,7 @@ export const test = [
       updated_at: "2021-04-04T05:48:33+00:00",
       start_date: "2021-01-09",
       finish_date: "2021-04-04",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -7174,7 +7174,6 @@ export const test = [
     start_date: "2019-10-11",
     end_date: "2019-12-27",
     mean: 7.57,
-    rank: 1384,
     genres: [
       {
         id: 36,
@@ -7203,6 +7202,7 @@ export const test = [
       updated_at: "2019-12-27T02:08:07+00:00",
       start_date: "2019-10-11",
       finish_date: "2019-12-26",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -7240,8 +7240,7 @@ export const test = [
     },
     start_date: "2017-10-07",
     end_date: "2017-12-23",
-    mean: 8.41,
-    rank: 150,
+    mean: 8.4,
     genres: [
       {
         id: 1,
@@ -7272,6 +7271,7 @@ export const test = [
       num_episodes_watched: 12,
       is_rewatching: false,
       updated_at: "2019-07-23T07:04:02+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -7310,7 +7310,6 @@ export const test = [
     start_date: "2011-10-02",
     end_date: "2014-09-24",
     mean: 9.07,
-    rank: 7,
     genres: [
       {
         id: 1,
@@ -7342,6 +7341,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-07-05T01:18:13+00:00",
       start_date: "2020-07-01",
+      num_times_rewatched: 0,
     },
     num_episodes: 148,
     start_season: {
@@ -7385,7 +7385,6 @@ export const test = [
     start_date: "2012-04-23",
     end_date: "2012-09-17",
     mean: 8.12,
-    rank: 401,
     genres: [
       {
         id: 7,
@@ -7408,6 +7407,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-03-02T07:46:13+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 22,
     start_season: {
@@ -7450,7 +7450,6 @@ export const test = [
     start_date: "2014-10-07",
     end_date: "2014-12-23",
     mean: 7.11,
-    rank: 3253,
     genres: [
       {
         id: 35,
@@ -7487,6 +7486,7 @@ export const test = [
       updated_at: "2020-01-23T06:32:16+00:00",
       start_date: "2020-01-19",
       finish_date: "2020-01-23",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -7525,7 +7525,6 @@ export const test = [
     start_date: "2018-10-06",
     end_date: "2018-12-29",
     mean: 7.53,
-    rank: 1512,
     genres: [
       {
         id: 8,
@@ -7554,6 +7553,7 @@ export const test = [
       updated_at: "2018-12-31T05:00:04+00:00",
       start_date: "2018-10-14",
       finish_date: "2018-12-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -7592,7 +7592,6 @@ export const test = [
     start_date: "2011-01-07",
     end_date: "2011-04-01",
     mean: 6.7,
-    rank: 5020,
     genres: [
       {
         id: 1,
@@ -7629,6 +7628,7 @@ export const test = [
       updated_at: "2018-10-18T12:52:48+00:00",
       start_date: "2018-10-14",
       finish_date: "2018-10-18",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -7667,7 +7667,6 @@ export const test = [
     start_date: "2013-10-04",
     end_date: "2013-12-20",
     mean: 6.51,
-    rank: 5970,
     genres: [
       {
         id: 1,
@@ -7703,6 +7702,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-02-27T16:08:00+00:00",
       start_date: "2018-10-19",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -7741,7 +7741,6 @@ export const test = [
     start_date: "2011-12-07",
     end_date: "2011-12-07",
     mean: 6.88,
-    rank: 4208,
     genres: [
       {
         id: 1,
@@ -7776,6 +7775,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-10-18T21:56:14+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -7811,7 +7811,6 @@ export const test = [
     start_date: "2009-05-22",
     end_date: "2010-05-26",
     mean: 7.81,
-    rank: 832,
     genres: [
       {
         id: 1,
@@ -7850,6 +7849,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-07-04T03:46:01+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -7888,7 +7888,6 @@ export const test = [
     start_date: "2019-04-10",
     end_date: "2019-06-26",
     mean: 7.42,
-    rank: 1885,
     genres: [
       {
         id: 4,
@@ -7913,6 +7912,7 @@ export const test = [
       updated_at: "2019-06-25T19:31:28+00:00",
       start_date: "2019-04-09",
       finish_date: "2019-06-25",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -7951,7 +7951,6 @@ export const test = [
     start_date: "2020-01-15",
     end_date: "2020-04-01",
     mean: 7.37,
-    rank: 2053,
     genres: [
       {
         id: 4,
@@ -7976,6 +7975,7 @@ export const test = [
       updated_at: "2020-04-02T05:59:55+00:00",
       start_date: "2020-01-14",
       finish_date: "2020-04-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -8018,7 +8018,6 @@ export const test = [
     start_date: "2020-01-08",
     end_date: "2020-03-25",
     mean: 7.56,
-    rank: 1422,
     genres: [
       {
         id: 1,
@@ -8055,6 +8054,7 @@ export const test = [
       updated_at: "2020-03-28T06:29:36+00:00",
       start_date: "2020-01-08",
       finish_date: "2020-03-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -8126,6 +8126,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-03-28T06:29:19+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 0,
     source: "light_novel",
@@ -8157,8 +8158,7 @@ export const test = [
     },
     start_date: "2008-04-05",
     end_date: "2008-09-25",
-    mean: 7.49,
-    rank: 1638,
+    mean: 7.48,
     genres: [
       {
         id: 4,
@@ -8182,6 +8182,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-07-17T07:10:23+00:00",
       start_date: "2020-07-11",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -8223,7 +8224,6 @@ export const test = [
     start_date: "2021-01-08",
     end_date: "2021-03-26",
     mean: 7.2,
-    rank: 2855,
     genres: [
       {
         id: 8,
@@ -8248,6 +8248,7 @@ export const test = [
       updated_at: "2021-07-21T06:49:25+00:00",
       start_date: "2021-01-08",
       finish_date: "2021-07-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -8286,7 +8287,6 @@ export const test = [
     start_date: "2019-07-05",
     end_date: "2019-09-20",
     mean: 7.71,
-    rank: 1021,
     genres: [
       {
         id: 4,
@@ -8307,6 +8307,7 @@ export const test = [
       updated_at: "2019-09-22T21:26:15+00:00",
       start_date: "2019-07-05",
       finish_date: "2019-09-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -8345,7 +8346,6 @@ export const test = [
     start_date: "2017-10-05",
     end_date: "2017-12-28",
     mean: 7.26,
-    rank: 2584,
     genres: [
       {
         id: 36,
@@ -8374,6 +8374,7 @@ export const test = [
       updated_at: "2019-12-27T02:45:41+00:00",
       start_date: "2019-07-23",
       finish_date: "2019-07-25",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -8412,7 +8413,6 @@ export const test = [
     start_date: "2009-04-03",
     end_date: "2009-06-26",
     mean: 7.84,
-    rank: 779,
     genres: [
       {
         id: 19,
@@ -8439,6 +8439,7 @@ export const test = [
       num_episodes_watched: 13,
       is_rewatching: false,
       updated_at: "2019-08-10T06:51:45+00:00",
+      num_times_rewatched: 1,
     },
     num_episodes: 13,
     start_season: {
@@ -8458,7 +8459,7 @@ export const test = [
       },
     ],
     image_url_id: "10/76120",
-    time_watched: 19097,
+    time_watched: 38194,
     title_en: "K-ON!",
     title_ja: "けいおん!",
   },
@@ -8477,7 +8478,6 @@ export const test = [
     start_date: "2011-12-03",
     end_date: "2011-12-03",
     mean: 8.33,
-    rank: 208,
     genres: [
       {
         id: 19,
@@ -8500,6 +8500,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-08-02T17:12:38+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -8533,8 +8534,7 @@ export const test = [
     },
     start_date: "2010-04-07",
     end_date: "2010-09-29",
-    mean: 8.15,
-    rank: 367,
+    mean: 8.16,
     genres: [
       {
         id: 4,
@@ -8561,6 +8561,7 @@ export const test = [
       num_episodes_watched: 23,
       is_rewatching: true,
       updated_at: "2019-08-22T06:25:17+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -8580,7 +8581,7 @@ export const test = [
       },
     ],
     image_url_id: "12/76121",
-    time_watched: 33810,
+    time_watched: 72030,
     title_en: "K-ON! Season 2",
     title_ja: "けいおん!!",
   },
@@ -8603,7 +8604,6 @@ export const test = [
     start_date: "2011-03-16",
     end_date: "2011-03-16",
     mean: 7.84,
-    rank: 780,
     genres: [
       {
         id: 4,
@@ -8630,6 +8630,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-08-02T17:13:09+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -8664,7 +8665,6 @@ export const test = [
     start_date: "2010-01-19",
     end_date: "2010-01-19",
     mean: 7.83,
-    rank: 792,
     genres: [
       {
         id: 4,
@@ -8691,6 +8691,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2019-08-11T06:23:27+00:00",
+      num_times_rewatched: 1,
     },
     num_episodes: 1,
     start_season: {
@@ -8706,7 +8707,7 @@ export const test = [
       },
     ],
     image_url_id: "9/15892",
-    time_watched: 1421,
+    time_watched: 2842,
     title_en: "K-On!: Live House!",
     title_ja: "けいおん! ライブハウス!",
   },
@@ -8727,7 +8728,6 @@ export const test = [
     start_date: "2019-01-12",
     end_date: "2019-03-30",
     mean: 8.41,
-    rank: 151,
     genres: [
       {
         id: 4,
@@ -8760,6 +8760,7 @@ export const test = [
       updated_at: "2020-04-21T17:00:51+00:00",
       start_date: "2019-01-12",
       finish_date: "2019-03-30",
+      num_times_rewatched: 1,
     },
     num_episodes: 12,
     start_season: {
@@ -8779,7 +8780,7 @@ export const test = [
       },
     ],
     image_url_id: "1295/106551",
-    time_watched: 18000,
+    time_watched: 36000,
     title_en: "Kaguya-sama: Love is War",
     title_ja: "かぐや様は告らせたい～天才たちの恋愛頭脳戦～",
   },
@@ -8802,7 +8803,6 @@ export const test = [
     start_date: "2020-04-11",
     end_date: "2020-06-27",
     mean: 8.68,
-    rank: 51,
     genres: [
       {
         id: 4,
@@ -8835,6 +8835,7 @@ export const test = [
       updated_at: "2020-06-27T23:11:49+00:00",
       start_date: "2020-04-11",
       finish_date: "2020-06-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -8872,8 +8873,7 @@ export const test = [
     },
     start_date: "2010-04-02",
     end_date: "2010-09-24",
-    mean: 8.04,
-    rank: 504,
+    mean: 8.03,
     genres: [
       {
         id: 4,
@@ -8902,6 +8902,7 @@ export const test = [
       updated_at: "2018-11-15T04:58:41+00:00",
       start_date: "2018-11-11",
       finish_date: "2018-11-14",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -8945,7 +8946,6 @@ export const test = [
     start_date: "2011-05-11",
     end_date: "2011-05-11",
     mean: 7.49,
-    rank: 1641,
     genres: [
       {
         id: 4,
@@ -8968,6 +8968,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-11-15T05:09:51+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -9002,7 +9003,6 @@ export const test = [
     start_date: "2020-04-02",
     end_date: "2020-06-18",
     mean: 8,
-    rank: 552,
     genres: [
       {
         id: 36,
@@ -9027,6 +9027,7 @@ export const test = [
       updated_at: "2020-06-18T19:33:07+00:00",
       start_date: "2020-04-02",
       finish_date: "2020-06-18",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9065,7 +9066,6 @@ export const test = [
     start_date: "2020-04-02",
     end_date: "2020-06-25",
     mean: 7.6,
-    rank: 1305,
     genres: [
       {
         id: 1,
@@ -9098,6 +9098,7 @@ export const test = [
       updated_at: "2020-06-24T22:45:08+00:00",
       start_date: "2020-04-02",
       finish_date: "2020-06-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -9136,7 +9137,6 @@ export const test = [
     start_date: "2010-10-07",
     end_date: "2010-12-23",
     mean: 7.7,
-    rank: 1057,
     genres: [
       {
         id: 4,
@@ -9169,6 +9169,7 @@ export const test = [
       updated_at: "2019-01-19T00:18:28+00:00",
       start_date: "2019-01-15",
       finish_date: "2019-01-18",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9211,7 +9212,6 @@ export const test = [
     start_date: "2011-04-12",
     end_date: "2011-06-28",
     mean: 7.92,
-    rank: 673,
     genres: [
       {
         id: 4,
@@ -9244,6 +9244,7 @@ export const test = [
       updated_at: "2019-01-21T07:23:25+00:00",
       start_date: "2019-01-19",
       finish_date: "2019-01-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9287,7 +9288,6 @@ export const test = [
     start_date: "2011-09-16",
     end_date: "2011-09-16",
     mean: 7.31,
-    rank: 2328,
     genres: [
       {
         id: 4,
@@ -9316,6 +9316,7 @@ export const test = [
       updated_at: "2019-01-21T18:01:42+00:00",
       start_date: "2019-01-21",
       finish_date: "2019-01-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -9357,7 +9358,6 @@ export const test = [
     start_date: "2013-07-09",
     end_date: "2013-09-24",
     mean: 8.05,
-    rank: 481,
     genres: [
       {
         id: 35,
@@ -9390,6 +9390,7 @@ export const test = [
       updated_at: "2019-02-01T00:00:21+00:00",
       start_date: "2019-01-21",
       finish_date: "2019-01-31",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9428,7 +9429,6 @@ export const test = [
     start_date: "2012-10-18",
     end_date: "2012-12-18",
     mean: 7.7,
-    rank: 1058,
     genres: [
       {
         id: 4,
@@ -9461,6 +9461,7 @@ export const test = [
       updated_at: "2019-01-22T04:34:37+00:00",
       start_date: "2019-01-21",
       finish_date: "2019-01-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 2,
     start_season: {
@@ -9498,7 +9499,6 @@ export const test = [
     start_date: "2005-06-29",
     end_date: "2005-09-27",
     mean: 7.38,
-    rank: 2036,
     genres: [
       {
         id: 4,
@@ -9525,6 +9525,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-04-06T15:48:15+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9559,7 +9560,6 @@ export const test = [
     start_date: "2020-10-11",
     end_date: "2020-12-27",
     mean: 6.82,
-    rank: 4463,
     genres: [
       {
         id: 8,
@@ -9579,6 +9579,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-02-04T08:06:07+00:00",
       start_date: "2020-10-10",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9617,7 +9618,6 @@ export const test = [
     start_date: "2019-07-03",
     end_date: "2019-09-18",
     mean: 8.13,
-    rank: 387,
     genres: [
       {
         id: 2,
@@ -9650,6 +9650,7 @@ export const test = [
       updated_at: "2019-09-20T04:15:47+00:00",
       start_date: "2019-07-03",
       finish_date: "2019-09-19",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9686,8 +9687,7 @@ export const test = [
       ja: "カノジョも彼女",
     },
     start_date: "2021-07-03",
-    mean: 6.7,
-    rank: 5023,
+    mean: 6.59,
     genres: [
       {
         id: 35,
@@ -9719,6 +9719,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-07-17T07:19:28+00:00",
       start_date: "2021-07-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9757,7 +9758,6 @@ export const test = [
     start_date: "2020-07-11",
     end_date: "2020-09-26",
     mean: 7.35,
-    rank: 2145,
     genres: [
       {
         id: 4,
@@ -9786,6 +9786,7 @@ export const test = [
       updated_at: "2020-09-25T22:55:44+00:00",
       start_date: "2020-07-10",
       finish_date: "2020-09-25",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9848,6 +9849,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-09-25T23:25:26+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 0,
     source: "manga",
@@ -9873,7 +9875,6 @@ export const test = [
     start_date: "2018-01-08",
     end_date: "2018-03-26",
     mean: 7.73,
-    rank: 979,
     genres: [
       {
         id: 36,
@@ -9906,6 +9907,7 @@ export const test = [
       updated_at: "2019-09-03T05:08:40+00:00",
       start_date: "2019-07-07",
       finish_date: "2019-07-16",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -9947,7 +9949,6 @@ export const test = [
     start_date: "2019-07-07",
     end_date: "2019-09-22",
     mean: 8.1,
-    rank: 425,
     genres: [
       {
         id: 36,
@@ -9980,6 +9981,7 @@ export const test = [
       updated_at: "2019-09-23T04:46:23+00:00",
       start_date: "2019-07-17",
       finish_date: "2019-09-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -10020,8 +10022,7 @@ export const test = [
     },
     start_date: "2018-07-12",
     end_date: "2018-07-12",
-    mean: 7.51,
-    rank: 1584,
+    mean: 7.5,
     genres: [
       {
         id: 36,
@@ -10050,6 +10051,7 @@ export const test = [
       updated_at: "2019-07-17T04:54:11+00:00",
       start_date: "2019-07-16",
       finish_date: "2019-07-16",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -10084,7 +10086,6 @@ export const test = [
     start_date: "1998-10-02",
     end_date: "1999-03-26",
     mean: 7.6,
-    rank: 1306,
     genres: [
       {
         id: 4,
@@ -10120,6 +10121,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-07-23T01:35:41+00:00",
       start_date: "2020-05-20",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -10161,8 +10163,7 @@ export const test = [
     },
     start_date: "2019-04-10",
     end_date: "2019-06-26",
-    mean: 6.56,
-    rank: 5735,
+    mean: 6.57,
     genres: [
       {
         id: 1,
@@ -10195,6 +10196,7 @@ export const test = [
       updated_at: "2019-06-27T20:04:20+00:00",
       start_date: "2019-04-10",
       finish_date: "2019-06-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -10232,8 +10234,7 @@ export const test = [
     },
     start_date: "2019-04-06",
     end_date: "2019-09-28",
-    mean: 8.59,
-    rank: 72,
+    mean: 8.58,
     genres: [
       {
         id: 1,
@@ -10266,6 +10267,7 @@ export const test = [
       updated_at: "2019-09-28T19:23:44+00:00",
       start_date: "2019-04-06",
       finish_date: "2019-09-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -10304,7 +10306,6 @@ export const test = [
     start_date: "2009-10-07",
     end_date: "2010-03-31",
     mean: 8,
-    rank: 554,
     genres: [
       {
         id: 36,
@@ -10336,6 +10337,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-07-04T04:29:22+00:00",
       start_date: "2019-06-13",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -10373,8 +10375,7 @@ export const test = [
     },
     start_date: "2013-07-13",
     end_date: "2013-09-28",
-    mean: 6.9,
-    rank: 4132,
+    mean: 6.89,
     genres: [
       {
         id: 36,
@@ -10403,6 +10404,7 @@ export const test = [
       updated_at: "2019-03-04T00:40:19+00:00",
       start_date: "2019-02-27",
       finish_date: "2019-03-03",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -10437,7 +10439,6 @@ export const test = [
     start_date: "2012-03-16",
     end_date: "2012-06-15",
     mean: 7.22,
-    rank: 2756,
     genres: [
       {
         id: 8,
@@ -10464,6 +10465,7 @@ export const test = [
       num_episodes_watched: 2,
       is_rewatching: false,
       updated_at: "2019-03-04T02:53:25+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 2,
     start_season: {
@@ -10498,7 +10500,6 @@ export const test = [
     start_date: "2016-08-26",
     end_date: "2016-08-26",
     mean: 8.91,
-    rank: 19,
     genres: [
       {
         id: 22,
@@ -10525,6 +10526,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-10-19T18:19:31+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -10559,7 +10561,6 @@ export const test = [
     start_date: "2018-09-01",
     end_date: "2018-09-01",
     mean: 8.59,
-    rank: 73,
     genres: [
       {
         id: 36,
@@ -10582,6 +10583,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2019-05-19T06:17:40+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -10616,7 +10618,6 @@ export const test = [
     start_date: "2007-10-07",
     end_date: "2008-03-23",
     mean: 7.31,
-    rank: 2333,
     genres: [
       {
         id: 8,
@@ -10640,6 +10641,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-04-06T04:20:43+00:00",
       start_date: "2018-12-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -10674,7 +10676,6 @@ export const test = [
     start_date: "2013-07-06",
     end_date: "2013-09-21",
     mean: 7.25,
-    rank: 2620,
     genres: [
       {
         id: 36,
@@ -10703,6 +10704,7 @@ export const test = [
       updated_at: "2020-01-06T05:47:34+00:00",
       start_date: "2019-07-03",
       finish_date: "2020-01-05",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -10737,7 +10739,6 @@ export const test = [
     start_date: "2018-10-06",
     end_date: "2018-12-22",
     mean: 7.46,
-    rank: 1749,
     genres: [
       {
         id: 1,
@@ -10770,6 +10771,7 @@ export const test = [
       updated_at: "2018-12-21T19:50:09+00:00",
       start_date: "2018-10-10",
       finish_date: "2018-12-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -10807,8 +10809,7 @@ export const test = [
     },
     start_date: "2016-09-17",
     end_date: "2016-09-17",
-    mean: 8.98,
-    rank: 13,
+    mean: 8.97,
     genres: [
       {
         id: 8,
@@ -10831,6 +10832,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2019-08-24T23:21:07+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -10865,7 +10867,6 @@ export const test = [
     start_date: "2012-07-06",
     end_date: "2012-09-28",
     mean: 7.05,
-    rank: 3511,
     genres: [
       {
         id: 8,
@@ -10888,6 +10889,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-06-13T22:55:24+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -10922,7 +10924,6 @@ export const test = [
     start_date: "2017-07-04",
     end_date: "2017-09-19",
     mean: 6.54,
-    rank: 5839,
     genres: [
       {
         id: 8,
@@ -10947,6 +10948,7 @@ export const test = [
       updated_at: "2019-04-27T19:13:11+00:00",
       start_date: "2019-04-22",
       finish_date: "2019-04-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -10985,7 +10987,6 @@ export const test = [
     start_date: "2012-07-08",
     end_date: "2012-09-30",
     mean: 7.8,
-    rank: 854,
     genres: [
       {
         id: 36,
@@ -11022,6 +11023,7 @@ export const test = [
       updated_at: "2018-11-01T14:52:13+00:00",
       start_date: "2018-10-28",
       finish_date: "2018-11-01",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -11063,7 +11065,6 @@ export const test = [
     start_date: "2012-11-19",
     end_date: "2012-12-10",
     mean: 7.98,
-    rank: 579,
     genres: [
       {
         id: 4,
@@ -11100,6 +11101,7 @@ export const test = [
       updated_at: "2018-11-03T02:46:49+00:00",
       start_date: "2018-11-01",
       finish_date: "2018-11-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 4,
     start_season: {
@@ -11134,7 +11136,6 @@ export const test = [
     start_date: "2019-04-07",
     end_date: "2019-06-30",
     mean: 7.87,
-    rank: 729,
     genres: [
       {
         id: 8,
@@ -11167,6 +11168,7 @@ export const test = [
       updated_at: "2019-06-30T00:07:56+00:00",
       start_date: "2019-04-07",
       finish_date: "2019-06-29",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -11204,8 +11206,7 @@ export const test = [
     },
     start_date: "2019-10-06",
     end_date: "2019-12-29",
-    mean: 8.42,
-    rank: 145,
+    mean: 8.41,
     genres: [
       {
         id: 8,
@@ -11237,6 +11238,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-02-15T06:02:17+00:00",
       start_date: "2019-10-05",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -11275,7 +11277,6 @@ export const test = [
     start_date: "2016-01-14",
     end_date: "2016-03-17",
     mean: 8.14,
-    rank: 381,
     genres: [
       {
         id: 2,
@@ -11308,6 +11309,7 @@ export const test = [
       updated_at: "2019-02-06T04:33:02+00:00",
       start_date: "2019-02-01",
       finish_date: "2019-02-05",
+      num_times_rewatched: 0,
     },
     num_episodes: 10,
     start_season: {
@@ -11346,7 +11348,6 @@ export const test = [
     start_date: "2017-01-12",
     end_date: "2017-03-16",
     mean: 8.29,
-    rank: 235,
     genres: [
       {
         id: 2,
@@ -11379,6 +11380,7 @@ export const test = [
       updated_at: "2019-04-22T05:21:31+00:00",
       start_date: "2019-02-07",
       finish_date: "2019-04-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 10,
     start_season: {
@@ -11418,7 +11420,6 @@ export const test = [
     start_date: "2016-06-24",
     end_date: "2016-06-24",
     mean: 7.86,
-    rank: 750,
     genres: [
       {
         id: 2,
@@ -11451,6 +11452,7 @@ export const test = [
       updated_at: "2020-06-18T06:24:28+00:00",
       start_date: "2020-06-18",
       finish_date: "2020-06-18",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -11487,7 +11489,6 @@ export const test = [
     start_date: "2019-04-02",
     end_date: "2019-10-01",
     mean: 6.57,
-    rank: 5658,
     genres: [
       {
         id: 24,
@@ -11507,6 +11508,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-06-25T20:26:59+00:00",
       start_date: "2019-04-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -11545,7 +11547,6 @@ export const test = [
     start_date: "2013-05-31",
     end_date: "2013-05-31",
     mean: 7.98,
-    rank: 580,
     genres: [
       {
         id: 36,
@@ -11572,6 +11573,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-05-27T03:45:20+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -11606,7 +11608,6 @@ export const test = [
     start_date: "2021-01-08",
     end_date: "2021-07-03",
     mean: 7.46,
-    rank: 1752,
     genres: [
       {
         id: 1,
@@ -11636,12 +11637,13 @@ export const test = [
     media_type: "tv",
     status: "finished_airing",
     my_list_status: {
-      status: "watching",
+      status: "on_hold",
       score: 0,
       num_episodes_watched: 8,
       is_rewatching: false,
-      updated_at: "2021-03-06T00:56:23+00:00",
+      updated_at: "2021-08-04T02:22:04+00:00",
       start_date: "2021-01-08",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -11680,7 +11682,6 @@ export const test = [
     start_date: "2012-10-06",
     end_date: "2013-04-06",
     mean: 7.51,
-    rank: 1587,
     genres: [
       {
         id: 36,
@@ -11712,6 +11713,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-06-05T03:42:43+00:00",
       start_date: "2019-06-01",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -11750,7 +11752,6 @@ export const test = [
     start_date: "2018-04-21",
     end_date: "2018-04-21",
     mean: 8.2,
-    rank: 320,
     genres: [
       {
         id: 8,
@@ -11773,6 +11774,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-01-02T07:31:33+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -11807,7 +11809,6 @@ export const test = [
     start_date: "2013-07-05",
     end_date: "2013-09-27",
     mean: 7.34,
-    rank: 2210,
     genres: [
       {
         id: 4,
@@ -11832,6 +11833,7 @@ export const test = [
       updated_at: "2019-12-27T07:51:55+00:00",
       start_date: "2019-12-21",
       finish_date: "2019-12-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -11870,7 +11872,6 @@ export const test = [
     start_date: "2013-01-06",
     end_date: "2013-03-31",
     mean: 7.42,
-    rank: 1887,
     genres: [
       {
         id: 19,
@@ -11895,6 +11896,7 @@ export const test = [
       updated_at: "2019-01-13T03:58:56+00:00",
       start_date: "2019-01-08",
       finish_date: "2019-01-12",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -11932,8 +11934,7 @@ export const test = [
     },
     start_date: "2014-04-06",
     end_date: "2014-06-29",
-    mean: 7.79,
-    rank: 866,
+    mean: 7.78,
     genres: [
       {
         id: 19,
@@ -11958,6 +11959,7 @@ export const test = [
       updated_at: "2020-10-07T19:07:49+00:00",
       start_date: "2019-01-13",
       finish_date: "2019-01-14",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -11996,7 +11998,6 @@ export const test = [
     start_date: "2013-11-27",
     end_date: "2013-11-27",
     mean: 6.85,
-    rank: 4335,
     genres: [
       {
         id: 19,
@@ -12019,6 +12020,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2019-01-13T04:37:49+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -12056,7 +12058,6 @@ export const test = [
     start_date: "2015-06-13",
     end_date: "2015-06-13",
     mean: 7.93,
-    rank: 640,
     genres: [
       {
         id: 19,
@@ -12079,6 +12080,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-05-26T22:55:15+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -12113,7 +12115,6 @@ export const test = [
     start_date: "2019-07-12",
     end_date: "2019-09-27",
     mean: 7.66,
-    rank: 1157,
     genres: [
       {
         id: 36,
@@ -12138,6 +12139,7 @@ export const test = [
       updated_at: "2019-10-13T05:52:40+00:00",
       start_date: "2019-07-11",
       finish_date: "2019-10-13",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -12196,6 +12198,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2021-06-26T04:25:25+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 0,
     start_season: {
@@ -12225,7 +12228,6 @@ export const test = [
     start_date: "2017-07-07",
     end_date: "2017-09-29",
     mean: 8.71,
-    rank: 43,
     genres: [
       {
         id: 24,
@@ -12256,6 +12258,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-06-17T03:11:51+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -12294,7 +12297,6 @@ export const test = [
     start_date: "2011-01-07",
     end_date: "2011-04-22",
     mean: 8.36,
-    rank: 177,
     genres: [
       {
         id: 40,
@@ -12321,6 +12323,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-03-26T18:03:11+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -12359,7 +12362,6 @@ export const test = [
     start_date: "2014-04-06",
     end_date: "2014-09-28",
     mean: 7.48,
-    rank: 1684,
     genres: [
       {
         id: 1,
@@ -12395,6 +12397,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-02-22T16:55:44+00:00",
       start_date: "2019-03-11",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -12433,7 +12436,6 @@ export const test = [
     start_date: "2019-10-05",
     end_date: "2020-03-07",
     mean: 7.72,
-    rank: 1007,
     genres: [
       {
         id: 4,
@@ -12469,6 +12471,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-04-12T06:31:42+00:00",
       start_date: "2019-10-05",
+      num_times_rewatched: 0,
     },
     num_episodes: 23,
     start_season: {
@@ -12507,7 +12510,6 @@ export const test = [
     start_date: "2020-10-02",
     end_date: "2020-12-18",
     mean: 7.55,
-    rank: 1445,
     genres: [
       {
         id: 2,
@@ -12531,6 +12533,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-01-11T08:05:15+00:00",
       start_date: "2020-10-06",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -12572,7 +12575,6 @@ export const test = [
     start_date: "2020-07-04",
     end_date: "2020-09-26",
     mean: 7.34,
-    rank: 2212,
     genres: [
       {
         id: 1,
@@ -12605,6 +12607,7 @@ export const test = [
       updated_at: "2020-09-27T08:02:38+00:00",
       start_date: "2020-07-04",
       finish_date: "2020-09-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -12644,7 +12647,6 @@ export const test = [
     start_date: "2017-01-05",
     end_date: "2017-03-23",
     mean: 6.78,
-    rank: 4645,
     genres: [
       {
         id: 4,
@@ -12677,6 +12679,7 @@ export const test = [
       updated_at: "2019-01-30T07:16:22+00:00",
       start_date: "2019-01-29",
       finish_date: "2019-01-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -12715,7 +12718,6 @@ export const test = [
     start_date: "2018-07-27",
     end_date: "2018-07-27",
     mean: 6.53,
-    rank: 5872,
     genres: [
       {
         id: 35,
@@ -12746,6 +12748,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2019-01-30T07:34:08+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -12779,8 +12782,7 @@ export const test = [
     },
     start_date: "2021-04-03",
     end_date: "2021-06-19",
-    mean: 7.59,
-    rank: 1333,
+    mean: 7.58,
     genres: [
       {
         id: 8,
@@ -12812,6 +12814,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-07-02T21:32:49+00:00",
       start_date: "2021-04-03",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -12854,7 +12857,6 @@ export const test = [
     start_date: "2011-10-05",
     end_date: "2011-12-21",
     mean: 7.07,
-    rank: 3413,
     genres: [
       {
         id: 35,
@@ -12883,6 +12885,7 @@ export const test = [
       updated_at: "2019-03-04T23:01:10+00:00",
       start_date: "2019-03-04",
       finish_date: "2019-03-04",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -12921,7 +12924,6 @@ export const test = [
     start_date: "2019-04-06",
     end_date: "2019-06-22",
     mean: 6.76,
-    rank: 4742,
     genres: [
       {
         id: 4,
@@ -12950,6 +12952,7 @@ export const test = [
       updated_at: "2019-06-22T05:39:01+00:00",
       start_date: "2019-04-05",
       finish_date: "2019-06-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -12988,7 +12991,6 @@ export const test = [
     start_date: "2018-01-07",
     end_date: "2018-03-25",
     mean: 7.42,
-    rank: 1889,
     genres: [
       {
         id: 4,
@@ -13011,6 +13013,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-05-18T05:29:33+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -13049,7 +13052,6 @@ export const test = [
     start_date: "2019-04-06",
     end_date: "2019-09-28",
     mean: 7.24,
-    rank: 2676,
     genres: [
       {
         id: 8,
@@ -13081,6 +13083,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-10-17T16:05:11+00:00",
       start_date: "2019-04-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -13119,7 +13122,6 @@ export const test = [
     start_date: "2016-07-11",
     end_date: "2016-09-27",
     mean: 8.48,
-    rank: 117,
     genres: [
       {
         id: 1,
@@ -13146,6 +13148,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-03-25T15:50:41+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -13184,7 +13187,6 @@ export const test = [
     start_date: "2013-01-12",
     end_date: "2013-03-16",
     mean: 7.52,
-    rank: 1528,
     genres: [
       {
         id: 1,
@@ -13211,6 +13213,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-10-03T20:09:24+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 10,
     start_season: {
@@ -13249,7 +13252,6 @@ export const test = [
     start_date: "2020-01-07",
     end_date: "2020-03-24",
     mean: 7.03,
-    rank: 3621,
     genres: [
       {
         id: 4,
@@ -13270,6 +13272,7 @@ export const test = [
       updated_at: "2020-03-29T05:19:15+00:00",
       start_date: "2020-01-07",
       finish_date: "2020-03-29",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -13310,7 +13313,6 @@ export const test = [
     start_date: "2021-01-11",
     end_date: "2021-03-22",
     mean: 8.38,
-    rank: 171,
     genres: [
       {
         id: 8,
@@ -13339,6 +13341,7 @@ export const test = [
       updated_at: "2021-03-24T14:41:17+00:00",
       start_date: "2021-01-10",
       finish_date: "2021-03-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 11,
     start_season: {
@@ -13377,7 +13380,6 @@ export const test = [
     start_date: "2007-10-03",
     end_date: "2007-12-26",
     mean: 7.17,
-    rank: 2966,
     genres: [
       {
         id: 8,
@@ -13401,6 +13403,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-09-09T17:59:37+00:00",
       start_date: "2020-07-17",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -13439,7 +13442,6 @@ export const test = [
     start_date: "2013-10-03",
     end_date: "2014-04-03",
     mean: 8.04,
-    rank: 490,
     genres: [
       {
         id: 8,
@@ -13464,6 +13466,7 @@ export const test = [
       updated_at: "2018-12-20T21:51:26+00:00",
       start_date: "2018-12-18",
       finish_date: "2018-12-20",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -13502,7 +13505,6 @@ export const test = [
     start_date: "2020-06-18",
     end_date: "2020-06-18",
     mean: 7.35,
-    rank: 2149,
     genres: [
       {
         id: 4,
@@ -13535,6 +13537,7 @@ export const test = [
       updated_at: "2020-06-28T08:22:49+00:00",
       start_date: "2020-06-28",
       finish_date: "2020-06-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -13569,7 +13572,6 @@ export const test = [
     start_date: "2012-10-19",
     end_date: "2012-10-19",
     mean: 6.97,
-    rank: 3835,
     genres: [
       {
         id: 22,
@@ -13592,6 +13594,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-08-14T05:26:06+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -13626,7 +13629,6 @@ export const test = [
     start_date: "2017-10-10",
     end_date: "2017-12-12",
     mean: 7.6,
-    rank: 1282,
     genres: [
       {
         id: 11,
@@ -13649,6 +13651,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-06-27T22:33:58+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 10,
     start_season: {
@@ -13683,7 +13686,6 @@ export const test = [
     start_date: "2016-07-04",
     end_date: "2016-09-19",
     mean: 7.59,
-    rank: 1335,
     genres: [
       {
         id: 11,
@@ -13708,6 +13710,7 @@ export const test = [
       updated_at: "2020-01-01T08:33:49+00:00",
       start_date: "2019-12-29",
       finish_date: "2020-01-01",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -13746,7 +13749,6 @@ export const test = [
     start_date: "2017-07-11",
     end_date: "2017-09-26",
     mean: 7.73,
-    rank: 984,
     genres: [
       {
         id: 11,
@@ -13771,6 +13773,7 @@ export const test = [
       updated_at: "2020-01-03T23:54:55+00:00",
       start_date: "2020-01-01",
       finish_date: "2020-01-03",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -13812,7 +13815,6 @@ export const test = [
     start_date: "2017-05-03",
     end_date: "2017-05-03",
     mean: 7.41,
-    rank: 1910,
     genres: [
       {
         id: 4,
@@ -13837,6 +13839,7 @@ export const test = [
       updated_at: "2020-01-02T06:25:45+00:00",
       start_date: "2020-01-02",
       finish_date: "2020-01-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -13871,7 +13874,6 @@ export const test = [
     start_date: "2014-01-11",
     end_date: "2014-05-24",
     mean: 7.62,
-    rank: 1231,
     genres: [
       {
         id: 35,
@@ -13904,6 +13906,7 @@ export const test = [
       updated_at: "2019-01-27T05:20:59+00:00",
       start_date: "2019-01-23",
       finish_date: "2019-01-26",
+      num_times_rewatched: 0,
     },
     num_episodes: 20,
     start_season: {
@@ -13942,7 +13945,6 @@ export const test = [
     start_date: "2014-10-03",
     end_date: "2015-04-03",
     mean: 7.39,
-    rank: 1994,
     genres: [
       {
         id: 4,
@@ -13973,6 +13975,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-06-26T16:35:30+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 3,
     start_season: {
@@ -14007,7 +14010,6 @@ export const test = [
     start_date: "2015-04-10",
     end_date: "2015-06-26",
     mean: 7.37,
-    rank: 2061,
     genres: [
       {
         id: 4,
@@ -14040,6 +14042,7 @@ export const test = [
       updated_at: "2019-01-29T05:15:53+00:00",
       start_date: "2019-01-27",
       finish_date: "2019-01-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -14078,7 +14081,6 @@ export const test = [
     start_date: "2014-04-09",
     end_date: "2014-06-25",
     mean: 8.15,
-    rank: 369,
     genres: [
       {
         id: 11,
@@ -14113,6 +14115,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-03-19T01:19:22+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -14151,7 +14154,6 @@ export const test = [
     start_date: "2013-10-08",
     end_date: "2013-12-24",
     mean: 7.95,
-    rank: 616,
     genres: [
       {
         id: 4,
@@ -14180,6 +14182,7 @@ export const test = [
       updated_at: "2020-11-27T21:57:34+00:00",
       start_date: "2020-11-24",
       finish_date: "2020-11-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -14218,7 +14221,6 @@ export const test = [
     start_date: "2018-08-25",
     end_date: "2018-08-25",
     mean: 8.25,
-    rank: 267,
     genres: [
       {
         id: 36,
@@ -14243,6 +14245,7 @@ export const test = [
       updated_at: "2021-03-10T22:05:03+00:00",
       start_date: "2021-03-10",
       finish_date: "2021-03-10",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -14277,7 +14280,6 @@ export const test = [
     start_date: "2021-01-11",
     end_date: "2021-03-29",
     mean: 8.41,
-    rank: 152,
     genres: [
       {
         id: 36,
@@ -14302,6 +14304,7 @@ export const test = [
       updated_at: "2021-04-19T06:05:18+00:00",
       start_date: "2021-04-05",
       finish_date: "2021-04-19",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -14340,7 +14343,6 @@ export const test = [
     start_date: "2015-07-07",
     end_date: "2015-09-22",
     mean: 8.19,
-    rank: 329,
     genres: [
       {
         id: 4,
@@ -14369,6 +14371,7 @@ export const test = [
       updated_at: "2021-01-18T08:44:34+00:00",
       start_date: "2020-12-18",
       finish_date: "2021-01-18",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -14407,7 +14410,6 @@ export const test = [
     start_date: "2014-07-23",
     end_date: "2014-07-23",
     mean: 7.62,
-    rank: 1232,
     genres: [
       {
         id: 36,
@@ -14436,6 +14438,7 @@ export const test = [
       updated_at: "2020-11-28T09:51:44+00:00",
       start_date: "2020-11-28",
       finish_date: "2020-11-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -14470,7 +14473,6 @@ export const test = [
     start_date: "2015-04-09",
     end_date: "2015-09-24",
     mean: 7.93,
-    rank: 645,
     genres: [
       {
         id: 4,
@@ -14494,6 +14496,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-01-22T00:12:27+00:00",
       start_date: "2019-09-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -14532,7 +14535,6 @@ export const test = [
     start_date: "2013-01-06",
     end_date: "2013-03-31",
     mean: 7.01,
-    rank: 3706,
     genres: [
       {
         id: 4,
@@ -14559,6 +14561,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-01-24T00:21:49+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -14597,7 +14600,6 @@ export const test = [
     start_date: "2019-10-03",
     end_date: "2019-12-26",
     mean: 7.36,
-    rank: 2087,
     genres: [
       {
         id: 35,
@@ -14626,6 +14628,7 @@ export const test = [
       updated_at: "2019-12-25T23:11:47+00:00",
       start_date: "2019-10-02",
       finish_date: "2019-12-25",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -14667,7 +14670,6 @@ export const test = [
     start_date: "2020-09-02",
     end_date: "2020-09-02",
     mean: 7.62,
-    rank: 1234,
     genres: [
       {
         id: 4,
@@ -14690,6 +14692,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-07-11T00:28:37+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -14729,7 +14732,6 @@ export const test = [
     start_date: "2020-04-05",
     end_date: "2020-06-21",
     mean: 7.5,
-    rank: 1601,
     genres: [
       {
         id: 35,
@@ -14770,6 +14772,7 @@ export const test = [
       updated_at: "2020-06-24T23:32:31+00:00",
       start_date: "2020-04-05",
       finish_date: "2020-06-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -14811,13 +14814,8 @@ export const test = [
       ja: "乙女ゲームの破滅フラグしかない悪役令嬢に転生してしまった…X",
     },
     start_date: "2021-07-03",
-    mean: 7.63,
-    rank: 1224,
+    mean: 7.62,
     genres: [
-      {
-        id: 35,
-        name: "Harem",
-      },
       {
         id: 4,
         name: "Comedy",
@@ -14827,12 +14825,16 @@ export const test = [
         name: "Drama",
       },
       {
-        id: 22,
-        name: "Romance",
-      },
-      {
         id: 10,
         name: "Fantasy",
+      },
+      {
+        id: 35,
+        name: "Harem",
+      },
+      {
+        id: 22,
+        name: "Romance",
       },
       {
         id: 23,
@@ -14852,6 +14854,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-07-02T21:31:52+00:00",
       start_date: "2021-07-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -14890,7 +14893,6 @@ export const test = [
     start_date: "2015-07-07",
     end_date: "2015-09-29",
     mean: 7.93,
-    rank: 646,
     genres: [
       {
         id: 1,
@@ -14925,6 +14927,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-05-18T05:42:28+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -14962,8 +14965,7 @@ export const test = [
     },
     start_date: "2013-11-23",
     end_date: "2013-11-23",
-    mean: 7.57,
-    rank: 1396,
+    mean: 7.56,
     genres: [
       {
         id: 1,
@@ -14988,6 +14990,7 @@ export const test = [
       updated_at: "2019-06-03T04:39:42+00:00",
       start_date: "2019-06-02",
       finish_date: "2019-06-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -15022,7 +15025,6 @@ export const test = [
     start_date: "2011-10-07",
     end_date: "2012-03-30",
     mean: 7.51,
-    rank: 1592,
     genres: [
       {
         id: 1,
@@ -15061,6 +15063,7 @@ export const test = [
       num_episodes_watched: 20,
       is_rewatching: true,
       updated_at: "2020-05-15T21:54:25+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -15076,7 +15079,7 @@ export const test = [
       },
     ],
     image_url_id: "4/29107",
-    time_watched: 30000,
+    time_watched: 67500,
     title_en: "Persona 4 the Animation",
     title_ja: "ペルソナ4アニメーション",
   },
@@ -15095,7 +15098,6 @@ export const test = [
     start_date: "2014-07-11",
     end_date: "2014-09-26",
     mean: 6.62,
-    rank: 5391,
     genres: [
       {
         id: 24,
@@ -15130,6 +15132,7 @@ export const test = [
       num_episodes_watched: 12,
       is_rewatching: false,
       updated_at: "2019-03-02T04:32:11+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -15164,7 +15167,6 @@ export const test = [
     start_date: "2015-04-05",
     end_date: "2015-06-28",
     mean: 7.93,
-    rank: 648,
     genres: [
       {
         id: 24,
@@ -15188,6 +15190,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-06-16T03:36:57+00:00",
       start_date: "2019-05-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -15226,7 +15229,6 @@ export const test = [
     start_date: "2019-05-24",
     end_date: "2019-05-24",
     mean: 8.04,
-    rank: 491,
     genres: [
       {
         id: 1,
@@ -15255,6 +15257,7 @@ export const test = [
       updated_at: "2020-06-22T06:20:19+00:00",
       start_date: "2020-06-22",
       finish_date: "2020-06-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -15293,7 +15296,6 @@ export const test = [
     start_date: "2015-10-03",
     end_date: "2015-12-19",
     mean: 7.49,
-    rank: 1646,
     genres: [
       {
         id: 1,
@@ -15325,6 +15327,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-05-06T03:05:30+00:00",
       start_date: "2019-04-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -15365,16 +15368,15 @@ export const test = [
       ja: "RE-MAIN（リメイン）",
     },
     start_date: "2021-07-04",
-    mean: 7.42,
-    rank: 1859,
+    mean: 7.34,
     genres: [
-      {
-        id: 30,
-        name: "Sports",
-      },
       {
         id: 23,
         name: "School",
+      },
+      {
+        id: 30,
+        name: "Sports",
       },
     ],
     media_type: "tv",
@@ -15382,10 +15384,11 @@ export const test = [
     my_list_status: {
       status: "watching",
       score: 0,
-      num_episodes_watched: 2,
+      num_episodes_watched: 4,
       is_rewatching: false,
-      updated_at: "2021-07-10T21:10:53+00:00",
+      updated_at: "2021-08-02T08:57:20+00:00",
       start_date: "2021-07-04",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -15428,7 +15431,6 @@ export const test = [
     start_date: "2016-04-04",
     end_date: "2016-09-19",
     mean: 8.27,
-    rank: 247,
     genres: [
       {
         id: 40,
@@ -15457,6 +15459,7 @@ export const test = [
       updated_at: "2019-03-27T14:50:38+00:00",
       start_date: "2019-03-18",
       finish_date: "2019-03-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -15495,7 +15498,6 @@ export const test = [
     start_date: "2019-11-08",
     end_date: "2019-11-08",
     mean: 7.6,
-    rank: 1284,
     genres: [
       {
         id: 40,
@@ -15522,6 +15524,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-07-10T01:29:51+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -15560,7 +15563,6 @@ export const test = [
     start_date: "2018-10-06",
     end_date: "2018-10-06",
     mean: 7.55,
-    rank: 1452,
     genres: [
       {
         id: 8,
@@ -15581,6 +15583,7 @@ export const test = [
       updated_at: "2020-07-10T01:13:48+00:00",
       start_date: "2020-07-09",
       finish_date: "2020-07-09",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -15619,7 +15622,6 @@ export const test = [
     start_date: "2020-07-08",
     end_date: "2020-09-30",
     mean: 8.43,
-    rank: 139,
     genres: [
       {
         id: 40,
@@ -15647,6 +15649,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-02-02T23:13:09+00:00",
       start_date: "2020-07-08",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -15685,7 +15688,6 @@ export const test = [
     start_date: "2016-07-02",
     end_date: "2016-09-24",
     mean: 8.01,
-    rank: 539,
     genres: [
       {
         id: 36,
@@ -15708,6 +15710,7 @@ export const test = [
       num_episodes_watched: 13,
       is_rewatching: false,
       updated_at: "2018-09-04T23:34:36+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -15745,8 +15748,7 @@ export const test = [
     },
     start_date: "2018-03-21",
     end_date: "2018-03-21",
-    mean: 8.21,
-    rank: 310,
+    mean: 8.22,
     genres: [
       {
         id: 22,
@@ -15769,6 +15771,7 @@ export const test = [
       num_episodes_watched: 4,
       is_rewatching: false,
       updated_at: "2018-08-02T17:15:21+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 4,
     start_season: {
@@ -15803,7 +15806,6 @@ export const test = [
     start_date: "2017-04-04",
     end_date: "2017-06-20",
     mean: 7.17,
-    rank: 2973,
     genres: [
       {
         id: 1,
@@ -15832,6 +15834,7 @@ export const test = [
       updated_at: "2019-05-10T21:48:51+00:00",
       start_date: "2019-05-09",
       finish_date: "2019-05-10",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -15870,7 +15873,6 @@ export const test = [
     start_date: "2020-01-11",
     end_date: "2020-03-28",
     mean: 7.61,
-    rank: 1277,
     genres: [
       {
         id: 36,
@@ -15899,6 +15901,7 @@ export const test = [
       updated_at: "2020-04-07T05:18:57+00:00",
       start_date: "2020-01-10",
       finish_date: "2020-04-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -15937,7 +15940,6 @@ export const test = [
     start_date: "2015-01-16",
     end_date: "2015-03-27",
     mean: 7.51,
-    rank: 1594,
     genres: [
       {
         id: 35,
@@ -15970,6 +15972,7 @@ export const test = [
       updated_at: "2019-02-05T05:03:28+00:00",
       start_date: "2019-02-03",
       finish_date: "2019-02-04",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -16008,7 +16011,6 @@ export const test = [
     start_date: "2017-04-14",
     end_date: "2017-06-23",
     mean: 7.79,
-    rank: 872,
     genres: [
       {
         id: 35,
@@ -16041,6 +16043,7 @@ export const test = [
       updated_at: "2019-02-24T06:28:21+00:00",
       start_date: "2019-02-05",
       finish_date: "2019-02-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 11,
     start_season: {
@@ -16079,7 +16082,6 @@ export const test = [
     start_date: "2017-04-06",
     end_date: "2017-04-06",
     mean: 7.35,
-    rank: 2158,
     genres: [
       {
         id: 35,
@@ -16112,6 +16114,7 @@ export const test = [
       updated_at: "2019-02-05T05:29:00+00:00",
       start_date: "2019-02-04",
       finish_date: "2019-02-04",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -16151,7 +16154,6 @@ export const test = [
     start_date: "2019-10-26",
     end_date: "2019-10-26",
     mean: 8.47,
-    rank: 123,
     genres: [
       {
         id: 35,
@@ -16182,6 +16184,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-10-07T19:03:32+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -16216,7 +16219,6 @@ export const test = [
     start_date: "2016-07-04",
     end_date: "2016-12-26",
     mean: 8.43,
-    rank: 140,
     genres: [
       {
         id: 4,
@@ -16249,6 +16251,7 @@ export const test = [
       updated_at: "2020-08-19T07:28:23+00:00",
       start_date: "2020-08-14",
       finish_date: "2020-08-19",
+      num_times_rewatched: 0,
     },
     num_episodes: 120,
     start_season: {
@@ -16291,7 +16294,6 @@ export const test = [
     start_date: "2018-01-17",
     end_date: "2018-06-27",
     mean: 8.45,
-    rank: 130,
     genres: [
       {
         id: 36,
@@ -16324,6 +16326,7 @@ export const test = [
       updated_at: "2020-08-23T04:40:52+00:00",
       start_date: "2020-08-19",
       finish_date: "2020-08-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -16370,7 +16373,6 @@ export const test = [
     start_date: "2019-12-30",
     end_date: "2019-12-30",
     mean: 8.11,
-    rank: 411,
     genres: [
       {
         id: 36,
@@ -16403,6 +16405,7 @@ export const test = [
       updated_at: "2020-08-24T23:29:34+00:00",
       start_date: "2020-08-24",
       finish_date: "2020-08-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 6,
     start_season: {
@@ -16441,7 +16444,6 @@ export const test = [
     start_date: "2018-12-28",
     end_date: "2018-12-28",
     mean: 8.21,
-    rank: 311,
     genres: [
       {
         id: 4,
@@ -16474,6 +16476,7 @@ export const test = [
       updated_at: "2020-08-23T05:43:59+00:00",
       start_date: "2020-08-23",
       finish_date: "2020-08-23",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -16512,7 +16515,6 @@ export const test = [
     start_date: "2012-04-13",
     end_date: "2012-06-29",
     mean: 8.34,
-    rank: 196,
     genres: [
       {
         id: 8,
@@ -16543,6 +16545,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-07-28T00:55:51+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -16585,7 +16588,6 @@ export const test = [
     start_date: "2017-04-06",
     end_date: "2017-09-21",
     mean: 7.39,
-    rank: 1997,
     genres: [
       {
         id: 36,
@@ -16605,6 +16607,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-02-27T15:52:37+00:00",
       start_date: "2019-02-12",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -16643,7 +16646,6 @@ export const test = [
     start_date: "2012-10-09",
     end_date: "2013-03-26",
     mean: 8.15,
-    rank: 371,
     genres: [
       {
         id: 36,
@@ -16676,6 +16678,7 @@ export const test = [
       updated_at: "2018-09-21T00:07:56+00:00",
       start_date: "2018-09-15",
       finish_date: "2018-09-20",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -16714,7 +16717,6 @@ export const test = [
     start_date: "2016-04-11",
     end_date: "2016-06-27",
     mean: 7.11,
-    rank: 3269,
     genres: [
       {
         id: 36,
@@ -16737,6 +16739,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2018-10-30T02:11:42+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -16774,8 +16777,7 @@ export const test = [
     },
     start_date: "2015-01-12",
     end_date: "2015-03-30",
-    mean: 6.86,
-    rank: 4262,
+    mean: 6.85,
     genres: [
       {
         id: 1,
@@ -16810,6 +16812,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-06-03T05:46:35+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -16846,8 +16849,7 @@ export const test = [
       ja: "精霊幻想記",
     },
     start_date: "2021-07-06",
-    mean: 7.4,
-    rank: 1941,
+    mean: 7.33,
     genres: [
       {
         id: 1,
@@ -16858,20 +16860,20 @@ export const test = [
         name: "Adventure",
       },
       {
-        id: 35,
-        name: "Harem",
-      },
-      {
         id: 8,
         name: "Drama",
       },
       {
-        id: 22,
-        name: "Romance",
-      },
-      {
         id: 10,
         name: "Fantasy",
+      },
+      {
+        id: 35,
+        name: "Harem",
+      },
+      {
+        id: 22,
+        name: "Romance",
       },
     ],
     media_type: "tv",
@@ -16879,10 +16881,11 @@ export const test = [
     my_list_status: {
       status: "watching",
       score: 0,
-      num_episodes_watched: 2,
+      num_episodes_watched: 5,
       is_rewatching: false,
-      updated_at: "2021-07-13T07:04:23+00:00",
+      updated_at: "2021-08-04T08:33:05+00:00",
       start_date: "2021-07-13",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -16902,7 +16905,7 @@ export const test = [
       },
     ],
     image_url_id: "1453/116276",
-    time_watched: 2858,
+    time_watched: 7145,
     title_en: "Spirit Chronicles",
     title_ja: "精霊幻想記",
   },
@@ -16920,8 +16923,7 @@ export const test = [
     },
     start_date: "2018-10-04",
     end_date: "2018-12-27",
-    mean: 8.33,
-    rank: 201,
+    mean: 8.32,
     genres: [
       {
         id: 4,
@@ -16954,6 +16956,7 @@ export const test = [
       updated_at: "2018-12-26T21:56:01+00:00",
       start_date: "2018-10-03",
       finish_date: "2018-12-26",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -16992,7 +16995,6 @@ export const test = [
     start_date: "2019-06-15",
     end_date: "2019-06-15",
     mean: 8.65,
-    rank: 55,
     genres: [
       {
         id: 8,
@@ -17021,6 +17023,7 @@ export const test = [
       updated_at: "2019-12-04T00:12:01+00:00",
       start_date: "2019-12-03",
       finish_date: "2019-12-03",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -17055,7 +17058,6 @@ export const test = [
     start_date: "2010-07-04",
     end_date: "2010-09-26",
     mean: 7.58,
-    rank: 1355,
     genres: [
       {
         id: 4,
@@ -17084,6 +17086,7 @@ export const test = [
       updated_at: "2018-11-04T00:11:56+00:00",
       start_date: "2018-10-30",
       finish_date: "2018-11-03",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -17128,7 +17131,6 @@ export const test = [
     start_date: "2011-04-15",
     end_date: "2013-10-17",
     mean: 7.78,
-    rank: 881,
     genres: [
       {
         id: 4,
@@ -17157,6 +17159,7 @@ export const test = [
       updated_at: "2018-11-07T04:15:45+00:00",
       start_date: "2018-11-04",
       finish_date: "2018-11-06",
+      num_times_rewatched: 0,
     },
     num_episodes: 8,
     start_season: {
@@ -17191,7 +17194,6 @@ export const test = [
     start_date: "2014-01-04",
     end_date: "2014-03-30",
     mean: 7.72,
-    rank: 994,
     genres: [
       {
         id: 36,
@@ -17219,6 +17221,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2018-12-24T06:24:55+00:00",
       start_date: "2018-11-06",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -17253,7 +17256,6 @@ export const test = [
     start_date: "2019-04-06",
     end_date: "2019-06-22",
     mean: 7.4,
-    rank: 1942,
     genres: [
       {
         id: 36,
@@ -17282,6 +17284,7 @@ export const test = [
       updated_at: "2019-06-29T04:34:44+00:00",
       start_date: "2019-04-05",
       finish_date: "2019-06-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -17320,7 +17323,6 @@ export const test = [
     start_date: "2013-07-05",
     end_date: "2013-09-27",
     mean: 7.66,
-    rank: 1143,
     genres: [
       {
         id: 4,
@@ -17343,6 +17345,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-05-27T02:14:29+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -17377,7 +17380,6 @@ export const test = [
     start_date: "2007-04-02",
     end_date: "2007-10-01",
     mean: 7.72,
-    rank: 995,
     genres: [
       {
         id: 4,
@@ -17408,6 +17410,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-01-19T07:17:59+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 26,
     start_season: {
@@ -17450,7 +17453,6 @@ export const test = [
     start_date: "2019-04-10",
     end_date: "2019-06-26",
     mean: 7.35,
-    rank: 2160,
     genres: [
       {
         id: 36,
@@ -17479,6 +17481,7 @@ export const test = [
       updated_at: "2019-06-27T19:38:22+00:00",
       start_date: "2019-04-10",
       finish_date: "2019-06-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -17517,7 +17520,6 @@ export const test = [
     start_date: "2013-04-07",
     end_date: "2013-09-29",
     mean: 8.51,
-    rank: 103,
     genres: [
       {
         id: 1,
@@ -17558,6 +17560,7 @@ export const test = [
       updated_at: "2020-06-06T03:22:49+00:00",
       start_date: "2018-08-26",
       finish_date: "2020-06-04",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -17604,7 +17607,6 @@ export const test = [
     start_date: "2013-12-09",
     end_date: "2014-08-08",
     mean: 7.85,
-    rank: 766,
     genres: [
       {
         id: 1,
@@ -17637,6 +17639,7 @@ export const test = [
       updated_at: "2020-06-08T23:49:04+00:00",
       start_date: "2020-06-06",
       finish_date: "2020-06-08",
+      num_times_rewatched: 0,
     },
     num_episodes: 3,
     start_season: {
@@ -17670,8 +17673,7 @@ export const test = [
     },
     start_date: "2017-04-01",
     end_date: "2017-06-17",
-    mean: 8.48,
-    rank: 119,
+    mean: 8.49,
     genres: [
       {
         id: 1,
@@ -17712,6 +17714,7 @@ export const test = [
       updated_at: "2020-06-12T03:26:25+00:00",
       start_date: "2020-06-10",
       finish_date: "2020-06-11",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -17750,7 +17753,6 @@ export const test = [
     start_date: "2018-07-23",
     end_date: "2018-10-15",
     mean: 8.63,
-    rank: 60,
     genres: [
       {
         id: 1,
@@ -17791,6 +17793,7 @@ export const test = [
       updated_at: "2020-06-14T01:20:14+00:00",
       start_date: "2020-06-12",
       finish_date: "2020-06-13",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -17829,7 +17832,6 @@ export const test = [
     start_date: "2019-04-29",
     end_date: "2019-07-01",
     mean: 9.1,
-    rank: 3,
     genres: [
       {
         id: 1,
@@ -17870,6 +17872,7 @@ export const test = [
       updated_at: "2020-06-17T03:02:49+00:00",
       start_date: "2020-06-16",
       finish_date: "2020-06-16",
+      num_times_rewatched: 0,
     },
     num_episodes: 10,
     start_season: {
@@ -17911,7 +17914,6 @@ export const test = [
     start_date: "2014-12-09",
     end_date: "2015-04-09",
     mean: 8.41,
-    rank: 153,
     genres: [
       {
         id: 1,
@@ -17936,6 +17938,7 @@ export const test = [
       updated_at: "2020-06-10T04:52:02+00:00",
       start_date: "2020-06-09",
       finish_date: "2020-06-09",
+      num_times_rewatched: 0,
     },
     num_episodes: 2,
     start_season: {
@@ -17970,7 +17973,6 @@ export const test = [
     start_date: "2017-12-08",
     end_date: "2018-08-09",
     mean: 7.79,
-    rank: 875,
     genres: [
       {
         id: 1,
@@ -18003,6 +18005,7 @@ export const test = [
       updated_at: "2020-06-14T01:54:32+00:00",
       start_date: "2020-06-12",
       finish_date: "2020-06-13",
+      num_times_rewatched: 0,
     },
     num_episodes: 3,
     start_season: {
@@ -18037,7 +18040,6 @@ export const test = [
     start_date: "2020-12-07",
     end_date: "2021-03-29",
     mean: 8.96,
-    rank: 14,
     genres: [
       {
         id: 1,
@@ -18078,6 +18080,7 @@ export const test = [
       updated_at: "2021-03-28T20:35:50+00:00",
       start_date: "2020-12-06",
       finish_date: "2021-03-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 16,
     start_season: {
@@ -18152,6 +18155,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2021-03-29T16:28:47+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 0,
     start_season: {
@@ -18185,8 +18189,7 @@ export const test = [
     },
     start_date: "2015-10-04",
     end_date: "2015-12-20",
-    mean: 7.14,
-    rank: 3102,
+    mean: 7.15,
     genres: [
       {
         id: 4,
@@ -18214,6 +18217,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-07-23T01:35:50+00:00",
       start_date: "2020-06-18",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -18252,7 +18256,6 @@ export const test = [
     start_date: "2014-10-09",
     end_date: "2015-03-26",
     mean: 8.33,
-    rank: 203,
     genres: [
       {
         id: 4,
@@ -18273,6 +18276,7 @@ export const test = [
       updated_at: "2019-01-22T03:47:57+00:00",
       start_date: "2019-01-16",
       finish_date: "2019-01-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -18311,7 +18315,6 @@ export const test = [
     start_date: "2020-02-29",
     end_date: "2020-02-29",
     mean: 7.77,
-    rank: 908,
     genres: [
       {
         id: 4,
@@ -18330,6 +18333,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-01-22T03:50:49+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -18362,8 +18366,7 @@ export const test = [
       ja: "白い砂のアクアトープ",
     },
     start_date: "2021-07-09",
-    mean: 7.58,
-    rank: 1356,
+    mean: 7.53,
     genres: [
       {
         id: 36,
@@ -18379,6 +18382,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-07-18T07:46:59+00:00",
       start_date: "2021-07-08",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -18417,7 +18421,6 @@ export const test = [
     start_date: "2015-04-04",
     end_date: "2015-09-26",
     mean: 8.23,
-    rank: 286,
     genres: [
       {
         id: 9,
@@ -18442,6 +18445,7 @@ export const test = [
       updated_at: "2019-10-09T03:27:19+00:00",
       start_date: "2018-09-04",
       finish_date: "2018-09-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -18483,7 +18487,6 @@ export const test = [
     start_date: "2016-05-02",
     end_date: "2016-07-04",
     mean: 7.35,
-    rank: 2163,
     genres: [
       {
         id: 9,
@@ -18506,6 +18509,7 @@ export const test = [
       num_episodes_watched: 2,
       is_rewatching: false,
       updated_at: "2018-09-09T01:41:13+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 2,
     start_season: {
@@ -18545,7 +18549,6 @@ export const test = [
     start_date: "2016-07-02",
     end_date: "2016-09-24",
     mean: 8.15,
-    rank: 372,
     genres: [
       {
         id: 9,
@@ -18570,6 +18573,7 @@ export const test = [
       updated_at: "2018-09-10T04:02:08+00:00",
       start_date: "2018-09-08",
       finish_date: "2018-09-09",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -18613,7 +18617,6 @@ export const test = [
     start_date: "2017-05-01",
     end_date: "2017-07-04",
     mean: 7.5,
-    rank: 1605,
     genres: [
       {
         id: 9,
@@ -18636,6 +18639,7 @@ export const test = [
       num_episodes_watched: 2,
       is_rewatching: false,
       updated_at: "2018-09-11T02:07:44+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 2,
     start_season: {
@@ -18670,7 +18674,6 @@ export const test = [
     start_date: "2017-10-04",
     end_date: "2017-12-20",
     mean: 8.07,
-    rank: 462,
     genres: [
       {
         id: 9,
@@ -18695,6 +18698,7 @@ export const test = [
       updated_at: "2019-10-13T16:00:37+00:00",
       start_date: "2018-09-10",
       finish_date: "2018-09-11",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -18737,8 +18741,7 @@ export const test = [
     },
     start_date: "2018-05-02",
     end_date: "2018-05-02",
-    mean: 7.47,
-    rank: 1704,
+    mean: 7.46,
     genres: [
       {
         id: 8,
@@ -18757,6 +18760,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-09-13T01:01:09+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -18795,7 +18799,6 @@ export const test = [
     start_date: "2018-04-09",
     end_date: "2018-06-25",
     mean: 8.02,
-    rank: 518,
     genres: [
       {
         id: 9,
@@ -18820,6 +18823,7 @@ export const test = [
       updated_at: "2019-09-01T16:22:50+00:00",
       start_date: "2018-09-12",
       finish_date: "2018-09-14",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -18858,7 +18862,6 @@ export const test = [
     start_date: "2019-10-12",
     end_date: "2019-12-28",
     mean: 7.75,
-    rank: 948,
     genres: [
       {
         id: 9,
@@ -18882,6 +18885,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2020-01-19T05:55:56+00:00",
       start_date: "2019-10-11",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -18920,7 +18924,6 @@ export const test = [
     start_date: "2018-01-07",
     end_date: "2018-03-25",
     mean: 7.02,
-    rank: 3650,
     genres: [
       {
         id: 4,
@@ -18945,6 +18948,7 @@ export const test = [
       updated_at: "2019-12-20T07:48:02+00:00",
       start_date: "2019-12-02",
       finish_date: "2019-12-20",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -18983,7 +18987,6 @@ export const test = [
     start_date: "2010-01-05",
     end_date: "2010-03-23",
     mean: 7.55,
-    rank: 1458,
     genres: [
       {
         id: 38,
@@ -19010,6 +19013,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-05-07T00:48:16+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -19048,7 +19052,6 @@ export const test = [
     start_date: "2019-10-11",
     end_date: "2019-10-11",
     mean: 7.52,
-    rank: 1535,
     genres: [
       {
         id: 19,
@@ -19075,6 +19078,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2020-06-17T04:17:25+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -19113,7 +19117,6 @@ export const test = [
     start_date: "2018-01-02",
     end_date: "2018-03-27",
     mean: 8.55,
-    rank: 87,
     genres: [
       {
         id: 2,
@@ -19136,6 +19139,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-02-18T15:42:19+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -19173,8 +19177,7 @@ export const test = [
     },
     start_date: "2008-04-07",
     end_date: "2008-09-15",
-    mean: 7.54,
-    rank: 1472,
+    mean: 7.53,
     genres: [
       {
         id: 4,
@@ -19203,6 +19206,7 @@ export const test = [
       updated_at: "2018-11-25T04:55:49+00:00",
       start_date: "2018-11-15",
       finish_date: "2018-11-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -19245,7 +19249,6 @@ export const test = [
     start_date: "2018-10-07",
     end_date: "2018-12-23",
     mean: 7.16,
-    rank: 3001,
     genres: [
       {
         id: 1,
@@ -19270,6 +19273,7 @@ export const test = [
       updated_at: "2018-12-23T04:22:07+00:00",
       start_date: "2018-10-18",
       finish_date: "2018-12-22",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -19308,7 +19312,6 @@ export const test = [
     start_date: "2011-04-06",
     end_date: "2011-09-14",
     mean: 9.1,
-    rank: 4,
     genres: [
       {
         id: 24,
@@ -19336,6 +19339,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2018-10-23T12:48:08+00:00",
       start_date: "2018-07-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -19374,7 +19378,6 @@ export const test = [
     start_date: "2012-07-08",
     end_date: "2012-12-23",
     mean: 7.21,
-    rank: 2810,
     genres: [
       {
         id: 1,
@@ -19406,6 +19409,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-06-25T20:26:47+00:00",
       start_date: "2019-06-06",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -19444,7 +19448,6 @@ export const test = [
     start_date: "2018-04-05",
     end_date: "2018-06-28",
     mean: 7.55,
-    rank: 1460,
     genres: [
       {
         id: 4,
@@ -19469,6 +19472,7 @@ export const test = [
       updated_at: "2020-01-10T01:02:20+00:00",
       start_date: "2019-05-30",
       finish_date: "2020-01-09",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -19507,7 +19511,6 @@ export const test = [
     start_date: "2016-04-09",
     end_date: "2016-06-25",
     mean: 7.88,
-    rank: 711,
     genres: [
       {
         id: 36,
@@ -19532,6 +19535,7 @@ export const test = [
       updated_at: "2020-05-27T07:17:31+00:00",
       start_date: "2019-03-10",
       finish_date: "2020-05-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -19570,7 +19574,6 @@ export const test = [
     start_date: "2016-06-24",
     end_date: "2016-12-22",
     mean: 7.41,
-    rank: 1925,
     genres: [
       {
         id: 4,
@@ -19595,6 +19598,7 @@ export const test = [
       updated_at: "2020-05-27T07:54:02+00:00",
       start_date: "2020-05-27",
       finish_date: "2020-05-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 7,
     start_season: {
@@ -19615,71 +19619,6 @@ export const test = [
     title_ja: "田中くんはいつもけだるげ特典",
   },
   {
-    id: 46471,
-    title: "Tantei wa Mou, Shindeiru.",
-    main_picture: {
-      medium: "https://api-cdn.myanimelist.net/images/anime/1843/115815.jpg",
-      large: "https://api-cdn.myanimelist.net/images/anime/1843/115815l.jpg",
-    },
-    alternative_titles: {
-      synonyms: ["La detective está muerta.", "Tanmoshi"],
-      en: "The Detective Is Already Dead",
-      ja: "探偵はもう、死んでいる。",
-    },
-    start_date: "2021-07-04",
-    mean: 7.49,
-    rank: 1652,
-    genres: [
-      {
-        id: 7,
-        name: "Mystery",
-      },
-      {
-        id: 4,
-        name: "Comedy",
-      },
-      {
-        id: 8,
-        name: "Drama",
-      },
-      {
-        id: 22,
-        name: "Romance",
-      },
-    ],
-    media_type: "tv",
-    status: "currently_airing",
-    my_list_status: {
-      status: "watching",
-      score: 0,
-      num_episodes_watched: 1,
-      is_rewatching: false,
-      updated_at: "2021-07-04T23:27:23+00:00",
-      start_date: "2021-07-04",
-    },
-    num_episodes: 12,
-    start_season: {
-      year: 2021,
-      season: "summer",
-    },
-    broadcast: {
-      day_of_the_week: "sunday",
-      start_time: "21:30",
-    },
-    source: "light_novel",
-    average_episode_duration: 1545,
-    studios: [
-      {
-        id: 1974,
-        name: "ENGI",
-      },
-    ],
-    image_url_id: "1843/115815",
-    time_watched: 1545,
-    title_en: "The Detective Is Already Dead",
-    title_ja: "探偵はもう、死んでいる。",
-  },
-  {
     id: 13333,
     title: "Tari Tari",
     main_picture: {
@@ -19694,7 +19633,6 @@ export const test = [
     start_date: "2012-07-01",
     end_date: "2012-09-23",
     mean: 7.31,
-    rank: 2356,
     genres: [
       {
         id: 19,
@@ -19719,6 +19657,7 @@ export const test = [
       updated_at: "2020-01-10T07:45:18+00:00",
       start_date: "2019-01-03",
       finish_date: "2019-01-07",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -19757,7 +19696,6 @@ export const test = [
     start_date: "2019-01-09",
     end_date: "2019-06-26",
     mean: 8.01,
-    rank: 540,
     genres: [
       {
         id: 1,
@@ -19786,6 +19724,7 @@ export const test = [
       updated_at: "2019-06-27T19:33:18+00:00",
       start_date: "2019-01-17",
       finish_date: "2019-06-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -19823,8 +19762,7 @@ export const test = [
     },
     start_date: "2019-07-02",
     end_date: "2019-09-17",
-    mean: 6.45,
-    rank: 6316,
+    mean: 6.44,
     genres: [
       {
         id: 4,
@@ -19853,6 +19791,7 @@ export const test = [
       updated_at: "2019-09-18T06:15:09+00:00",
       start_date: "2019-07-02",
       finish_date: "2019-09-18",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -19891,7 +19830,6 @@ export const test = [
     start_date: "2019-07-19",
     end_date: "2019-07-19",
     mean: 8.36,
-    rank: 180,
     genres: [
       {
         id: 36,
@@ -19920,6 +19858,7 @@ export const test = [
       updated_at: "2020-06-17T23:26:46+00:00",
       start_date: "2020-06-17",
       finish_date: "2020-06-17",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -19954,7 +19893,6 @@ export const test = [
     start_date: "2018-10-02",
     end_date: "2019-03-19",
     mean: 8.1,
-    rank: 417,
     genres: [
       {
         id: 1,
@@ -19990,6 +19928,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-01-13T08:51:29+00:00",
       start_date: "2019-03-17",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -20026,8 +19965,7 @@ export const test = [
       ja: "東京リベンジャーズ",
     },
     start_date: "2021-04-11",
-    mean: 8.27,
-    rank: 249,
+    mean: 8.28,
     genres: [
       {
         id: 1,
@@ -20059,6 +19997,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-05-09T05:17:32+00:00",
       start_date: "2021-05-02",
+      num_times_rewatched: 0,
     },
     num_episodes: 0,
     start_season: {
@@ -20097,7 +20036,6 @@ export const test = [
     start_date: "1988-04-16",
     end_date: "1988-04-16",
     mean: 8.28,
-    rank: 245,
     genres: [
       {
         id: 2,
@@ -20122,6 +20060,7 @@ export const test = [
       updated_at: "2019-09-03T22:17:47+00:00",
       start_date: "2019-09-03",
       finish_date: "2019-09-03",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -20156,7 +20095,6 @@ export const test = [
     start_date: "2020-10-03",
     end_date: "2020-12-19",
     mean: 7.92,
-    rank: 659,
     genres: [
       {
         id: 4,
@@ -20181,6 +20119,7 @@ export const test = [
       updated_at: "2020-12-21T09:36:21+00:00",
       start_date: "2020-10-02",
       finish_date: "2020-12-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -20219,7 +20158,6 @@ export const test = [
     start_date: "2008-10-02",
     end_date: "2009-03-26",
     mean: 8.17,
-    rank: 347,
     genres: [
       {
         id: 36,
@@ -20248,6 +20186,7 @@ export const test = [
       updated_at: "2018-12-18T05:42:12+00:00",
       start_date: "2018-09-25",
       finish_date: "2018-12-17",
+      num_times_rewatched: 0,
     },
     num_episodes: 25,
     start_season: {
@@ -20286,7 +20225,6 @@ export const test = [
     start_date: "2011-12-21",
     end_date: "2011-12-21",
     mean: 7.45,
-    rank: 1784,
     genres: [
       {
         id: 36,
@@ -20313,6 +20251,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2018-12-18T06:12:19+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 1,
     start_season: {
@@ -20347,7 +20286,6 @@ export const test = [
     start_date: "2014-10-08",
     end_date: "2014-12-24",
     mean: 7.12,
-    rank: 3200,
     genres: [
       {
         id: 1,
@@ -20399,6 +20337,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-05-27T18:42:03+00:00",
       start_date: "2018-11-05",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -20437,7 +20376,6 @@ export const test = [
     start_date: "2008-01-06",
     end_date: "2008-03-30",
     mean: 7.34,
-    rank: 2190,
     genres: [
       {
         id: 8,
@@ -20462,6 +20400,7 @@ export const test = [
       updated_at: "2019-08-15T05:30:45+00:00",
       start_date: "2019-07-28",
       finish_date: "2019-08-15",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -20500,7 +20439,6 @@ export const test = [
     start_date: "2017-04-07",
     end_date: "2017-06-30",
     mean: 8.13,
-    rank: 394,
     genres: [
       {
         id: 22,
@@ -20521,6 +20459,7 @@ export const test = [
       updated_at: "2019-07-21T06:22:38+00:00",
       start_date: "2018-10-05",
       finish_date: "2019-07-21",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -20558,8 +20497,7 @@ export const test = [
     },
     start_date: "2018-10-22",
     end_date: "2019-01-21",
-    mean: 7.6,
-    rank: 1293,
+    mean: 7.61,
     genres: [
       {
         id: 30,
@@ -20584,6 +20522,7 @@ export const test = [
       updated_at: "2019-06-18T22:15:13+00:00",
       start_date: "2018-10-21",
       finish_date: "2019-01-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -20622,7 +20561,6 @@ export const test = [
     start_date: "2019-07-08",
     end_date: "2019-12-30",
     mean: 8.72,
-    rank: 40,
     genres: [
       {
         id: 1,
@@ -20655,6 +20593,7 @@ export const test = [
       updated_at: "2019-12-31T00:44:33+00:00",
       start_date: "2019-07-09",
       finish_date: "2019-12-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 24,
     start_season: {
@@ -20693,7 +20632,6 @@ export const test = [
     start_date: "2019-10-07",
     end_date: "2019-12-23",
     mean: 6.82,
-    rank: 4443,
     genres: [
       {
         id: 4,
@@ -20714,6 +20652,7 @@ export const test = [
       updated_at: "2019-12-24T06:43:36+00:00",
       start_date: "2019-10-08",
       finish_date: "2019-12-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -20752,7 +20691,6 @@ export const test = [
     start_date: "2010-04-04",
     end_date: "2010-06-27",
     mean: 7.68,
-    rank: 1092,
     genres: [
       {
         id: 4,
@@ -20781,6 +20719,7 @@ export const test = [
       updated_at: "2019-05-23T06:01:58+00:00",
       start_date: "2019-05-21",
       finish_date: "2019-05-23",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -20815,7 +20754,6 @@ export const test = [
     start_date: "2015-07-05",
     end_date: "2015-09-27",
     mean: 8,
-    rank: 547,
     genres: [
       {
         id: 4,
@@ -20843,6 +20781,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-06-16T03:36:51+00:00",
       start_date: "2019-05-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -20881,7 +20820,6 @@ export const test = [
     start_date: "2011-10-01",
     end_date: "2011-12-24",
     mean: 7.85,
-    rank: 768,
     genres: [
       {
         id: 4,
@@ -20910,6 +20848,7 @@ export const test = [
       updated_at: "2019-05-27T02:48:01+00:00",
       start_date: "2019-05-24",
       finish_date: "2019-05-26",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -20944,7 +20883,6 @@ export const test = [
     start_date: "2018-04-13",
     end_date: "2018-06-22",
     mean: 7.95,
-    rank: 617,
     genres: [
       {
         id: 36,
@@ -20967,6 +20905,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-05-19T02:34:11+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 11,
     start_season: {
@@ -21005,7 +20944,6 @@ export const test = [
     start_date: "2018-10-05",
     end_date: "2018-12-28",
     mean: 7.92,
-    rank: 660,
     genres: [
       {
         id: 8,
@@ -21032,6 +20970,7 @@ export const test = [
       num_episodes_watched: 0,
       is_rewatching: false,
       updated_at: "2019-09-29T04:36:35+00:00",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -21073,7 +21012,6 @@ export const test = [
     start_date: "2013-04-05",
     end_date: "2013-06-28",
     mean: 8.04,
-    rank: 494,
     genres: [
       {
         id: 36,
@@ -21106,6 +21044,7 @@ export const test = [
       updated_at: "2020-03-17T23:08:54+00:00",
       start_date: "2018-08-30",
       finish_date: "2018-09-02",
+      num_times_rewatched: 1,
     },
     num_episodes: 13,
     start_season: {
@@ -21125,7 +21064,7 @@ export const test = [
       },
     ],
     image_url_id: "11/49459",
-    time_watched: 18720,
+    time_watched: 37440,
     title_en: "My Teen Romantic Comedy SNAFU",
     title_ja: "やはり俺の青春ラブコメはまちがっている。",
   },
@@ -21149,7 +21088,6 @@ export const test = [
     start_date: "2020-07-10",
     end_date: "2020-09-25",
     mean: 8.41,
-    rank: 156,
     genres: [
       {
         id: 36,
@@ -21182,6 +21120,7 @@ export const test = [
       updated_at: "2020-09-24T20:10:54+00:00",
       start_date: "2020-07-10",
       finish_date: "2020-09-24",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -21225,7 +21164,6 @@ export const test = [
     start_date: "2013-09-19",
     end_date: "2013-09-19",
     mean: 7.59,
-    rank: 1345,
     genres: [
       {
         id: 4,
@@ -21248,6 +21186,7 @@ export const test = [
       num_episodes_watched: 1,
       is_rewatching: false,
       updated_at: "2020-03-19T05:30:13+00:00",
+      num_times_rewatched: 1,
     },
     num_episodes: 1,
     start_season: {
@@ -21263,7 +21202,7 @@ export const test = [
       },
     ],
     image_url_id: "9/54831",
-    time_watched: 1420,
+    time_watched: 2840,
     title_en: "Yahari Ore no Seishun Love Comedy wa Machigatteiru. OVA",
     title_ja:
       "やはり俺の青春ラブコメはまちがっている。OVA「こちらとしても彼ら彼女らの行く末に幸多からんことを願わざるを得ない。」",
@@ -21288,7 +21227,6 @@ export const test = [
     start_date: "2015-04-03",
     end_date: "2015-06-26",
     mean: 8.25,
-    rank: 269,
     genres: [
       {
         id: 36,
@@ -21321,6 +21259,7 @@ export const test = [
       updated_at: "2020-03-21T05:57:23+00:00",
       start_date: "2018-09-02",
       finish_date: "2018-09-03",
+      num_times_rewatched: 1,
     },
     num_episodes: 13,
     start_season: {
@@ -21340,7 +21279,7 @@ export const test = [
       },
     ],
     image_url_id: "11/75376",
-    time_watched: 18720,
+    time_watched: 37440,
     title_en: "My Teen Romantic Comedy SNAFU TOO!",
     title_ja: "やはり俺の青春ラブコメはまちがっている。続",
   },
@@ -21362,7 +21301,6 @@ export const test = [
     start_date: "2016-10-27",
     end_date: "2016-10-27",
     mean: 8.06,
-    rank: 468,
     genres: [
       {
         id: 4,
@@ -21387,6 +21325,7 @@ export const test = [
       updated_at: "2020-03-21T06:30:38+00:00",
       start_date: "2018-09-03",
       finish_date: "2018-09-03",
+      num_times_rewatched: 1,
     },
     num_episodes: 1,
     start_season: {
@@ -21402,7 +21341,7 @@ export const test = [
       },
     ],
     image_url_id: "13/84052",
-    time_watched: 1420,
+    time_watched: 2840,
     title_en: "Yahari Ore no Seishun Love Comedy wa Machigatteiru. Zoku OVA",
     title_ja:
       "やはり俺の青春ラブコメはまちがっている. 続 きっと, 女の子はお砂糖とスパイスと素敵な何かでできている。",
@@ -21421,8 +21360,7 @@ export const test = [
     },
     start_date: "2019-01-10",
     end_date: "2019-03-29",
-    mean: 8.6,
-    rank: 65,
+    mean: 8.59,
     genres: [
       {
         id: 24,
@@ -21459,6 +21397,7 @@ export const test = [
       updated_at: "2019-03-29T01:21:50+00:00",
       start_date: "2019-01-09",
       finish_date: "2019-03-28",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -21497,7 +21436,6 @@ export const test = [
     start_date: "2021-01-08",
     end_date: "2021-03-26",
     mean: 5.51,
-    rank: 10125,
     genres: [
       {
         id: 24,
@@ -21529,6 +21467,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-05-10T06:00:01+00:00",
       start_date: "2021-01-08",
+      num_times_rewatched: 0,
     },
     num_episodes: 11,
     start_season: {
@@ -21570,8 +21509,7 @@ export const test = [
     },
     start_date: "2015-04-12",
     end_date: "2015-06-28",
-    mean: 7.61,
-    rank: 1281,
+    mean: 7.6,
     genres: [
       {
         id: 35,
@@ -21612,6 +21550,7 @@ export const test = [
       updated_at: "2019-01-31T21:34:31+00:00",
       start_date: "2019-01-30",
       finish_date: "2019-01-31",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -21650,7 +21589,6 @@ export const test = [
     start_date: "2020-04-05",
     end_date: "2020-06-21",
     mean: 6.95,
-    rank: 3930,
     genres: [
       {
         id: 36,
@@ -21679,6 +21617,7 @@ export const test = [
       updated_at: "2020-06-21T03:33:56+00:00",
       start_date: "2020-04-05",
       finish_date: "2020-06-20",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -21717,7 +21656,6 @@ export const test = [
     start_date: "2017-07-12",
     end_date: "2017-09-27",
     mean: 7.84,
-    rank: 774,
     genres: [
       {
         id: 40,
@@ -21742,6 +21680,7 @@ export const test = [
       updated_at: "2019-05-06T15:51:58+00:00",
       start_date: "2018-10-24",
       finish_date: "2018-10-27",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -21780,7 +21719,6 @@ export const test = [
     start_date: "2018-07-14",
     end_date: "2018-09-29",
     mean: 7.03,
-    rank: 3640,
     genres: [
       {
         id: 4,
@@ -21817,6 +21755,7 @@ export const test = [
       updated_at: "2019-10-23T12:44:41+00:00",
       start_date: "2019-06-24",
       finish_date: "2019-06-25",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -21855,7 +21794,6 @@ export const test = [
     start_date: "2018-01-04",
     end_date: "2018-03-22",
     mean: 8.27,
-    rank: 250,
     genres: [
       {
         id: 36,
@@ -21876,6 +21814,7 @@ export const test = [
       updated_at: "2020-04-30T06:57:43+00:00",
       start_date: "2019-09-08",
       finish_date: "2020-04-30",
+      num_times_rewatched: 0,
     },
     num_episodes: 12,
     start_season: {
@@ -21914,7 +21853,6 @@ export const test = [
     start_date: "2021-01-07",
     end_date: "2021-04-01",
     mean: 8.55,
-    rank: 88,
     genres: [
       {
         id: 36,
@@ -21934,6 +21872,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2021-04-05T06:26:07+00:00",
       start_date: "2021-01-08",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
@@ -21972,7 +21911,6 @@ export const test = [
     start_date: "2006-07-03",
     end_date: "2006-09-25",
     mean: 7.29,
-    rank: 2446,
     genres: [
       {
         id: 1,
@@ -22020,6 +21958,7 @@ export const test = [
       is_rewatching: false,
       updated_at: "2019-05-09T19:12:07+00:00",
       start_date: "2019-04-01",
+      num_times_rewatched: 0,
     },
     num_episodes: 13,
     start_season: {
