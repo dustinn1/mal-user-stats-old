@@ -39,10 +39,27 @@ export default function StatsGenerate(props: Props) {
   useEffect(() => setGenerated(false), []);
 
   useEffect(() => {
-    getBackendStatus()
-      .then((response) => setLoaded(response))
-      .catch((err) => console.log(err));
-  }, []);
+    if (props.show) {
+      getBackendStatus()
+        .then((response) => setLoaded(response))
+        .catch((err) => console.log(err));
+      if (!loaded) {
+        let second = 0;
+        const interval = setInterval(() => {
+          if (second < 10) {
+            second++;
+            if (second === 9) {
+              getBackendStatus()
+                .then((response) => setLoaded(response))
+                .catch((err) => console.log(err));
+            }
+          } else {
+            clearInterval(interval);
+          }
+        }, 1000);
+      }
+    }
+  }, [props.show, loaded]);
 
   function generateStats(): void {
     //const userCookie = cookie.parse(document.cookie).user;

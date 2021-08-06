@@ -1,6 +1,34 @@
 footer {
-  display: flex;
-  padding: 20px;
+  padding: 25px 20px;
   margin-top: 30px;
   border-top: 1px solid #ababab;
+  font-size: 18px;
+}
+
+footer > .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer > .container > .footer-section > span {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+footer > .container > .footer-section > span.footer-delete:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  footer > .container {
+    flex-direction: column;
+  }
+
+  footer > .container > .footer-section {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }

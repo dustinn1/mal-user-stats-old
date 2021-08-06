@@ -1,7 +1,7 @@
 .profile-header {
   padding-top: 20px;
   padding-bottom: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   border-bottom: 1px solid #ababab;
 }
 
@@ -13,16 +13,31 @@
   margin-top: 5px;
 }
 
+.profile-header > .container > .header-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header > .container > .header-buttons > .btn {
+  width: 100%;
+  margin: 3px;
+}
+
+.profile-header > .container > .header-buttons > .btn > svg {
+  margin-right: 3px;
+}
+
 @media (max-width: 767px) {
+  .profile-header > .container > .header-buttons {
+    width: 100%;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+
   .profile-header > .container > span {
     width: 100%;
     text-align: center;
     order: 2;
-  }
-
-  .profile-header > .container > .btn {
-    width: 100%;
-    margin-bottom: 20px;
   }
 }
 

@@ -24,11 +24,11 @@ import MangaSingleGenreStats from "./manga/Genre";
 export default function Stats() {
   const { path, url } = useRouteMatch();
 
-  return (
+  return localStorage.getItem("data") !== null ? (
     <SettingsContextProvider>
       <StatsContextProvider>
         <Header />
-        <Container>
+        <Container className="flex-grow-1">
           <Row>
             <Col lg={2}>
               <Nav variant="pills" className="stats-tabs">
@@ -122,5 +122,7 @@ export default function Stats() {
         <Footer />
       </StatsContextProvider>
     </SettingsContextProvider>
+  ) : (
+    <Redirect to={"/"} />
   );
 }

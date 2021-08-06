@@ -8,9 +8,14 @@ import { StatsContext } from "../../contexts/StatsContext";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faExternalLinkAlt,
+  faSync,
+  faCog,
+} from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
 import StatsGenerateModal from "../../components/statsgenerate";
+import SettingsModal from "../../components/settings";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -19,7 +24,8 @@ dayjs.extend(relativeTime);
 
 export default function Header() {
   const stats = useContext(StatsContext);
-  const [showModal, setShowModal] = useState(false);
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   return (
     <>
@@ -47,44 +53,36 @@ export default function Header() {
               </h1>
             </a>
           </span>
-          <Button variant="outline-primary" onClick={() => setShowModal(true)}>
-            Update Stats
-          </Button>
+          <div className="header-buttons">
+            <Button
+              variant="outline-primary"
+              onClick={() => setShowUpdateModal(true)}
+            >
+              <FontAwesomeIcon icon={faSync} /> Update Stats
+            </Button>
+            <Button
+              variant="outline-primary"
+              onClick={() => setShowSettingsModal(true)}
+            >
+              <FontAwesomeIcon icon={faCog} /> Settings
+            </Button>
+          </div>
         </Container>
         <div className="stats-generated-time">
           Stats generated on{" "}
           {dayjs(stats.data.generated_on).tz(dayjs.tz.guess()).format("LLL")} (
           {dayjs(stats.data.generated_on).fromNow()})
         </div>
-        {/* <Button
-            variant="outline-primary"
-            onClick={() => settings.updateLanguage("romaji")}
-            active={settings.language === "romaji"}
-          >
-            Romaji
-          </Button>{" "}
-          <Button
-            variant="outline-primary"
-            onClick={() => settings.updateLanguage("english")}
-            active={settings.language === "english"}
-          >
-            English
-          </Button>{" "}
-          <Button
-            variant="outline-primary"
-            onClick={() => settings.updateLanguage("japanese")}
-            active={settings.language === "japanese"}
-          >
-            Japanese
-          </Button> */}
       </header>
-      {showModal && (
-        <StatsGenerateModal
-          update
-          show={showModal}
-          onHide={() => setShowModal(false)}
-        />
-      )}
+      <StatsGenerateModal
+        update
+        show={showUpdateModal}
+        onHide={() => setShowUpdateModal(false)}
+      />
+      <SettingsModal
+        show={showSettingsModal}
+        onHide={() => setShowSettingsModal(false)}
+      />
     </>
   );
 }

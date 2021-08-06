@@ -1,0 +1,15 @@
+.settings-modal span {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.settings-modal .settings-modal-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.settings-modal .settings-modal-buttons .btn {
+  font-size: 18px;
+}
