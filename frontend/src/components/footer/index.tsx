@@ -64,7 +64,10 @@ export default function Footer() {
         <Modal.Header closeButton>
           <Modal.Title>Delete Stats</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Are you sure you want to delete your stats?</Modal.Body>
+        <Modal.Body>
+          Are you sure you want to delete your stats? You will have to
+          regenerate your stats to view them again.
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="danger" onClick={() => deleteStats()}>
             Delete

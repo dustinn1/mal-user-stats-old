@@ -4,6 +4,8 @@ import { Redirect } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
 import statsJSON from "../../interfaces/StatsJson";
 import { StatsContext } from "../../contexts/StatsContext";
 
@@ -35,30 +37,33 @@ export default function StatsGenerate(props: Props) {
   const stats = useContext(StatsContext);
   const [generated, setGenerated] = useState(false);
   const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => setGenerated(false), []);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (props.show) {
+    if (props.show && !loaded) {
       getBackendStatus()
         .then((response) => setLoaded(response))
-        .catch((err) => console.log(err));
-      if (!loaded) {
-        let second = 0;
-        const interval = setInterval(() => {
-          if (second < 10) {
-            second++;
-            if (second === 9) {
-              getBackendStatus()
-                .then((response) => setLoaded(response))
-                .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          let second = 0;
+          const interval = setInterval(() => {
+            if (second < 10) {
+              second++;
+              if (second === 9) {
+                getBackendStatus()
+                  .then((response) => setLoaded(response))
+                  .catch((err) => {
+                    console.log(err);
+                    setError(true);
+                  });
+              }
+            } else {
+              clearInterval(interval);
             }
-          } else {
-            clearInterval(interval);
-          }
-        }, 1000);
-      }
+          }, 1000);
+        });
     }
+    return setError(false);
   }, [props.show, loaded]);
 
   function generateStats(): void {
@@ -97,11 +102,24 @@ export default function StatsGenerate(props: Props) {
         </Modal.Header>
         <Modal.Body>
           {!loaded ? (
-            <div className="d-flex justify-content-center py-2 flex-column text-center">
+            <div
+              className={`d-flex justify-content-center py-2 flex-column text-center ${
+                error && "text-danger"
+              }`}
+            >
               <span className="w-100 pb-3">
-                <Spinner animation="border" />
+                {!error ? (
+                  <Spinner animation="border" />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faExclamationTriangle}
+                    className="fs-2"
+                  />
+                )}
               </span>
-              Please wait for the website's backend to load...
+              {!error
+                ? "Please wait for the website's backend to load..."
+                : "Unable to connect to the backend. Please try again later."}
             </div>
           ) : props.update ? (
             "Are you sure you want to update your stats? Your current stats will be overriden."

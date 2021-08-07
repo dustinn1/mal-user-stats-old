@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { LinkContainer } from "react-router-bootstrap";
@@ -24,6 +24,8 @@ interface Anime {
 export default function Studio() {
   const stats = useContext(StatsContext);
   const { studio } = useParams<{ studio: string }>();
+
+  useEffect(() => window.scrollTo(0, 0), []);
 
   const validStudio: boolean = stats.data.anime_statistics.studios.some(
     (n) => n.name.toLowerCase() === studio.replaceAll("_", " ")

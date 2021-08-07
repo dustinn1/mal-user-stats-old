@@ -57,6 +57,7 @@
 .stats-card > .stats-card-header > .badge {
   align-content: center;
   font-size: 0.65em;
+  margin-left: 5px;
 }
 
 .stats-card > .stats {

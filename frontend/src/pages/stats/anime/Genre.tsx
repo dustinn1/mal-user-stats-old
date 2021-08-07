@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { LinkContainer } from "react-router-bootstrap";
@@ -24,6 +24,8 @@ interface Anime {
 export default function Genre() {
   const stats = useContext(StatsContext);
   const { genre } = useParams<{ genre: string }>();
+
+  useEffect(() => window.scrollTo(0, 0), []);
 
   const validGenre: boolean = stats.data.anime_statistics.genres.some(
     (n) => n.name.toLowerCase() === genre.replaceAll("_", " ")
