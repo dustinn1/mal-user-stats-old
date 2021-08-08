@@ -5,7 +5,11 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import "./styles.css";
 
-export default function Footer() {
+interface Props {
+  homepage?: boolean;
+}
+
+export default function Footer(props: Props) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [deleted, setDeleted] = useState(false);
 
@@ -19,7 +23,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-light sticky-bottom">
+      <footer className={`${!props.homepage && "bg-light"}`}>
         <Container>
           <div className="footer-section">
             All data from{" "}
@@ -49,34 +53,38 @@ export default function Footer() {
               </a>
             </span>
           </div>
-          <div className="footer-section">
-            <span
-              className="link-danger footer-delete"
-              onClick={openDeleteModal}
-            >
-              Delete Stats
-            </span>
-          </div>
+          {!props.homepage && (
+            <div className="footer-section">
+              <span
+                className="link-danger footer-delete"
+                onClick={openDeleteModal}
+              >
+                Delete Stats
+              </span>
+            </div>
+          )}
         </Container>
       </footer>
-      {deleted && <Redirect to={"/"} />}
-      <Modal show={showDeleteModal} onHide={hideDeleteModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Delete Stats</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          Are you sure you want to delete your stats? You will have to
-          regenerate your stats to view them again.
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={() => deleteStats()}>
-            Delete
-          </Button>
-          <Button variant="secondary" onClick={hideDeleteModal}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      {!props.homepage && deleted && <Redirect to={"/"} />}
+      {!props.homepage && (
+        <Modal show={showDeleteModal} onHide={hideDeleteModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Delete Stats</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Are you sure you want to delete your stats? You will have to
+            regenerate your stats to view them again.
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="danger" onClick={() => deleteStats()}>
+              Delete
+            </Button>
+            <Button variant="secondary" onClick={hideDeleteModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 }

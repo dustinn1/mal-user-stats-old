@@ -1,4 +1,7 @@
 import { Helmet } from "react-helmet-async";
+import { LinkContainer } from "react-router-bootstrap";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
 
 export default function NotFound() {
   return (
@@ -6,12 +9,15 @@ export default function NotFound() {
       <Helmet>
         <title>404 Page Not Found</title>
       </Helmet>
-      <div
-        className="d-flex justify-content-center align-items-center"
-        style={{ height: "100vh" }}
-      >
-        <h1>404 Page Not Found</h1>
-      </div>
+      <Container className="mt-5 text-center">
+        <h1 className="display-4 fw-bold lh-1 mb-3">404</h1>
+        <p className="lead pb-lg-3">Page Not Found</p>
+        <div className="d-grid justify-content-center mt-2 mt-lg-3">
+          <LinkContainer exact to="/">
+            <Button size="lg">Go Home</Button>
+          </LinkContainer>
+        </div>
+      </Container>
     </>
   );
 }
