@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -11,14 +11,14 @@ interface Props {
 
 export default function Footer(props: Props) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [deleted, setDeleted] = useState(false);
+  const history = useHistory();
 
   const hideDeleteModal = () => setShowDeleteModal(false);
   const openDeleteModal = () => setShowDeleteModal(true);
 
   function deleteStats() {
     localStorage.removeItem("data");
-    setDeleted(true);
+    history.push(`/`);
   }
 
   return (
@@ -65,7 +65,6 @@ export default function Footer(props: Props) {
           )}
         </Container>
       </footer>
-      {!props.homepage && deleted && <Redirect to={"/"} />}
       {!props.homepage && (
         <Modal show={showDeleteModal} onHide={hideDeleteModal}>
           <Modal.Header closeButton>

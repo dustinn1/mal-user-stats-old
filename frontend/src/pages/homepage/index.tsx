@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import cookie from "cookie";
-import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,15 +9,28 @@ import Button from "react-bootstrap/Button";
 import StatsGenerateModal from "../../components/statsgenerate";
 import Footer from "../../components/footer";
 
-export default function Homepage() {
+interface Props {
+  invalid?: boolean;
+}
+
+export default function Homepage(props: Props) {
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    if (props.invalid) {
+      const allCookies = document.cookie.split(";");
+      for (var i = 0; i < allCookies.length; i++)
+        document.cookie =
+          allCookies[i] + "=;expires=" + new Date(0).toUTCString();
+    }
+  }, [props.invalid]);
 
   function HomepageButton() {
     if ((localStorage.getItem("data") as string) !== null) {
       return (
-        <Link to="/stats">
+        <LinkContainer to="/stats">
           <Button size="lg">View Profile</Button>
-        </Link>
+        </LinkContainer>
       );
     } else if (cookie.parse(document.cookie).user !== undefined) {
       return (
@@ -35,7 +48,9 @@ export default function Homepage() {
     } else {
       return (
         <>
-          <Button size="lg">Log in</Button>
+          <LinkContainer to="/auth">
+            <Button size="lg">Log in</Button>
+          </LinkContainer>
           <small className="mt-2">
             You will be redirected to myanimelist.net to login.
           </small>
@@ -47,6 +62,15 @@ export default function Homepage() {
   return (
     <>
       <Container className="mt-5 flex-grow-1">
+        {props.invalid && (
+          <div className="text-center text-danger fs-5">
+            There was a problem authenticating your MyAnimeList account. Please{" "}
+            <a href="/auth" className="link-danger">
+              log in
+            </a>{" "}
+            again to generate your stats.
+          </div>
+        )}
         <Row className="py-5 align-items-center">
           <Col xs={12} lg={6} className="text-center mb-4">
             <h1 className="display-5 fw-bold lh-1 mb-3">

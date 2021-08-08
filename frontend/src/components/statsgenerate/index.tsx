@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react";
 //import cookie from "cookie";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
@@ -35,9 +35,9 @@ async function getBackendStatus(): Promise<boolean> {
 
 export default function StatsGenerate(props: Props) {
   const stats = useContext(StatsContext);
-  const [generated, setGenerated] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     if (props.show && !loaded) {
@@ -82,7 +82,7 @@ export default function StatsGenerate(props: Props) {
       .then((data) => {
         if (!props.update) {
           saveLocalStorage(data);
-          setGenerated(true);
+          history.push(`/stats`);
         } else {
           stats.updateData(data);
           props.onHide();
@@ -93,7 +93,6 @@ export default function StatsGenerate(props: Props) {
 
   return (
     <>
-      {!props.update && generated && <Redirect to={"/stats"} />}
       <Modal show={props.show} onHide={props.onHide}>
         <Modal.Header closeButton>
           <Modal.Title>
