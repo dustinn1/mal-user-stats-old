@@ -82,7 +82,6 @@ export async function handler(event: HandlerEvent, context: HandlerContext) {
         Location: `${redirect === "stats" ? "/stats" : "/"}`,
         "Cache-Control": "no-cache",
       },
-      body: JSON.stringify(tokenJSON),
     };
   } catch (error) {
     console.log(error);

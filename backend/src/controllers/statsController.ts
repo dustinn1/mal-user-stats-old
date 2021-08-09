@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
+import dayjs from "dayjs";
 import { User } from "../models/user";
 import { getAnimeStats } from "./animeController";
 import { getMangaStats } from "./mangaController";
@@ -58,6 +59,9 @@ export function getFullStats(req: Request, res: Response) {
           if (user === null) {
             return res.sendStatus(404);
           } else {
+            if (dayjs().diff(user.updated_on, "hours") >= 1) {
+              return res.sendStatus(401);
+            }
             /* getFullList(user.access_token)
               .then((response) =>
                 getStatsJSON(

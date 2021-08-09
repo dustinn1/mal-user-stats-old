@@ -1,3 +1,4 @@
+import { LinkContainer } from "react-router-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
@@ -12,8 +13,11 @@ export default function StatsLoginModal(props: Props) {
       <Modal.Header closeButton>
         <Modal.Title>Login</Modal.Title>
       </Modal.Header>
-      <Modal.Body>Login</Modal.Body>
+      <Modal.Body>Please log in to update your stats.</Modal.Body>
       <Modal.Footer>
+        <LinkContainer to="/auth/stats">
+          <Button variant="primary">Log In</Button>
+        </LinkContainer>
         <Button variant="secondary" onClick={props.onHide}>
           Close
         </Button>

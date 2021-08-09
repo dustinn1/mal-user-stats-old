@@ -115,11 +115,12 @@ export async function handler(event: HandlerEvent, context: HandlerContext) {
           }
         );
         return {
-          statusCode: 200,
+          statusCode: 302,
           headers: {
             "Set-Cookie": setUserCookie(userJSON.id, userJSON.name),
+            Location: `${redirect === "stats" ? "/stats" : "/"}`,
+            "Cache-Control": "no-cache",
           },
-          body: JSON.stringify(tokenJSON),
         };
         // send the user an authentication link if the access token is more than 1 month old
       } else if (difference > 720) {
@@ -128,7 +129,7 @@ export async function handler(event: HandlerEvent, context: HandlerContext) {
     } catch (err) {
       return {
         statusCode: 400,
-        body: JSON.stringify("hello"),
+        body: "400 Bad Request",
       };
     }
   } else if (!user) {

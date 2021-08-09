@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-//import cookie from "cookie";
+import cookie from "cookie";
 import { useHistory } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -66,29 +66,34 @@ export default function StatsGenerate(props: Props) {
     return setError(false);
   }, [props.show, loaded]);
 
-  function generateStats(): void {
-    //const userCookie = cookie.parse(document.cookie).user;
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/stats/generate`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        //user: userCookie,
-        user: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtYWxfaWQiOjcyOTY1MjksInVzZXJuYW1lIjoidHJpcGxlemtvIiwiaWF0IjoxNjI0MjM3MjMwLCJleHAiOjE2MzQyNDA4MzB9.FmKlVmH5sN7tzkxNe44KlNg76osLKUCVzMnGSpYqzN4",
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (!props.update) {
-          saveLocalStorage(data);
-          history.push(`/stats`);
-        } else {
-          stats.updateData(data);
-          props.onHide();
+  async function generateStats(): Promise<void> {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/stats/generate`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            user: cookie.parse(document.cookie).user,
+          }),
         }
-      })
-      .catch((err) => console.log(err));
+      );
+      if (!response.ok && response.status === 401) {
+        return history.push("/invalid");
+      }
+      const responseJSON = await response.json();
+      if (!props.update) {
+        saveLocalStorage(responseJSON);
+        history.push("/stats");
+      } else {
+        stats.updateData(responseJSON);
+        props.onHide();
+      }
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
