@@ -1,11 +1,8 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import mongoose from "mongoose";
 import rateLimit from "express-rate-limit";
 import statsRoute from "./routes/stats";
-
-dotenv.config();
 
 const app = express();
 
