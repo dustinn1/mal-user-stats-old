@@ -9,7 +9,7 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:8888",
-  "https://mal-user-stats.netlify.app/",
+  "https://mal-user-stats.netlify.app",
 ];
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
