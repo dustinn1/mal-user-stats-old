@@ -1,6 +1,7 @@
-import { useState, useContext, useEffect } from "react";
-import cookie from "cookie";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import cookie from "cookie";
+import dayjs from "dayjs";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
@@ -30,43 +31,45 @@ async function getBackendStatus(): Promise<boolean> {
     }
   );
   clearTimeout(id);
-  return response.ok;
+  return response.ok && response.status === 200;
 }
 
 export default function StatsGenerate(props: Props) {
+  const history = useHistory();
   const stats = useContext(StatsContext);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
-  const history = useHistory();
+  const [rateLimit, setRateLimit] = useState(0);
 
-  useEffect(() => {
-    if (props.show && !loaded) {
-      getBackendStatus()
-        .then((response) => setLoaded(response))
-        .catch((err) => {
-          console.log(err);
-          let second = 0;
-          const interval = setInterval(() => {
-            if (second < 10) {
-              second++;
-              if (second === 9) {
-                getBackendStatus()
-                  .then((response) => setLoaded(response))
-                  .catch((err) => {
-                    console.log(err);
-                    setError(true);
-                  });
-              }
-            } else {
-              clearInterval(interval);
+  function wakeHeroku() {
+    getBackendStatus()
+      .then((response) => {
+        setLoaded(response);
+      })
+      .catch(() => {
+        let second = 0;
+        const interval = setInterval(() => {
+          if (
+            second <
+            parseInt(process.env.REACT_APP_BACKEND_WAKEUP_DELAY as string)
+          ) {
+            second++;
+            if (
+              second ===
+              parseInt(process.env.REACT_APP_BACKEND_WAKEUP_DELAY as string) - 1
+            ) {
+              getBackendStatus()
+                .then((response) => setLoaded(response))
+                .catch(() => setError(true));
             }
-          }, 1000);
-        });
-    }
-    return setError(false);
-  }, [props.show, loaded]);
+          } else {
+            clearInterval(interval);
+          }
+        }, 1000);
+      });
+  }
 
-  async function generateStats(): Promise<void> {
+  async function getStats(): Promise<void> {
     try {
       const response = await fetch(
         `${process.env.REACT_APP_BACKEND_URL}/api/stats/generate`,
@@ -83,6 +86,11 @@ export default function StatsGenerate(props: Props) {
       if (!response.ok && response.status === 401) {
         return history.push("/invalid");
       }
+      if (!response.ok && response.status === 429) {
+        return setRateLimit(
+          parseInt(response.headers.get("X-RateLimit-Reset") as string)
+        );
+      }
       const responseJSON = await response.json();
       if (!props.update) {
         saveLocalStorage(responseJSON);
@@ -96,16 +104,58 @@ export default function StatsGenerate(props: Props) {
     }
   }
 
+  const onModalShow = () => {
+    wakeHeroku();
+  };
+
+  const onModalHide = () => {
+    setLoaded(false);
+    setError(false);
+    setRateLimit(0);
+  };
+
+  const onStatsGenerate = () => {
+    getBackendStatus()
+      .then(() => {
+        getStats();
+      })
+      .catch(() => {
+        setLoaded(false);
+        wakeHeroku();
+      });
+  };
+
   return (
     <>
-      <Modal show={props.show} onHide={props.onHide}>
+      <Modal
+        show={props.show}
+        onHide={props.onHide}
+        onEnter={() => onModalShow()}
+        onExited={onModalHide}
+      >
         <Modal.Header closeButton>
           <Modal.Title>
             {props.update ? "Update" : "Generate"} Stats
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          {!loaded ? (
+        <Modal.Body className="text-center">
+          {rateLimit > 0 ? (
+            <div className="text-danger">
+              <span>
+                Sorry, you've generated your stats too many times in a short
+                period.
+              </span>
+              <br />
+              <span className="fw-bold">
+                {" "}
+                Please try again in{" "}
+                {dayjs.unix(rateLimit).diff(dayjs(), "minutes") > 1
+                  ? `${dayjs.unix(rateLimit).diff(dayjs(), "minutes")} minutes`
+                  : `${dayjs.unix(rateLimit).diff(dayjs(), "seconds")} seconds`}
+                .
+              </span>
+            </div>
+          ) : !loaded ? (
             <div
               className={`d-flex justify-content-center py-2 flex-column text-center ${
                 error && "text-danger"
@@ -126,16 +176,16 @@ export default function StatsGenerate(props: Props) {
                 : "Unable to connect to the backend. Please try again later."}
             </div>
           ) : props.update ? (
-            "Are you sure you want to update your stats? Your current stats will be overriden."
+            "Are you sure you want to update your stats? Your current stats will be overriden. It will take a few seconds."
           ) : (
-            "Generate"
+            "Press the Generate button to view your stats. It will take a few seconds."
           )}
         </Modal.Body>
         <Modal.Footer>
           <Button
             variant="primary"
-            onClick={() => generateStats()}
-            disabled={!loaded}
+            onClick={onStatsGenerate}
+            disabled={!loaded || rateLimit > 0}
           >
             {props.update ? "Update" : "Generate"}
           </Button>

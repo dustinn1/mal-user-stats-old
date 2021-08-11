@@ -43,7 +43,7 @@ async function getStatsJSON(
   }
 }
 
-export function getFullStats(req: Request, res: Response) {
+export async function getFullStats(req: Request, res: Response) {
   const user: string = req.body.user;
   let decodedUserJWT: userJWT;
   if (user) {
@@ -62,17 +62,6 @@ export function getFullStats(req: Request, res: Response) {
             if (dayjs().diff(user.updated_on, "hours") >= 1) {
               return res.sendStatus(401);
             }
-            /* getFullList(user.access_token)
-              .then((response) =>
-                getStatsJSON(
-                  response,
-                  decodedUserJWT.mal_id,
-                  decodedUserJWT.username
-                )
-                  .then((response) => res.json(response))
-                  .catch((err) => res.send(err))
-              )
-              .catch((err) => res.send(err)); */
             getStatsJSON(
               user.access_token,
               decodedUserJWT.mal_id,

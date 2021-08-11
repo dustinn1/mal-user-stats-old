@@ -1,6 +1,4 @@
 import fetch from "node-fetch";
-import { test } from "../json/anime_test";
-
 import overviewStats from "./animeStats/overview";
 import scoresStats from "./animeStats/scores";
 import episodeCountStats from "./animeStats/episodeCount";
@@ -111,20 +109,11 @@ async function getStatsJSON(animeList: Array<any>): Promise<Stats> {
   }
 }
 
-export function getAnimeStats(access_token: string): Promise<Stats> {
-  /* getFullList(user.access_token)
-    .then((response) =>
-      getStatsJSON(
-        response,
-        decodedUserJWT.mal_id,
-        decodedUserJWT.username
-      )
-        .then((response) => res.json(response))
-        .catch((err) => res.send(err))
-    )
-    .catch((err) => res.send(err)); */
+export async function getAnimeStats(access_token: string): Promise<Stats> {
   try {
-    return getStatsJSON(test);
+    const animeList = await getFullList(access_token);
+    const statsJSON = await getStatsJSON(animeList);
+    return statsJSON;
   } catch (err) {
     return err;
   }

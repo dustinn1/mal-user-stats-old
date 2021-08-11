@@ -1,6 +1,4 @@
 import fetch from "node-fetch";
-import { test } from "../json/manga_test";
-
 import overviewStats from "./mangaStats/overview";
 import scoreStats from "./mangaStats/scores";
 import chapterCountStats from "./mangaStats/chapterCount";
@@ -109,20 +107,11 @@ async function getStatsJSON(mangaList: Array<any>): Promise<Stats> {
   }
 }
 
-export function getMangaStats(access_token: string): Promise<Stats> {
-  /* getFullList(user.access_token)
-    .then((response) =>
-      getStatsJSON(
-        response,
-        decodedUserJWT.mal_id,
-        decodedUserJWT.username
-      )
-        .then((response) => res.json(response))
-        .catch((err) => res.send(err))
-    )
-    .catch((err) => res.send(err)); */
+export async function getMangaStats(access_token: string): Promise<Stats> {
   try {
-    return getStatsJSON(test);
+    const mangaList = await getFullList(access_token);
+    const statsJSON = await getStatsJSON(mangaList);
+    return statsJSON;
   } catch (err) {
     return err;
   }
