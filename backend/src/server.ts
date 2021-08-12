@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import rateLimit from "express-rate-limit";
 import statsRoute from "./routes/stats";
+import authRoute from "./routes/auth";
 
 const app = express();
 
@@ -34,6 +35,7 @@ const limiter = rateLimit({
 app.use("/api/stats", limiter);
 
 app.use("/api/stats", statsRoute);
+app.use("/api/auth", authRoute);
 app.use("/api/status", (req, res) => res.sendStatus(200));
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.sendStatus(404);

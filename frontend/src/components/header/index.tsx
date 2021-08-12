@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import cookie from "cookie";
+import Cookie from "js-cookie";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
@@ -60,7 +60,7 @@ export default function Header() {
             <Button
               variant="outline-primary"
               onClick={
-                cookie.parse(document.cookie).user !== undefined
+                Cookie.get("user") !== undefined
                   ? () => setShowUpdateModal(true)
                   : () => setShowLoginModal(true)
               }

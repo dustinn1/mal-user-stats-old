@@ -1,4 +1,4 @@
-import statusStats from "../../../controllers/animeStats/status";
+import statusStats from "../../../controllers/stats/animeStats/status";
 import { animes } from "./data";
 
 test("return an array of anime stats sorted by status", async () => {

@@ -1,38 +1,37 @@
 import { useState, useEffect } from "react";
-import cookie from "cookie";
+import { useLocation } from "react-router";
+import Cookie from "js-cookie";
 import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
-import StatsGenerateModal from "../../components/statsgenerate";
-import Footer from "../../components/footer";
+import StatsGenerateModal from "../components/statsgenerate";
+import Footer from "../components/footer";
 
-interface Props {
-  invalid?: boolean;
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
 }
 
-export default function Homepage(props: Props) {
+export default function Homepage() {
   const [showModal, setShowModal] = useState(false);
+  const [errorQuery] = useState(useQuery().get("error") as string);
 
   useEffect(() => {
-    if (props.invalid) {
-      const allCookies = document.cookie.split(";");
-      for (var i = 0; i < allCookies.length; i++)
-        document.cookie =
-          allCookies[i] + "=;expires=" + new Date(0).toUTCString();
+    if (errorQuery === "auth") {
+      document.cookie = "";
     }
-  }, [props.invalid]);
+  }, [errorQuery]);
 
   function HomepageButton() {
     if ((localStorage.getItem("data") as string) !== null) {
       return (
-        <LinkContainer to="/stats">
+        <LinkContainer to="/stats/anime/overview">
           <Button size="lg">View Profile</Button>
         </LinkContainer>
       );
-    } else if (cookie.parse(document.cookie).user !== undefined) {
+    } else if (Cookie.get("user") !== undefined) {
       return (
         <>
           <Button onClick={() => setShowModal(true)} size="lg">
@@ -48,9 +47,9 @@ export default function Homepage(props: Props) {
     } else {
       return (
         <>
-          <LinkContainer to="/auth">
+          <a href={`${process.env.REACT_APP_BACKEND_URL}/api/auth`}>
             <Button size="lg">Log in</Button>
-          </LinkContainer>
+          </a>
           <small className="mt-2">
             You will be redirected to myanimelist.net to login.
           </small>
@@ -62,13 +61,18 @@ export default function Homepage(props: Props) {
   return (
     <>
       <Container className="mt-5 flex-grow-1">
-        {props.invalid && (
+        {errorQuery === "auth" && (
           <div className="text-center text-danger fs-5">
             There was a problem authenticating your MyAnimeList account. Please{" "}
             <a href="/auth" className="link-danger">
               log in
             </a>{" "}
             again to generate your stats.
+          </div>
+        )}
+        {errorQuery === "cookies" && (
+          <div className="text-center text-danger fs-5">
+            Please enable cookies
           </div>
         )}
         <Row className="py-5 align-items-center">

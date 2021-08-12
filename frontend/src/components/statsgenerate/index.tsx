@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import cookie from "cookie";
+import Cookie from "js-cookie";
 import dayjs from "dayjs";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -79,12 +79,12 @@ export default function StatsGenerate(props: Props) {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            user: cookie.parse(document.cookie).user,
+            user: Cookie.get("user"),
           }),
         }
       );
       if (!response.ok && response.status === 401) {
-        return history.push("/invalid");
+        return history.push("/?error=auth");
       }
       if (!response.ok && response.status === 429) {
         return setRateLimit(

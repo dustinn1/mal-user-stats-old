@@ -4,7 +4,7 @@ export function encrypt(text: string) {
   let iv = crypto.randomBytes(16);
   let cipher = crypto.createCipheriv(
     "aes-256-cbc",
-    Buffer.from(process.env.ENCRYPTION_KEY),
+    Buffer.from(process.env.ENCRYPTION_KEY as string),
     iv
   );
   let encrypted = cipher.update(text);
@@ -15,11 +15,11 @@ export function encrypt(text: string) {
 export function decrypt(text: string) {
   text = decodeURIComponent(text);
   let textParts = text.split(":");
-  let iv = Buffer.from(textParts.shift(), "hex");
+  let iv = Buffer.from(textParts.shift() as string, "hex");
   let encryptedText = Buffer.from(textParts.join(":"), "hex");
   let decipher = crypto.createDecipheriv(
     "aes-256-cbc",
-    Buffer.from(process.env.ENCRYPTION_KEY),
+    Buffer.from(process.env.ENCRYPTION_KEY as string),
     iv
   );
   let decrypted = decipher.update(encryptedText);

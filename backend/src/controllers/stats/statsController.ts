@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import dayjs from "dayjs";
-import { User } from "../models/user";
+import { User } from "../../models/user";
 import { getAnimeStats } from "./animeController";
 import { getMangaStats } from "./mangaController";
 

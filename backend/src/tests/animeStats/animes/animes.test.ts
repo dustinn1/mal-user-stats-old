@@ -1,4 +1,4 @@
-import allAnimes from "../../../controllers/animeStats/animes";
+import allAnimes from "../../../controllers/stats/animeStats/animes";
 import { animes } from "./data";
 
 test("return an array of animes with certain information", async () => {

@@ -1,4 +1,4 @@
-import formatStats from "../../../controllers/animeStats/format";
+import formatStats from "../../../controllers/stats/animeStats/format";
 import { animes } from "./data";
 
 test("return an array of anime stats sorted by format", async () => {
