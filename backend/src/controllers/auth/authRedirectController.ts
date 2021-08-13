@@ -52,8 +52,9 @@ export default async function AuthRedirect(req: Request, res: Response) {
       access_token: tokenJSON.access_token,
       refresh_token: tokenJSON.refresh_token,
     };
-    User.findOneAndUpdate({ mal_id: userJSON.id }, userObject, {
+    await User.findOneAndUpdate({ mal_id: userJSON.id }, userObject, {
       upsert: true,
+      useFindAndModify: false,
     });
     return res.redirect(
       `${process.env.FRONTEND_URL}/auth?jwt=${JWTsign(

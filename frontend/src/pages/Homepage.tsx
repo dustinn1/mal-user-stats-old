@@ -9,13 +9,15 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import StatsGenerateModal from "../components/statsgenerate";
 import Footer from "../components/footer";
+import LoginModal from "../components/login";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
 export default function Homepage() {
-  const [showModal, setShowModal] = useState(false);
+  const [showStatsModal, setShowStatsModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [errorQuery] = useState(useQuery().get("error") as string);
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export default function Homepage() {
     } else if (Cookie.get("user") !== undefined) {
       return (
         <>
-          <Button onClick={() => setShowModal(true)} size="lg">
+          <Button onClick={() => setShowStatsModal(true)} size="lg">
             Generate Stats
           </Button>
           <small className="mt-2">
@@ -47,9 +49,9 @@ export default function Homepage() {
     } else {
       return (
         <>
-          <a href={`${process.env.REACT_APP_BACKEND_URL}/api/auth`}>
-            <Button size="lg">Log in</Button>
-          </a>
+          <Button size="lg" onClick={() => setShowLoginModal(true)}>
+            Log in
+          </Button>
           <small className="mt-2">
             You will be redirected to myanimelist.net to login.
           </small>
@@ -64,9 +66,12 @@ export default function Homepage() {
         {errorQuery === "auth" && (
           <div className="text-center text-danger fs-5">
             There was a problem authenticating your MyAnimeList account. Please{" "}
-            <a href="/auth" className="link-danger">
+            <span
+              className="link-danger"
+              onClick={() => setShowLoginModal(true)}
+            >
               log in
-            </a>{" "}
+            </span>{" "}
             again to generate your stats.
           </div>
         )}
@@ -137,8 +142,13 @@ export default function Homepage() {
           </Col>
         </Row>
         <StatsGenerateModal
-          show={showModal}
-          onHide={() => setShowModal(false)}
+          show={showStatsModal}
+          onHide={() => setShowStatsModal(false)}
+        />
+        <LoginModal
+          show={showLoginModal}
+          onHide={() => setShowLoginModal(false)}
+          redirect="home"
         />
       </Container>
       <Footer homepage />

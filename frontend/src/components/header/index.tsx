@@ -16,7 +16,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
 import StatsGenerateModal from "../../components/statsgenerate";
-import StatsLoginModal from "../statsgenerate/login";
+import LoginModal from "../../components/login";
 import SettingsModal from "../../components/settings";
 
 dayjs.extend(utc);
@@ -86,9 +86,10 @@ export default function Header() {
         show={showUpdateModal}
         onHide={() => setShowUpdateModal(false)}
       />
-      <StatsLoginModal
+      <LoginModal
         show={showLoginModal}
         onHide={() => setShowLoginModal(false)}
+        redirect="stats"
       />
       <SettingsModal
         show={showSettingsModal}

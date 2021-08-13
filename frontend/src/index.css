@@ -10,3 +10,11 @@ html {
   flex-direction: column;
   min-height: 100vh;
 }
+
+.link-danger {
+  text-decoration: underline;
+}
+
+.link-danger:hover {
+  cursor: pointer;
+}

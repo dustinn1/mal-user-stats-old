@@ -7,7 +7,6 @@ function useQuery() {
 
 function setCookie(jwt: string) {
   Cookies.set("user", jwt, {
-    secure: true,
     sameSite: "strict",
     path: "/",
     expires: new Date(new Date().getTime() + 60 * 60 * 1000),
