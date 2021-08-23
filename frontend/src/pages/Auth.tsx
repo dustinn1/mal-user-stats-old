@@ -1,4 +1,4 @@
-import { useLocation, useHistory } from "react-router";
+import { useLocation } from "react-router";
 import Cookies from "js-cookie";
 
 function useQuery() {
@@ -14,24 +14,19 @@ function setCookie(jwt: string) {
 }
 
 export default function Auth() {
-  const history = useHistory();
   const jwtQuery = useQuery().get("jwt");
   const redirectQuery = useQuery().get("redirect");
 
   if (jwtQuery !== null && jwtQuery !== "") {
     setCookie(jwtQuery);
   } else {
-    history.push("/");
-  }
-
-  if (Cookies.get("user") === undefined) {
-    history.push("/?error=cookies");
+    window.location.replace("/");
   }
 
   if (redirectQuery === "stats") {
-    history.push("/stats");
+    window.location.replace("/stats");
   } else {
-    history.push("/");
+    window.location.replace("/");
   }
 
   return null;
