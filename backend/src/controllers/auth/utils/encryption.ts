@@ -1,5 +1,7 @@
 import crypto from "crypto";
 
+// from https://gist.github.com/vlucas/2bd40f62d20c1d49237a109d491974eb
+
 export function encrypt(text: string) {
   let iv = crypto.randomBytes(16);
   let cipher = crypto.createCipheriv(
