@@ -8,6 +8,11 @@
   width: 18rem;
 }
 
+[data-theme="dark"] .card.value-stats-card {
+  background-color: #121212;
+  color: #fff;
+}
+
 @media (min-width: 992px) {
   .card.value-stats-card {
     width: 17rem;
@@ -31,6 +36,10 @@
   justify-content: center;
   border-right: 1px solid #000;
   width: 80px;
+}
+
+[data-theme="dark"] .value-stats-card .icon {
+  border-right-color: #fff;
 }
 
 .value-stats-card svg {

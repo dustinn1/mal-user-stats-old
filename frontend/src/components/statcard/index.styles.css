@@ -6,6 +6,12 @@
   border-color: #ababab;
 }
 
+[data-theme="dark"] .card.stats-card {
+  background-color: #121212;
+  color: #fff;
+  border-color: #545454;
+}
+
 @media (min-width: 576px) {
   .card.stats-card {
     width: 31.2rem;
@@ -64,6 +70,9 @@
   margin: 0.5rem 1rem;
   padding-bottom: 0.5em;
   border-bottom: 1px solid #777777;
+}
+[data-theme="dark"] .stats-card > .stats {
+  border-bottom-color: #888888;
 }
 
 .stats-card > .stats > p {

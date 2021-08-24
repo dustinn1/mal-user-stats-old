@@ -23,7 +23,7 @@ export default function Footer(props: Props) {
 
   return (
     <>
-      <footer className={`${!props.homepage && "bg-light"}`}>
+      <footer>
         <Container>
           <div className="footer-section">
             All data from{" "}

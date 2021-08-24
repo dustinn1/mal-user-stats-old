@@ -19,6 +19,7 @@ interface Props {
 function saveLocalStorage(data: statsJSON): void {
   localStorage.setItem("data", JSON.stringify(data));
   localStorage.setItem("language", "romaji");
+  localStorage.setItem("theme", "system");
 }
 
 async function getBackendStatus(): Promise<boolean> {

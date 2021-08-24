@@ -3,6 +3,12 @@ footer {
   margin-top: 30px;
   border-top: 1px solid #ababab;
   font-size: 18px;
+  background-color: #f8f9fa;
+}
+
+[data-theme="dark"] footer {
+  background-color: #212529;
+  color: #fff;
 }
 
 footer > .container {

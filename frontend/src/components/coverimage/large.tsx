@@ -1,6 +1,6 @@
 import LazyLoad from "react-lazyload";
 import { useContext } from "react";
-import { SettingsContext } from "../../contexts/SettingsContext";
+import { LanguageContext } from "../../contexts/LanguageContext";
 import Placeholder from "./placeholder";
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 }
 
 export default function LargeCoverImage(props: Props) {
-  const settings = useContext(SettingsContext);
+  const language = useContext(LanguageContext);
   const title = props.title;
 
   return (
@@ -38,9 +38,9 @@ export default function LargeCoverImage(props: Props) {
         </picture>
       </LazyLoad>
       <span>
-        {settings.language === "romaji" && title.title}
-        {settings.language === "english" && title.title_en}
-        {settings.language === "japanese" && title.title_ja}
+        {language.language === "romaji" && title.title}
+        {language.language === "english" && title.title_en}
+        {language.language === "japanese" && title.title_ja}
       </span>
     </a>
   );

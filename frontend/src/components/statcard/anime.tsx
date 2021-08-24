@@ -7,7 +7,6 @@ import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import "./index.styles.css";
-
 import { StatsContext } from "../../contexts/StatsContext";
 import SmallCoverImage from "../coverimage/small";
 
@@ -49,7 +48,7 @@ function listButton(genre: number, direction: string) {
 }
 
 export default function StatCard(props: Props) {
-  let { url } = useRouteMatch();
+  const { url } = useRouteMatch();
   const allAnimes = useContext(StatsContext).data.anime_statistics.all_animes;
   const animes: Array<Anime> = [];
 

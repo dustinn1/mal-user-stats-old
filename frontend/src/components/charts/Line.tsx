@@ -6,6 +6,7 @@ interface Props {
   data: Array<any>;
   dataIndex: string;
   dataKey: string;
+  dark: boolean;
 }
 
 interface PointData {
@@ -41,6 +42,7 @@ export default function LineGraph(props: Props) {
     areaOpacity: 0.5,
     useMesh: true,
     theme: {
+      textColor: props.dark ? "#fff" : "#000",
       dots: {
         text: {
           fontSize: "16px",

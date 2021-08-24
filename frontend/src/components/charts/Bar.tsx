@@ -6,6 +6,7 @@ interface Props {
   data: Array<any>;
   dataIndex: string;
   dataKey: string;
+  dark: boolean;
 }
 
 export default function BarGraph(props: Props) {
@@ -18,6 +19,7 @@ export default function BarGraph(props: Props) {
     labelTextColor: "#fff",
     labelSkipHeight: 30,
     theme: {
+      textColor: props.dark ? "#fff" : "#000",
       labels: {
         text: {
           fontSize: "16px",

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import Nav from "react-bootstrap/Nav";
 import BarGraph from "./Bar";
 import LineGraph from "./Line";
@@ -15,6 +16,7 @@ interface Props {
 }
 
 export default function ChartContainer(props: Props) {
+  const theme = useContext(ThemeContext);
   const [sort, setSort] = useState("count");
 
   return (
@@ -67,6 +69,7 @@ export default function ChartContainer(props: Props) {
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
+            dark={theme.theme === "dark"}
           />
         )}
         {props.chartType === "line" && (
@@ -75,6 +78,7 @@ export default function ChartContainer(props: Props) {
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
+            dark={theme.theme === "dark"}
           />
         )}
         {props.chartType === "pie" && (
@@ -83,6 +87,7 @@ export default function ChartContainer(props: Props) {
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
+            dark={theme.theme === "dark"}
           />
         )}
       </div>

@@ -1,15 +1,14 @@
 import { Switch, Route, useRouteMatch, Redirect } from "react-router-dom";
-import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Nav from "react-bootstrap/Nav";
 import "./styles.css";
 
 import { StatsContextProvider } from "../../contexts/StatsContext";
-import { SettingsContextProvider } from "../../contexts/SettingsContext";
+import { LanguageContextProvider } from "../../contexts/LanguageContext";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
+import StatsNav from "../../components/statsnav";
 import AnimeOverviewStats from "./anime/Overview";
 import AnimeHistoryStats from "./anime/History";
 import AnimeGenresStats from "./anime/Genres";
@@ -25,55 +24,13 @@ export default function Stats() {
   const { path, url } = useRouteMatch();
 
   return localStorage.getItem("data") !== null ? (
-    <SettingsContextProvider>
-      <StatsContextProvider>
+    <StatsContextProvider>
+      <LanguageContextProvider>
         <Header />
         <Container className="flex-grow-1">
           <Row>
             <Col lg={2}>
-              <Nav variant="pills" className="stats-tabs">
-                <div className="stats-tab-divider">Anime</div>
-                <div className="stats-tab-section">
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/anime/overview`}>
-                      <Nav.Link>Overview</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/anime/history`}>
-                      <Nav.Link>History</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/anime/genres`}>
-                      <Nav.Link>Genres</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/anime/studios`}>
-                      <Nav.Link>Studios</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                </div>
-                <div className="stats-tab-divider">Manga</div>
-                <div className="stats-tab-section">
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/manga/overview`}>
-                      <Nav.Link>Overview</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/manga/history`}>
-                      <Nav.Link>History</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <LinkContainer to={`${url}/manga/genres`}>
-                      <Nav.Link>Genres</Nav.Link>
-                    </LinkContainer>
-                  </Nav.Item>
-                </div>
-              </Nav>
+              <StatsNav />
             </Col>
             <Col lg={10}>
               <Switch>
@@ -120,8 +77,8 @@ export default function Stats() {
           </Row>
         </Container>
         <Footer />
-      </StatsContextProvider>
-    </SettingsContextProvider>
+      </LanguageContextProvider>
+    </StatsContextProvider>
   ) : (
     <Redirect to={"/"} />
   );

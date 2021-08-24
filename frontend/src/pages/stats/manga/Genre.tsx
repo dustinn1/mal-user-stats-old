@@ -73,7 +73,7 @@ export default function Genre() {
             icon={faBook}
           />
         </div>
-        <h3>Mangas ({mangas.length})</h3>
+        <h3 className="stats-subheader">Mangas ({mangas.length})</h3>
         <hr />
         <div className="cover-images-grid">
           {mangas.map((manga: Manga) => (

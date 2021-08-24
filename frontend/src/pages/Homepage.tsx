@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 import { useLocation } from "react-router";
 import Cookie from "js-cookie";
 import { LinkContainer } from "react-router-bootstrap";
@@ -16,6 +17,7 @@ function useQuery() {
 }
 
 export default function Homepage() {
+  const theme = useContext(ThemeContext);
   const [showStatsModal, setShowStatsModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [errorQuery] = useState(useQuery().get("error") as string);
@@ -82,10 +84,18 @@ export default function Homepage() {
         )}
         <Row className="py-5 align-items-center">
           <Col xs={12} lg={6} className="text-center mb-4">
-            <h1 className="display-5 fw-bold lh-1 mb-3">
+            <h1
+              className={`display-5 fw-bold lh-1 mb-3 ${
+                theme.theme === "dark" && "text-light"
+              }`}
+            >
               MyAnimeList User Stats
             </h1>
-            <p className="lead pb-lg-3">
+            <p
+              className={`lead pb-lg-3 ${
+                theme.theme === "dark" && "text-light"
+              }`}
+            >
               Generate statistics similar to AniList (
               <a
                 href="https://anilist.co/user/triplezko/stats/anime/overview"

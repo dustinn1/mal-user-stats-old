@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { SettingsContext } from "../../contexts/SettingsContext";
+import { LanguageContext } from "../../contexts/LanguageContext";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import "./styles.css";
@@ -17,7 +17,7 @@ interface Props {
 }
 
 export default function SmallCoverImage(props: Props) {
-  const settings = useContext(SettingsContext);
+  const language = useContext(LanguageContext);
   const title = props.title;
 
   return (
@@ -27,9 +27,9 @@ export default function SmallCoverImage(props: Props) {
         overlay={
           <Tooltip id={`tooltip-${props.genre}-${props.title.id}`}>
             <strong>
-              {settings.language === "romaji" && title.title}
-              {settings.language === "english" && title.title_en}
-              {settings.language === "japanese" && title.title_ja}
+              {language.language === "romaji" && title.title}
+              {language.language === "english" && title.title_en}
+              {language.language === "japanese" && title.title_ja}
             </strong>
           </Tooltip>
         }

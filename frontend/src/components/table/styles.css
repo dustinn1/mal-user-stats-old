@@ -1,3 +1,11 @@
+[data-theme="dark"] .chart-table {
+  color: #fff;
+}
+[data-theme="dark"] .chart-table.table-striped > tbody > tr:nth-of-type(odd) {
+  color: #dedad6;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
 .chart-table th > .chart-table-header {
   display: flex;
   justify-content: space-between;
@@ -15,4 +23,14 @@ ul.pagination > li:focus {
 
 ul.pagination > li.disabled {
   cursor: not-allowed;
+}
+
+[data-theme="dark"] ul.pagination > li.page-item > .page-link {
+  background-color: #444;
+  color: #fff;
+  border-color: #dee2e6;
+}
+
+[data-theme="dark"] ul.pagination > li.page-item.active > .page-link {
+  background-color: #0d6efd;
 }

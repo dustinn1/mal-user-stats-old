@@ -2,7 +2,8 @@ import { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import { SettingsContext } from "../../contexts/SettingsContext";
+import { LanguageContext } from "../../contexts/LanguageContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import "./styles.css";
 
 interface Props {
@@ -11,7 +12,8 @@ interface Props {
 }
 
 export default function Settings(props: Props) {
-  const settings = useContext(SettingsContext);
+  const language = useContext(LanguageContext);
+  const theme = useContext(ThemeContext);
 
   return (
     <Modal show={props.show} onHide={props.onHide} className="settings-modal">
@@ -20,26 +22,51 @@ export default function Settings(props: Props) {
       </Modal.Header>
       <Modal.Body>
         <Container>
+          <span>Theme</span>
+          <div className="settings-modal-buttons">
+            <Button
+              variant="outline-primary"
+              onClick={() => theme.updateTheme("system")}
+              active={theme.theme === "system"}
+            >
+              System
+            </Button>{" "}
+            <Button
+              variant="outline-primary"
+              onClick={() => theme.updateTheme("light")}
+              active={theme.theme === "light"}
+            >
+              Light
+            </Button>{" "}
+            <Button
+              variant="outline-primary"
+              onClick={() => theme.updateTheme("dark")}
+              active={theme.theme === "dark"}
+            >
+              Dark
+            </Button>{" "}
+          </div>
+          <br />
           <span>Title Language</span>
           <div className="settings-modal-buttons">
             <Button
               variant="outline-primary"
-              onClick={() => settings.updateLanguage("romaji")}
-              active={settings.language === "romaji"}
+              onClick={() => language.updateLanguage("romaji")}
+              active={language.language === "romaji"}
             >
               Romaji
             </Button>{" "}
             <Button
               variant="outline-primary"
-              onClick={() => settings.updateLanguage("english")}
-              active={settings.language === "english"}
+              onClick={() => language.updateLanguage("english")}
+              active={language.language === "english"}
             >
               English
             </Button>{" "}
             <Button
               variant="outline-primary"
-              onClick={() => settings.updateLanguage("japanese")}
-              active={settings.language === "japanese"}
+              onClick={() => language.updateLanguage("japanese")}
+              active={language.language === "japanese"}
             >
               日本語
             </Button>

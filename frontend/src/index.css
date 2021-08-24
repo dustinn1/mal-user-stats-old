@@ -3,6 +3,7 @@ html {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
 }
 
 #root {
@@ -11,10 +12,32 @@ html {
   min-height: 100vh;
 }
 
+html[data-theme="dark"] {
+  background-color: #212529;
+}
+
+html[data-theme="dark"] #root {
+  background-color: #121212;
+}
+
 .link-danger {
   text-decoration: underline;
 }
 
 .link-danger:hover {
   cursor: pointer;
+}
+
+[data-theme="dark"] .modal-dialog > .modal-content {
+  color: #fff;
+  background-color: #121212;
+}
+
+[data-theme="dark"] .modal-dialog > .modal-content .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+[data-theme="dark"] hr {
+  color: #fff;
+  opacity: 0.5;
 }

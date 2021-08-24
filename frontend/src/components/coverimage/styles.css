@@ -17,12 +17,21 @@
   text-decoration: none;
 }
 
+[data-theme="dark"] .large-cover-image {
+  color: #fff;
+}
+
 .large-cover-image:hover,
 .large-cover-image:focus {
   color: #000;
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 3px;
+}
+
+[data-theme="dark"] .large-cover-image:hover,
+[data-theme="dark"] .large-cover-image.dark:focus {
+  color: #fff;
 }
 
 .large-cover-image picture > img,

@@ -15,6 +15,10 @@
   text-underline-offset: 3px;
 }
 
+[data-theme="dark"] .chart-container > .chart-container-header > h3 {
+  color: #fff;
+}
+
 .chart-container > .chart-container-header > .nav {
   justify-content: flex-end;
 }

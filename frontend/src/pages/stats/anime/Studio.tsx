@@ -76,7 +76,7 @@ export default function Studio() {
             icon={faClock}
           />
         </div>
-        <h3>Animes ({animes.length})</h3>
+        <h3 className="stats-subheader">Animes ({animes.length})</h3>
         <hr />
         <div className="cover-images-grid">
           {animes.map((anime: Anime) => (

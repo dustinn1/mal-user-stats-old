@@ -6,53 +6,19 @@
   border-bottom: 4px solid #000;
 }
 
+[data-theme="dark"] .stats-header {
+  color: #fff;
+  border-color: #fff;
+}
+
+[data-theme="dark"] .stats-subheader {
+  color: #fff;
+}
+
 .stats-cards {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-}
-
-@media (max-width: 991px) {
-  .stats-tabs {
-    margin-top: -8px;
-    justify-content: center;
-    padding-bottom: 5px;
-    margin-bottom: 12px !important;
-    border-bottom: 1px solid #ababab;
-  }
-
-  .stats-tabs > .stats-tab-section {
-    display: flex;
-    overflow-x: scroll;
-    padding-bottom: 8px;
-  }
-
-  .stats-tabs > .stats-tab-divider {
-    width: 100%;
-    font-size: 18px;
-    text-align: center;
-    font-weight: 700;
-    /* margin-top: 2px; */
-    margin-bottom: 6px;
-    padding-bottom: 2px;
-    text-decoration: underline;
-    text-underline-offset: 6px;
-  }
-}
-
-@media (min-width: 992px) {
-  .stats-tabs {
-    flex-direction: column;
-  }
-
-  .stats-tabs > .stats-tab-divider {
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #000;
-  }
 }
 
 .sort-section {
@@ -71,6 +37,10 @@
 
 .sort-section > .sort-buttons > span {
   margin-right: 7px;
+}
+
+[data-theme="dark"] .sort-section > .sort-buttons > span {
+  color: #fff;
 }
 
 @media (max-width: 575px) {
@@ -97,6 +67,15 @@
     width: 100%;
     margin-top: 10px;
   }
+}
+
+[data-theme="dark"] .sort-section > .search-section > input {
+  background-color: #121212;
+  color: #fff;
+}
+
+[data-theme="dark"] .sort-section > .search-section > input::placeholder {
+  color: #fff;
 }
 
 .breadcrumb a {

@@ -1,7 +1,7 @@
 {
   "name": "mal-user-stats",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
@@ -30,6 +30,7 @@
     "react-scripts": "4.0.3",
     "react-table": "^7.7.0",
     "typescript": "^4.1.2",
+    "use-color-scheme": "^1.1.3",
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {

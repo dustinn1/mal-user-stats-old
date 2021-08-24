@@ -88,6 +88,7 @@ export default function LoginModal(props: Props) {
         onHide={props.onHide}
         onEnter={() => onModalShow()}
         onExited={onModalHide}
+        className="settings-modal"
       >
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>

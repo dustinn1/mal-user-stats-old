@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="profile-header bg-light">
+      <header className="profile-header">
         <Container>
           <span>
             <picture>

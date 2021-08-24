@@ -6,6 +6,7 @@ interface Props {
   data: Array<any>;
   dataIndex: string;
   dataKey: string;
+  dark: boolean;
 }
 
 export default function PieChart(props: Props) {
@@ -31,6 +32,7 @@ export default function PieChart(props: Props) {
       activeInnerRadiusOffset={10}
       activeOuterRadiusOffset={10}
       theme={{
+        textColor: props.dark ? "#fff" : "#000",
         labels: {
           text: {
             fontSize: "14px",
