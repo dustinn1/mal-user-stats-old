@@ -28,7 +28,7 @@ function getSavedTheme(): "light" | "dark" | "system" {
     return local;
   } else {
     localStorage.setItem("theme", "system");
-    return "light";
+    return "system";
   }
 }
 
