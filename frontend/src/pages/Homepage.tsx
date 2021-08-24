@@ -3,6 +3,8 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { useLocation } from "react-router";
 import Cookie from "js-cookie";
 import { LinkContainer } from "react-router-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon, faDesktop } from "@fortawesome/free-solid-svg-icons";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -28,7 +30,7 @@ export default function Homepage() {
     }
   }, [errorQuery]);
 
-  function HomepageButton() {
+  function HomepageButton(props: { theme: string }) {
     if ((localStorage.getItem("data") as string) !== null) {
       return (
         <LinkContainer to="/stats/anime/overview">
@@ -41,7 +43,7 @@ export default function Homepage() {
           <Button onClick={() => setShowStatsModal(true)} size="lg">
             Generate Stats
           </Button>
-          <small className="mt-2">
+          <small className={`mt-2 ${props.theme === "dark" && "text-light"}`}>
             All generated stats are stored locally on your browser.
             <br />
             Your stats will only be visible to you.
@@ -54,7 +56,7 @@ export default function Homepage() {
           <Button size="lg" onClick={() => setShowLoginModal(true)}>
             Log in
           </Button>
-          <small className="mt-2">
+          <small className={`mt-2 ${props.theme === "dark" && "text-light"}`}>
             You will be redirected to myanimelist.net to login.
           </small>
         </>
@@ -64,9 +66,38 @@ export default function Homepage() {
 
   return (
     <>
-      <Container className="mt-5 flex-grow-1">
+      <Container className="mt-3 flex-grow-1">
+        <div className="text-end">
+          <Button
+            variant="outline-primary"
+            size="sm"
+            onClick={() => theme.updateTheme("system")}
+            active={theme.theme === "system"}
+          >
+            <FontAwesomeIcon icon={faDesktop} className="me-2" />
+            System
+          </Button>{" "}
+          <Button
+            variant="outline-primary"
+            size="sm"
+            onClick={() => theme.updateTheme("light")}
+            active={theme.theme === "light"}
+          >
+            <FontAwesomeIcon icon={faSun} className="me-2" />
+            Light
+          </Button>{" "}
+          <Button
+            variant="outline-primary"
+            size="sm"
+            onClick={() => theme.updateTheme("dark")}
+            active={theme.theme === "dark"}
+          >
+            <FontAwesomeIcon icon={faMoon} className="me-2" />
+            Dark
+          </Button>
+        </div>
         {errorQuery === "auth" && (
-          <div className="text-center text-danger fs-5">
+          <div className="text-center text-danger fs-5 mt-3">
             There was a problem authenticating your MyAnimeList account. Please{" "}
             <span
               className="link-danger"
@@ -78,7 +109,7 @@ export default function Homepage() {
           </div>
         )}
         {errorQuery === "cookies" && (
-          <div className="text-center text-danger fs-5">
+          <div className="text-center text-danger fs-5 mt-3">
             Please enable cookies
           </div>
         )}
@@ -107,7 +138,7 @@ export default function Homepage() {
               ) using data from your MyAnimeList profile.
             </p>
             <div className="d-grid justify-content-center mt-2 mt-lg-4">
-              <HomepageButton />
+              <HomepageButton theme={theme.theme} />
             </div>
           </Col>
           <Col xs={12} lg={6} className="mt-4 mt-lg-0">
