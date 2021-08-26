@@ -16,12 +16,16 @@ export default function NotFound() {
       <Container className="mt-5 text-center">
         <h1
           className={`display-4 fw-bold lh-1 mb-3 ${
-            theme.theme === "dark" && "text-light"
+            theme.colorTheme === "dark" && "text-light"
           }`}
         >
           404
         </h1>
-        <p className={`lead pb-lg-3 ${theme.theme === "dark" && "text-light"}`}>
+        <p
+          className={`lead pb-lg-3 ${
+            theme.colorTheme === "dark" && "text-light"
+          }`}
+        >
           Page Not Found
         </p>
         <div className="d-grid justify-content-center mt-2 mt-lg-3">

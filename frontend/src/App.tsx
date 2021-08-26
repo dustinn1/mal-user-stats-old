@@ -37,10 +37,14 @@ export default function App() {
   const [theme, setTheme] = useState<"light" | "dark" | "system">(
     getSavedTheme()
   );
+
   function updateTheme(theme: "light" | "dark" | "system") {
     setTheme(theme);
     localStorage.setItem("theme", theme);
   }
+
+  const colorTheme =
+    theme === "system" ? (scheme !== "none" ? scheme : "light") : theme;
 
   return (
     <HelmetProvider>
@@ -48,13 +52,16 @@ export default function App() {
         titleTemplate="%s - MAL User Stats"
         defaultTitle="MAL User Stats"
         htmlAttributes={{
-          "data-theme":
-            theme === "system" ? (scheme !== "none" ? scheme : "light") : theme,
+          "data-theme": colorTheme,
         }}
       />
       {localStorageTest() ? (
         <ThemeContext.Provider
-          value={{ theme: theme, updateTheme: updateTheme }}
+          value={{
+            theme: theme,
+            colorTheme: colorTheme,
+            updateTheme: updateTheme,
+          }}
         >
           <Router>
             <ErrorBoundary FallbackComponent={ErrorFallback}>

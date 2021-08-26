@@ -14,12 +14,16 @@ export default function ErrorFallback({ resetErrorBoundary }: FallbackProps) {
     <Container className="mt-5 text-center">
       <h1
         className={`display-4 fw-bold lh-1 mb-3 ${
-          theme.theme === "dark" && "text-light"
+          theme.colorTheme === "dark" && "text-light"
         }`}
       >
         Something Went Wrong
       </h1>
-      <p className={`lead pb-lg-3 ${theme.theme === "dark" && "text-light"}`}>
+      <p
+        className={`lead pb-lg-3 ${
+          theme.colorTheme === "dark" && "text-light"
+        }`}
+      >
         It seems like there is a problem with your saved stats.
         <br />
         You will have to regenerate them.

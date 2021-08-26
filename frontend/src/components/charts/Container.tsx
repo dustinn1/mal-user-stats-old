@@ -69,7 +69,7 @@ export default function ChartContainer(props: Props) {
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
-            dark={theme.theme === "dark"}
+            dark={theme.colorTheme === "dark"}
           />
         )}
         {props.chartType === "line" && (
@@ -78,7 +78,7 @@ export default function ChartContainer(props: Props) {
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
-            dark={theme.theme === "dark"}
+            dark={theme.colorTheme === "dark"}
           />
         )}
         {props.chartType === "pie" && (
@@ -87,7 +87,7 @@ export default function ChartContainer(props: Props) {
             data={props.data}
             dataIndex={props.dataIndex}
             dataKey={sort}
-            dark={theme.theme === "dark"}
+            dark={theme.colorTheme === "dark"}
           />
         )}
       </div>

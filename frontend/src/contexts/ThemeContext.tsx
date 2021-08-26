@@ -1,7 +1,8 @@
 import { createContext } from "react";
 
 interface Theme {
-  theme: string;
+  theme: "system" | "light" | "dark";
+  colorTheme: "light" | "dark";
   updateTheme: Function;
 }
 

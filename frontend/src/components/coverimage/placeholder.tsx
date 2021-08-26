@@ -12,7 +12,9 @@ export default function Placeholder() {
   const theme = useContext(ThemeContext);
   return (
     <img
-      src={`data:image/png;base64,${theme.theme === "dark" ? black : white}`}
+      src={`data:image/png;base64,${
+        theme.colorTheme === "dark" ? black : white
+      }`}
       alt="placeholder"
       className="placeholder-image"
     />

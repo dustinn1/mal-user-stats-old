@@ -117,14 +117,14 @@ export default function Homepage() {
           <Col xs={12} lg={6} className="text-center mb-4">
             <h1
               className={`display-5 fw-bold lh-1 mb-3 ${
-                theme.theme === "dark" && "text-light"
+                theme.colorTheme === "dark" && "text-light"
               }`}
             >
               MyAnimeList User Stats
             </h1>
             <p
               className={`lead pb-lg-3 ${
-                theme.theme === "dark" && "text-light"
+                theme.colorTheme === "dark" && "text-light"
               }`}
             >
               Generate statistics similar to AniList (
@@ -138,7 +138,7 @@ export default function Homepage() {
               ) using data from your MyAnimeList profile.
             </p>
             <div className="d-grid justify-content-center mt-2 mt-lg-4">
-              <HomepageButton theme={theme.theme} />
+              <HomepageButton theme={theme.colorTheme} />
             </div>
           </Col>
           <Col xs={12} lg={6} className="mt-4 mt-lg-0">
