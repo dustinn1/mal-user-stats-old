@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -11,14 +11,14 @@ interface Props {
 
 export default function Footer(props: Props) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const hideDeleteModal = () => setShowDeleteModal(false);
   const openDeleteModal = () => setShowDeleteModal(true);
 
   function deleteStats() {
     localStorage.removeItem("data");
-    history.push(`/`);
+    navigate(`/`);
   }
 
   return (

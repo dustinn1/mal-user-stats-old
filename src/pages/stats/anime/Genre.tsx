@@ -28,12 +28,12 @@ export default function Genre() {
   useEffect(() => window.scrollTo(0, 0), []);
 
   const validGenre: boolean = stats.data.anime_statistics.genres.some(
-    (n) => n.name.toLowerCase() === genre.replaceAll("_", " ")
+    (n) => n.name.toLowerCase() === genre!.replaceAll("_", " ")
   );
 
   if (validGenre) {
     const genreStats = stats.data.anime_statistics.genres.find(
-      (element) => element.name.toLowerCase() === genre.replaceAll("_", " ")
+      (element) => element.name.toLowerCase() === genre!.replaceAll("_", " ")
     )!;
 
     const animes: Array<Anime> = [];
@@ -51,7 +51,7 @@ export default function Genre() {
           <title>{`${genreStats.name} Genre Stats`}</title>
         </Helmet>
         <Breadcrumb>
-          <LinkContainer to={"../genres"}>
+          <LinkContainer to="..">
             <Breadcrumb.Item>Genres</Breadcrumb.Item>
           </LinkContainer>
           <Breadcrumb.Item active>{genreStats.name}</Breadcrumb.Item>

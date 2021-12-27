@@ -22,17 +22,17 @@ interface Manga {
 
 export default function Genre() {
   const stats = useContext(StatsContext);
-  const { genre } = useParams<{ genre: string }>();
+  const { genre } = useParams();
 
   useEffect(() => window.scrollTo(0, 0), []);
 
   const validGenre: boolean = stats.data.manga_statistics.genres.some(
-    (n) => n.name.toLowerCase() === genre.replaceAll("_", " ")
+    (n) => n.name.toLowerCase() === genre!.replaceAll("_", " ")
   );
 
   if (validGenre) {
     const genreStats = stats.data.manga_statistics.genres.find(
-      (element) => element.name.toLowerCase() === genre.replaceAll("_", " ")
+      (element) => element.name.toLowerCase() === genre!.replaceAll("_", " ")
     )!;
 
     const mangas: Array<Manga> = [];
@@ -50,7 +50,7 @@ export default function Genre() {
           <title>{`${genreStats.name} Genre Stats`}</title>
         </Helmet>
         <Breadcrumb>
-          <LinkContainer to={"../genres"}>
+          <LinkContainer to="..">
             <Breadcrumb.Item>Genres</Breadcrumb.Item>
           </LinkContainer>
           <Breadcrumb.Item active>{genreStats.name}</Breadcrumb.Item>

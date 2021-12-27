@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Cookie from "js-cookie";
 import dayjs from "dayjs";
 import Modal from "react-bootstrap/Modal";
@@ -36,7 +36,7 @@ async function getBackendStatus(): Promise<boolean> {
 }
 
 export default function StatsGenerate(props: Props) {
-  const history = useHistory();
+  const navigate = useNavigate();
   const stats = useContext(StatsContext);
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
@@ -85,7 +85,7 @@ export default function StatsGenerate(props: Props) {
         }
       );
       if (!response.ok && response.status === 401) {
-        return history.push("/?error=auth");
+        return navigate("/?error=auth");
       }
       if (!response.ok && response.status === 429) {
         return setRateLimit(
@@ -95,7 +95,7 @@ export default function StatsGenerate(props: Props) {
       const responseJSON = await response.json();
       if (!props.update) {
         saveLocalStorage(responseJSON);
-        history.push("/stats");
+        navigate("/stats");
       } else {
         stats.updateData(responseJSON);
         props.onHide();

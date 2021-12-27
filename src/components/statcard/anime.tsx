@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import prettyMs from "pretty-ms";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
@@ -48,7 +48,6 @@ function listButton(genre: number, direction: string) {
 }
 
 export default function StatCard(props: Props) {
-  const { url } = useRouteMatch();
   const allAnimes = useContext(StatsContext).data.anime_statistics.all_animes;
   const animes: Array<Anime> = [];
 
@@ -57,64 +56,62 @@ export default function StatCard(props: Props) {
   }
 
   return (
-    <>
-      <Card className="stats-card shadow-sm" id={`genre-${props.genre}`}>
-        <h2 className="stats-card-header">
-          <Link to={`${url}/${props.name.toLowerCase().replaceAll(" ", "_")}`}>
-            {props.name}
-          </Link>
-          <Badge pill bg="dark">
-            {props.index}
-          </Badge>
-        </h2>
-        <div className="stats">
-          <p>
-            {props.count} <strong>Animes</strong>
-          </p>
-          <p>
-            {props.mean_score} <strong>Average Score</strong>
-          </p>
-          <p>
-            {props.time_watched !== 0
-              ? prettyMs(props.time_watched * 1000, {
-                  verbose: true,
-                  unitCount: 2,
-                })
-              : 0}{" "}
-            <strong>Time Watched</strong>
-          </p>
+    <Card className="stats-card shadow-sm" id={`genre-${props.genre}`}>
+      <h2 className="stats-card-header">
+        <Link to={`${props.name.toLowerCase().replaceAll(" ", "_")}`}>
+          {props.name}
+        </Link>
+        <Badge pill bg="dark">
+          {props.index}
+        </Badge>
+      </h2>
+      <div className="stats">
+        <p>
+          {props.count} <strong>Animes</strong>
+        </p>
+        <p>
+          {props.mean_score} <strong>Average Score</strong>
+        </p>
+        <p>
+          {props.time_watched !== 0
+            ? prettyMs(props.time_watched * 1000, {
+                verbose: true,
+                unitCount: 2,
+              })
+            : 0}{" "}
+          <strong>Time Watched</strong>
+        </p>
+      </div>
+      <div className="covers-list">
+        {props.count > 3 && (
+          <>
+            <Button
+              variant="dark"
+              className="prev-button"
+              onClick={() => listButton(props.genre, "prev")}
+            >
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </Button>
+            <Button
+              variant="dark"
+              className="next-button"
+              onClick={() => listButton(props.genre, "next")}
+            >
+              <FontAwesomeIcon icon={faAngleRight} />
+            </Button>
+          </>
+        )}
+        <div className="covers">
+          {animes.map((anime: Anime) => (
+            <SmallCoverImage
+              key={anime.id}
+              type="anime"
+              genre={props.genre}
+              title={anime}
+            />
+          ))}
         </div>
-        <div className="covers-list">
-          {props.count > 3 && (
-            <>
-              <Button
-                variant="dark"
-                className="prev-button"
-                onClick={() => listButton(props.genre, "prev")}
-              >
-                <FontAwesomeIcon icon={faAngleLeft} />
-              </Button>
-              <Button
-                variant="dark"
-                className="next-button"
-                onClick={() => listButton(props.genre, "next")}
-              >
-                <FontAwesomeIcon icon={faAngleRight} />
-              </Button>
-            </>
-          )}
-          <div className="covers">
-            {animes.map((anime: Anime) => (
-              <SmallCoverImage
-                key={anime.id}
-                type="anime"
-                genre={props.genre}
-                title={anime}
-              />
-            ))}
-          </div>
-        </div>
-      </Card>
-    </>
+      </div>
+    </Card>
   );
 }

@@ -1,15 +1,25 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { ErrorBoundary } from "react-error-boundary";
 import { useColorScheme } from "use-color-scheme";
 import { ThemeContext } from "./contexts/ThemeContext";
-import Homepage from "./pages/Homepage";
-import Auth from "./pages/Auth";
-import Stats from "./pages/stats";
-import NotFound from "./pages/NotFound";
 import ErrorFallback from "./components/errorfallback";
 import StorageErrorFallback from "./components/errorfallback/storage";
+
+import Homepage from "./pages/Homepage";
+import NotFound from "./pages/NotFound";
+import Stats from "./pages/stats";
+import AnimeOverviewStats from "./pages/stats/anime/Overview";
+import AnimeHistoryStats from "./pages/stats/anime/History";
+import AnimeGenresStats from "./pages/stats/anime/Genres";
+import AnimeSingleGenreStats from "./pages/stats/anime/Genre";
+import AnimeStudiosStats from "./pages/stats/anime/Studios";
+import AnimeSingleStudioStats from "./pages/stats/anime/Studio";
+import MangaOverviewStats from "./pages/stats/manga/Overview";
+import MangaHistoryStats from "./pages/stats/manga/History";
+import MangaGenresStats from "./pages/stats/manga/Genres";
+import MangaSingleGenreStats from "./pages/stats/manga/Genre";
 
 function localStorageTest() {
   const test = "test";
@@ -63,24 +73,47 @@ export default function App() {
             updateTheme: updateTheme,
           }}
         >
-          <Router>
+          <BrowserRouter>
             <ErrorBoundary FallbackComponent={ErrorFallback}>
-              <Switch>
-                <Route exact path="/">
-                  <Homepage />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="stats" element={<Stats />}>
+                  <Route path="anime">
+                    <Route index element={<Navigate to="overview" />} />
+                    <Route path="overview" element={<AnimeOverviewStats />} />
+                    <Route path="history" element={<AnimeHistoryStats />} />
+                    <Route path="genres">
+                      <Route index element={<AnimeGenresStats />} />
+                      <Route
+                        path=":genre"
+                        element={<AnimeSingleGenreStats />}
+                      />
+                    </Route>
+                    <Route path="studios">
+                      <Route index element={<AnimeStudiosStats />} />
+                      <Route
+                        path=":studio"
+                        element={<AnimeSingleStudioStats />}
+                      />
+                    </Route>
+                  </Route>
+                  <Route path="manga">
+                    <Route index element={<Navigate to="overview" />} />
+                    <Route path="overview" element={<MangaOverviewStats />} />
+                    <Route path="history" element={<MangaHistoryStats />} />
+                    <Route path="genres">
+                      <Route index element={<MangaGenresStats />} />
+                      <Route
+                        path=":genre"
+                        element={<MangaSingleGenreStats />}
+                      />
+                    </Route>
+                  </Route>
                 </Route>
-                <Route path="/auth">
-                  <Auth />
-                </Route>
-                <Route path="/stats">
-                  <Stats />
-                </Route>
-                <Route path="*">
-                  <NotFound />
-                </Route>
-              </Switch>
+                <Route path="*" element={<NotFound />} />
+              </Routes>
             </ErrorBoundary>
-          </Router>
+          </BrowserRouter>
         </ThemeContext.Provider>
       ) : (
         <StorageErrorFallback />

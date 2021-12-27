@@ -28,12 +28,12 @@ export default function Studio() {
   useEffect(() => window.scrollTo(0, 0), []);
 
   const validStudio: boolean = stats.data.anime_statistics.studios.some(
-    (n) => n.name.toLowerCase() === studio.replaceAll("_", " ")
+    (n) => n.name.toLowerCase() === studio!.replaceAll("_", " ")
   );
 
   if (validStudio) {
     const studioStats = stats.data.anime_statistics.studios.find(
-      (element) => element.name.toLowerCase() === studio.replaceAll("_", " ")
+      (element) => element.name.toLowerCase() === studio!.replaceAll("_", " ")
     )!;
 
     const animes: Array<Anime> = [];
@@ -51,7 +51,7 @@ export default function Studio() {
           <title>{`${studioStats.name} Studio Stats`}</title>
         </Helmet>
         <Breadcrumb>
-          <LinkContainer to={"../studios"}>
+          <LinkContainer to="..">
             <Breadcrumb.Item>Studios</Breadcrumb.Item>
           </LinkContainer>
           <Breadcrumb.Item active>{studioStats.name}</Breadcrumb.Item>

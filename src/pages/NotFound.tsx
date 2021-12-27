@@ -29,7 +29,7 @@ export default function NotFound() {
           Page Not Found
         </p>
         <div className="d-grid justify-content-center mt-2 mt-lg-3">
-          <LinkContainer exact to="/">
+          <LinkContainer to="/">
             <Button size="lg">Go Home</Button>
           </LinkContainer>
         </div>

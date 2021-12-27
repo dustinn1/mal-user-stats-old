@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Badge from "react-bootstrap/Badge";
 import Button from "react-bootstrap/Button";
@@ -47,7 +47,6 @@ function listButton(genre: number, direction: string) {
 }
 
 export default function StatCard(props: Props) {
-  const { url } = useRouteMatch();
   const allMangas = useContext(StatsContext).data.manga_statistics.all_mangas;
   const mangas: Array<Manga> = [];
 
@@ -59,7 +58,7 @@ export default function StatCard(props: Props) {
     <>
       <Card className="stats-card shadow-sm" id={`genre-${props.genre}`}>
         <h2 className="stats-card-header">
-          <Link to={`${url}/${props.name.toLowerCase().replaceAll(" ", "_")}`}>
+          <Link to={`${props.name.toLowerCase().replaceAll(" ", "_")}`}>
             {props.name}
           </Link>
           <Badge pill bg="dark">

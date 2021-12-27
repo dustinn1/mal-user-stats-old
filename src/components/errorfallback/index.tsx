@@ -29,7 +29,7 @@ export default function ErrorFallback({ resetErrorBoundary }: FallbackProps) {
         You will have to regenerate them.
       </p>
       <div className="d-grid justify-content-center mt-2 mt-lg-3">
-        <LinkContainer exact to="/">
+        <LinkContainer to="/">
           <Button size="lg" onClick={resetErrorBoundary}>
             Go Home
           </Button>
