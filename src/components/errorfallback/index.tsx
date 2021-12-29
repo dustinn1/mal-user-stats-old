@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 export default function ErrorFallback({ resetErrorBoundary }: FallbackProps) {
   const theme = useContext(ThemeContext);
 
-  useEffect(() => localStorage.clear(), []);
+  //useEffect(() => localStorage.clear(), []);
 
   return (
     <Container className="mt-5 text-center">

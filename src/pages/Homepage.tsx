@@ -1,7 +1,5 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
-import { useLocation } from "react-router";
-import Cookie from "js-cookie";
 import { LinkContainer } from "react-router-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon, faDesktop } from "@fortawesome/free-solid-svg-icons";
@@ -10,25 +8,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
-import StatsGenerateModal from "../components/statsgenerate";
+import StatsGenerateModal from "../components/modals/statsgenerate";
 import Footer from "../components/footer";
-import LoginModal from "../components/login";
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
 
 export default function Homepage() {
   const theme = useContext(ThemeContext);
   const [showStatsModal, setShowStatsModal] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false);
-  const [errorQuery] = useState(useQuery().get("error") as string);
-
-  useEffect(() => {
-    if (errorQuery === "auth") {
-      document.cookie = "";
-    }
-  }, [errorQuery]);
 
   function HomepageButton(props: { theme: string }) {
     if ((localStorage.getItem("data") as string) !== null) {
@@ -37,7 +22,7 @@ export default function Homepage() {
           <Button size="lg">View Profile</Button>
         </LinkContainer>
       );
-    } else if (Cookie.get("user") !== undefined) {
+    } else {
       return (
         <>
           <Button onClick={() => setShowStatsModal(true)} size="lg">
@@ -47,17 +32,6 @@ export default function Homepage() {
             All generated stats are stored locally on your browser.
             <br />
             Your stats will only be visible to you.
-          </small>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <Button size="lg" onClick={() => setShowLoginModal(true)}>
-            Log in
-          </Button>
-          <small className={`mt-2 ${props.theme === "dark" && "text-light"}`}>
-            You will be redirected to myanimelist.net to login.
           </small>
         </>
       );
@@ -96,23 +70,6 @@ export default function Homepage() {
             Dark
           </Button>
         </div>
-        {errorQuery === "auth" && (
-          <div className="text-center text-danger fs-5 mt-3">
-            There was a problem authenticating your MyAnimeList account. Please{" "}
-            <span
-              className="link-danger"
-              onClick={() => setShowLoginModal(true)}
-            >
-              log in
-            </span>{" "}
-            again to generate your stats.
-          </div>
-        )}
-        {errorQuery === "cookies" && (
-          <div className="text-center text-danger fs-5 mt-3">
-            Please enable cookies
-          </div>
-        )}
         <Row className="py-5 align-items-center">
           <Col xs={12} lg={6} className="text-center mb-4">
             <h1
@@ -185,11 +142,6 @@ export default function Homepage() {
         <StatsGenerateModal
           show={showStatsModal}
           onHide={() => setShowStatsModal(false)}
-        />
-        <LoginModal
-          show={showLoginModal}
-          onHide={() => setShowLoginModal(false)}
-          redirect="home"
         />
       </Container>
       <Footer homepage />

@@ -1,5 +1,4 @@
 import { useState, useContext } from "react";
-import Cookie from "js-cookie";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
@@ -15,9 +14,8 @@ import {
   faCog,
 } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
-import StatsGenerateModal from "../../components/statsgenerate";
-import LoginModal from "../../components/login";
-import SettingsModal from "../../components/settings";
+import StatsGenerateModal from "../modals/statsgenerate";
+import SettingsModal from "../modals/settings";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -27,7 +25,6 @@ dayjs.extend(relativeTime);
 export default function Header() {
   const stats = useContext(StatsContext);
   const [showUpdateModal, setShowUpdateModal] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   return (
@@ -59,11 +56,7 @@ export default function Header() {
           <div className="header-buttons">
             <Button
               variant="outline-primary"
-              onClick={
-                Cookie.get("user") !== undefined
-                  ? () => setShowUpdateModal(true)
-                  : () => setShowLoginModal(true)
-              }
+              onClick={() => setShowUpdateModal(true)}
             >
               <FontAwesomeIcon icon={faSync} /> Update Stats
             </Button>
@@ -85,11 +78,6 @@ export default function Header() {
         update
         show={showUpdateModal}
         onHide={() => setShowUpdateModal(false)}
-      />
-      <LoginModal
-        show={showLoginModal}
-        onHide={() => setShowLoginModal(false)}
-        redirect="stats"
       />
       <SettingsModal
         show={showSettingsModal}

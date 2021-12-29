@@ -1,0 +1,120 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import prettyMs from "pretty-ms";
+import Card from "react-bootstrap/Card";
+import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import "./index.styles.css";
+import { StatsContext } from "../../contexts/StatsContext";
+import SmallCoverImage from "../coverimage/small";
+
+interface Props {
+  type: "anime" | "manga";
+  rank: number;
+  data: {
+    genre: number;
+    name: string;
+    count: number;
+    mean_score: number;
+    time_watched: number;
+    top_titles: Array<number>;
+  };
+}
+
+interface Title {
+  id: number;
+  title: string;
+  image_url_id: string;
+  title_en: string;
+  title_ja: string;
+}
+
+function listButton(genre: number, direction: string) {
+  const container = document
+    .getElementById(`genre-${genre}`)!
+    .getElementsByClassName("covers")[0];
+  let scrollAmount = 0;
+  const scrollStep = 28;
+  var slideTimer = setInterval(() => {
+    if (direction === "prev") {
+      container.scrollLeft -= scrollStep;
+    } else if (direction === "next") {
+      container.scrollLeft += scrollStep;
+    }
+    scrollAmount += 10;
+    if (scrollAmount >= 100) {
+      window.clearInterval(slideTimer);
+    }
+  }, 10);
+}
+
+export default function StatCard(props: Props) {
+  const allTitles = useContext(StatsContext).data.anime_statistics.all_animes;
+  const titles: Array<Title> = [];
+
+  for (let titleId of [...props.data.top_titles].splice(0, 10)) {
+    titles.push(allTitles.find((title: any) => title.id === titleId) as Title);
+  }
+
+  return (
+    <Card className="stats-card shadow-sm" id={`genre-${props.data.genre}`}>
+      <h2 className="stats-card-header">
+        <Link to={`${props.data.name.toLowerCase().replaceAll(" ", "_")}`}>
+          {props.data.name}
+        </Link>
+        <Badge pill bg="dark">
+          {props.rank}
+        </Badge>
+      </h2>
+      <div className="stats">
+        <p>
+          {props.data.count} <strong>{props.type}</strong>
+        </p>
+        <p>
+          {props.data.mean_score} <strong>Average Score</strong>
+        </p>
+        <p>
+          {props.data.time_watched !== 0
+            ? prettyMs(props.data.time_watched * 1000, {
+                verbose: true,
+                unitCount: 2,
+              })
+            : 0}{" "}
+          <strong>Time Watched</strong>
+        </p>
+      </div>
+      <div className="covers-list">
+        {props.data.count > 3 && (
+          <>
+            <Button
+              variant="dark"
+              className="prev-button"
+              onClick={() => listButton(props.data.genre, "prev")}
+            >
+              <FontAwesomeIcon icon={faAngleLeft} />
+            </Button>
+            <Button
+              variant="dark"
+              className="next-button"
+              onClick={() => listButton(props.data.genre, "next")}
+            >
+              <FontAwesomeIcon icon={faAngleRight} />
+            </Button>
+          </>
+        )}
+        <div className="covers">
+          {titles.map((title: Title) => (
+            <SmallCoverImage
+              key={title.id}
+              type={props.type}
+              genre={props.data.genre}
+              title={title}
+            />
+          ))}
+        </div>
+      </div>
+    </Card>
+  );
+}

@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { LanguageContext } from "../../contexts/LanguageContext";
-import { ThemeContext } from "../../contexts/ThemeContext";
+import { LanguageContext } from "../../../contexts/LanguageContext";
+import { ThemeContext } from "../../../contexts/ThemeContext";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
