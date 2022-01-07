@@ -5,11 +5,9 @@ import pick from "lodash-es/pick";
 interface Anime {
   id: number;
   title: string;
-  image_url_id: number;
-  alternative_titles: {
-    en: string;
-    jp: string;
-  };
+  image_url_id: string;
+  title_en: string;
+  title_ja: string;
 }
 
 export default async function allAnimes(

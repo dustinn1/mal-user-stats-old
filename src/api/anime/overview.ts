@@ -3,7 +3,7 @@ import filter from "lodash-es/filter";
 import round from "lodash-es/round";
 import meanBy from "lodash-es/meanBy";
 
-interface Overall {
+interface Overview {
   total_anime: number;
   episodes_watched: number;
   time_watched: number;
@@ -11,10 +11,10 @@ interface Overall {
   standard_deviation: number;
 }
 
-export default async function overallStats(
+export default async function overviewStats(
   animeList: Array<any>
-): Promise<Overall> {
-  let object: Overall = {
+): Promise<Overview> {
+  let object: Overview = {
     total_anime: 0,
     episodes_watched: 0,
     time_watched: 0,

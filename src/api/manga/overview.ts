@@ -3,7 +3,7 @@ import filter from "lodash-es/filter";
 import round from "lodash-es/round";
 import meanBy from "lodash-es/meanBy";
 
-interface Overall {
+interface Overview {
   total_manga: number;
   chapters_read: number;
   volumes_read: number;
@@ -11,10 +11,10 @@ interface Overall {
   standard_deviation: number;
 }
 
-export default async function overallStats(
+export default async function overviewStats(
   mangaList: Array<any>
-): Promise<Overall> {
-  let object: Overall = {
+): Promise<Overview> {
+  let object: Overview = {
     total_manga: 0,
     chapters_read: 0,
     volumes_read: 0,
