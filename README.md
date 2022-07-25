@@ -1,5 +1,11 @@
 # MyAnimeList User Stats
 
+## Update
+
+This project is outdated and has been archived. A new and updated version is located at https://github.com/dustinn1/mal-user-stats.
+
+---
+
 ## Description
 
 Generate statistics similar to [AniList](https://anilist.co/) ([example](https://anilist.co/user/triplezko/stats/anime/overview)) using data from your [MyAnimeList](https://myanimelist.net/) profile.
